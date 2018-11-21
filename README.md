@@ -21,12 +21,12 @@ Before doing this workshop, please install these required programs for the platf
 
 Install Node and Watchman using Homebrew using the below commands:
 
-1. brew install node
-2. brew install watchman
+1. `brew install node`
+2. `brew install watchman`
 
 Install the AWS amplify CLI with the node package manager(npm) using the following command:
 
-1. npm install -g @aws-amplify/cli
+1. `npm install -g @aws-amplify/cli`
 
 ## Step 1:  Android Studio Configuration
 
