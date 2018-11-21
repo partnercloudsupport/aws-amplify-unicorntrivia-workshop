@@ -71,7 +71,12 @@ this.setState({
 ```
 ## Step 3: Subscribing to the GraphQL API back end
 
+# ask sam what this is about
 1. Creating/migrating the aws_exports file and also the API.js files
+
+
+
+
 1. Navigate to ./src/components/App/Game/component.js
 1. Now we are ready to implement our graphql subscriptions. We will be creating two listeners, one listening for new questions and one listening for updated questions.
 1. Find the function named “listenForQuestions” and paste in the following code.
