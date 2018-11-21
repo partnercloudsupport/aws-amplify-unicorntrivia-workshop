@@ -35,7 +35,7 @@ Install the AWS amplify CLI with the node package manager(npm) using the followi
 1. clone the project with git clone 
 2. run export JAVA_HOME=`/usr/libexec/java_home -v 1.8` to get the right JDK version
 3. Navigate to the root directory of the project
-4. Run`*npm install` to install dependencies detailed in package.json
+4. Run`npm install` to install dependencies detailed in package.json
 5. Run react native link to link the React Native modules libraries to the project.
 
 ## Step 2: AdminPanel Walkthrough
