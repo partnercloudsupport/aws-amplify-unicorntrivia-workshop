@@ -333,6 +333,7 @@ Now that we have implemented every section of the application! It is time to run
 1. Finally we need the android API Level 27 system image. This should be Android Oreo. If you don't already have it installed go ahead and begin the download (remember to check your drive for available space as these downloads can be fairly large)
 1. Now select next and finish to return back to the previous screen. You should see your newely created virtual device. From here choose the green 'Play' button to launch the emulator!
 ![assets/android_studio_play_device.png](AndroidLaunchEmu)
+![Amplify Configure Project](assets/android_studio_play_device.png)
 1. Wait for android to launch and the home screen to appear. Then return to the terminal and navigate back to the root directory of our application.
 1. From here run the command `react-native run-android` to launch the application in the emulator
 
