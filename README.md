@@ -9,11 +9,6 @@
 
 Before doing this workshop, please install these required programs for the platform you will be running.
 
-### IOS
-
-1. Download and install Xcode from the [AppStore](http://appstore.com/mac/apple/xcode)
-2. Download and install OBS from [obsproject.com](https://obsproject.com/download)
-
 ### Android
 
 1. Install Node and Watchman using [Homebrew](http://brew.sh/)
