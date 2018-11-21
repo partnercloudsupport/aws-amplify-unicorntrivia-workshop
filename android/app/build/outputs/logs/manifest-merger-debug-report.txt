@@ -1,0 +1,180 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml:1:1-26:12
+INJECTED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml:1:1-26:12
+INJECTED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml:1:1-26:12
+INJECTED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml:1:1-26:12
+MERGED from [:react-native-video] /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/node_modules/react-native-video/android-exoplayer/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-svg] /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/node_modules/react-native-svg/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.react:react-native:0.57.4] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/react-native-0.57.4.aar/d1b48a29659f9057c803877442be9eb5/AndroidManifest.xml:2:1-15:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/2868b79a4836b55ebcc799fab32c5723/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.exoplayer:exoplayer:2.7.3] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/exoplayer-2.7.3.aar/8dbb69b701e31034558ee8cc1a5c8685/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:extension-okhttp:2.7.3] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/extension-okhttp-2.7.3.aar/1cb0e6ecab49e83ed6da83ab0328af47/AndroidManifest.xml:17:1-24:12
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.10.0.aar/166c4fcd4d8f0ffd2fc0a750ffc641b9/AndroidManifest.xml:2:1-9:12
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/e025f25f6304e5409cdc5a59cdb63f26/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/b8d540e90f6ea7c5c7a598f471f787bb/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/a14ee174056998dceef475c31b037aa2/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/b54920136b78b1ee8c86a3bddfe0eaa7/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/a8f4e27da89d77200661809f1bb9b4e8/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.7.3] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/exoplayer-dash-2.7.3.aar/3d4e81322236cfa9d4bc59506998a719/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-hls:2.7.3] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/exoplayer-hls-2.7.3.aar/906d65dfb7151c8e8dfbeb401bbcbd0a/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.7.3] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/exoplayer-smoothstreaming-2.7.3.aar/7cc6e83f39d9f67286c42867fd3e0d44/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-ui:2.7.3] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/exoplayer-ui-2.7.3.aar/5e0f9685b0c8e859927088d0ecd9d4c7/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.7.3] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/exoplayer-core-2.7.3.aar/1b28aea17b81ecc912e77f9d867e5957/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:support-compat:27.1.1] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/866ce90c91ca83ec2d85de9462bc0bbc/AndroidManifest.xml:17:1-22:12
+MERGED from [com.facebook.fresco:fresco:1.10.0] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/fresco-1.10.0.aar/6bc13c46037e8214581c08cdf2edcad4/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:drawee:1.10.0] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/drawee-1.10.0.aar/fd63e8c3b1816d10cbc71ca049468846/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline:1.10.0] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/imagepipeline-1.10.0.aar/54f3643a60fd2c16bddb8bf702f533a9/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-1.10.0.aar/487678e3c665cedef5350fccabd10a64/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.soloader:soloader:0.5.1] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/soloader-0.5.1.aar/1d566c4127312311c5d1fcad802e0b9a/AndroidManifest.xml:2:1-13:12
+MERGED from [org.webkit:android-jsc:r174650] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/android-jsc-r174650.aar/12cac6be7cab4a946034c3ffc927aa78/AndroidManifest.xml:1:1-3:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/95ee63b45417412a0f61d68fa5453be0/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/80289e3355b4be95e4be4a2c17e52cb3/AndroidManifest.xml:17:1-22:12
+MERGED from [com.facebook.fresco:fbcore:1.10.0] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/fbcore-1.10.0.aar/e824717f6a5605322fc2ddccf83de563/AndroidManifest.xml:2:1-9:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/b98b14e15290457220481c11b6f7f372/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/8429f53599049f5754985a82458ebd0e/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml:1:1-26:12
+INJECTED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml:1:1-26:12
+INJECTED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml:1:1-26:12
+	package
+		ADDED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml:2:5-32
+		INJECTED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml:1:1-26:12
+		INJECTED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml:1:1-26:12
+		INJECTED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml:1:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml:4:5-67
+	android:name
+		ADDED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml:4:22-64
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml:5:5-77
+MERGED from [com.facebook.react:react-native:0.57.4] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/react-native-0.57.4.aar/d1b48a29659f9057c803877442be9eb5/AndroidManifest.xml:11:5-78
+MERGED from [com.facebook.react:react-native:0.57.4] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/react-native-0.57.4.aar/d1b48a29659f9057c803877442be9eb5/AndroidManifest.xml:11:5-78
+	android:name
+		ADDED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml:5:22-75
+application
+ADDED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml:7:5-24:19
+MERGED from [com.facebook.react:react-native:0.57.4] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/react-native-0.57.4.aar/d1b48a29659f9057c803877442be9eb5/AndroidManifest.xml:13:5-20
+MERGED from [com.facebook.react:react-native:0.57.4] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/react-native-0.57.4.aar/d1b48a29659f9057c803877442be9eb5/AndroidManifest.xml:13:5-20
+MERGED from [com.facebook.soloader:soloader:0.5.1] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/soloader-0.5.1.aar/1d566c4127312311c5d1fcad802e0b9a/AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.soloader:soloader:0.5.1] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/soloader-0.5.1.aar/1d566c4127312311c5d1fcad802e0b9a/AndroidManifest.xml:11:5-20
+MERGED from [org.webkit:android-jsc:r174650] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/android-jsc-r174650.aar/12cac6be7cab4a946034c3ffc927aa78/AndroidManifest.xml:2:3-17
+MERGED from [org.webkit:android-jsc:r174650] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/android-jsc-r174650.aar/12cac6be7cab4a946034c3ffc927aa78/AndroidManifest.xml:2:3-17
+	android:label
+		ADDED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml:9:7-39
+	android:icon
+		ADDED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml:10:7-41
+	android:allowBackup
+		ADDED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml:11:7-34
+	android:theme
+		ADDED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml:12:7-38
+	android:name
+		ADDED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml:8:7-38
+activity#com.unicorntrivia.MainActivity
+ADDED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml:13:7-22:18
+	android:label
+		ADDED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml:15:9-41
+	android:windowSoftInputMode
+		ADDED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml:17:9-51
+	android:configChanges
+		ADDED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml:16:9-79
+	android:name
+		ADDED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml:14:9-37
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml:18:9-21:25
+action#android.intent.action.MAIN
+ADDED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml:19:13-65
+	android:name
+		ADDED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml:19:21-62
+category#android.intent.category.LAUNCHER
+ADDED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml:20:13-73
+	android:name
+		ADDED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml:20:23-70
+activity#com.facebook.react.devsupport.DevSettingsActivity
+ADDED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml:23:7-84
+	android:name
+		ADDED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml:23:17-81
+uses-sdk
+INJECTED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml
+MERGED from [:react-native-video] /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/node_modules/react-native-video/android-exoplayer/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-video] /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/node_modules/react-native-video/android-exoplayer/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-svg] /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/node_modules/react-native-svg/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-svg] /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/node_modules/react-native-svg/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.react:react-native:0.57.4] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/react-native-0.57.4.aar/d1b48a29659f9057c803877442be9eb5/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.57.4] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/react-native-0.57.4.aar/d1b48a29659f9057c803877442be9eb5/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/2868b79a4836b55ebcc799fab32c5723/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/2868b79a4836b55ebcc799fab32c5723/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.exoplayer:exoplayer:2.7.3] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/exoplayer-2.7.3.aar/8dbb69b701e31034558ee8cc1a5c8685/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer:2.7.3] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/exoplayer-2.7.3.aar/8dbb69b701e31034558ee8cc1a5c8685/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:extension-okhttp:2.7.3] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/extension-okhttp-2.7.3.aar/1cb0e6ecab49e83ed6da83ab0328af47/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:extension-okhttp:2.7.3] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/extension-okhttp-2.7.3.aar/1cb0e6ecab49e83ed6da83ab0328af47/AndroidManifest.xml:20:5-22:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.10.0.aar/166c4fcd4d8f0ffd2fc0a750ffc641b9/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.10.0.aar/166c4fcd4d8f0ffd2fc0a750ffc641b9/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/e025f25f6304e5409cdc5a59cdb63f26/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/e025f25f6304e5409cdc5a59cdb63f26/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/b8d540e90f6ea7c5c7a598f471f787bb/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/b8d540e90f6ea7c5c7a598f471f787bb/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/a14ee174056998dceef475c31b037aa2/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/a14ee174056998dceef475c31b037aa2/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/b54920136b78b1ee8c86a3bddfe0eaa7/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/b54920136b78b1ee8c86a3bddfe0eaa7/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/a8f4e27da89d77200661809f1bb9b4e8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/a8f4e27da89d77200661809f1bb9b4e8/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.7.3] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/exoplayer-dash-2.7.3.aar/3d4e81322236cfa9d4bc59506998a719/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.7.3] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/exoplayer-dash-2.7.3.aar/3d4e81322236cfa9d4bc59506998a719/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-hls:2.7.3] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/exoplayer-hls-2.7.3.aar/906d65dfb7151c8e8dfbeb401bbcbd0a/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-hls:2.7.3] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/exoplayer-hls-2.7.3.aar/906d65dfb7151c8e8dfbeb401bbcbd0a/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.7.3] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/exoplayer-smoothstreaming-2.7.3.aar/7cc6e83f39d9f67286c42867fd3e0d44/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.7.3] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/exoplayer-smoothstreaming-2.7.3.aar/7cc6e83f39d9f67286c42867fd3e0d44/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-ui:2.7.3] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/exoplayer-ui-2.7.3.aar/5e0f9685b0c8e859927088d0ecd9d4c7/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-ui:2.7.3] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/exoplayer-ui-2.7.3.aar/5e0f9685b0c8e859927088d0ecd9d4c7/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.7.3] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/exoplayer-core-2.7.3.aar/1b28aea17b81ecc912e77f9d867e5957/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.7.3] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/exoplayer-core-2.7.3.aar/1b28aea17b81ecc912e77f9d867e5957/AndroidManifest.xml:20:5-22:41
+MERGED from [com.android.support:support-compat:27.1.1] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/866ce90c91ca83ec2d85de9462bc0bbc/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/866ce90c91ca83ec2d85de9462bc0bbc/AndroidManifest.xml:20:5-44
+MERGED from [com.facebook.fresco:fresco:1.10.0] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/fresco-1.10.0.aar/6bc13c46037e8214581c08cdf2edcad4/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fresco:1.10.0] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/fresco-1.10.0.aar/6bc13c46037e8214581c08cdf2edcad4/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:1.10.0] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/drawee-1.10.0.aar/fd63e8c3b1816d10cbc71ca049468846/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:1.10.0] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/drawee-1.10.0.aar/fd63e8c3b1816d10cbc71ca049468846/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:1.10.0] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/imagepipeline-1.10.0.aar/54f3643a60fd2c16bddb8bf702f533a9/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:1.10.0] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/imagepipeline-1.10.0.aar/54f3643a60fd2c16bddb8bf702f533a9/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-1.10.0.aar/487678e3c665cedef5350fccabd10a64/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-1.10.0.aar/487678e3c665cedef5350fccabd10a64/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.soloader:soloader:0.5.1] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/soloader-0.5.1.aar/1d566c4127312311c5d1fcad802e0b9a/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.soloader:soloader:0.5.1] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/soloader-0.5.1.aar/1d566c4127312311c5d1fcad802e0b9a/AndroidManifest.xml:7:5-9:41
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/95ee63b45417412a0f61d68fa5453be0/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/95ee63b45417412a0f61d68fa5453be0/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/80289e3355b4be95e4be4a2c17e52cb3/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/80289e3355b4be95e4be4a2c17e52cb3/AndroidManifest.xml:20:5-44
+MERGED from [com.facebook.fresco:fbcore:1.10.0] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/fbcore-1.10.0.aar/e824717f6a5605322fc2ddccf83de563/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:1.10.0] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/fbcore-1.10.0.aar/e824717f6a5605322fc2ddccf83de563/AndroidManifest.xml:5:5-7:41
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/b98b14e15290457220481c11b6f7f372/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/b98b14e15290457220481c11b6f7f372/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/8429f53599049f5754985a82458ebd0e/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /Users/ashwinmr/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/8429f53599049f5754985a82458ebd0e/AndroidManifest.xml:20:5-44
+INJECTED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+IMPLIED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml:1:1-26:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
+uses-permission#android.permission.READ_PHONE_STATE
+IMPLIED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml:1:1-26:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+IMPLIED from /Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/src/main/AndroidManifest.xml:1:1-26:12 reason: org.webkit.android_jsc requested WRITE_EXTERNAL_STORAGE

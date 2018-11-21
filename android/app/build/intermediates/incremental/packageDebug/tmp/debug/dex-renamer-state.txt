@@ -1,0 +1,4 @@
+#Tue Nov 20 17:11:29 PST 2018
+base.0=/Users/ashwinmr/code/temp/aws-amplify-unicorntrivia-workshop/android/app/build/intermediates/transforms/dexMerger/debug/0
+path.0=classes.dex
+renamed.0=classes.dex
