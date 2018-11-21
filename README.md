@@ -337,7 +337,9 @@ Now that we have implemented every section of the application! It is time to run
 1. Wait for android to launch and the home screen to appear. Then return to the terminal and navigate back to the root directory of our application.
 1. From here run the command `react-native run-android` to launch the application in the emulator
 
-**IOS** **Only works on IOS devices**
+**IOS** 
+
+**Only works on Macs**
 
 1. Return the terminal to the root directory of our project.
 1. Run the command `react-native run-ios`
