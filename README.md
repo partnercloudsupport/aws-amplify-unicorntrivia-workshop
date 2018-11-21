@@ -41,8 +41,8 @@ Install the AWS amplify CLI with the node package manager(npm) using the followi
 Now that our environment is all set up we are ready to begin implementing our application! React applications are broken up into “Components” or microservices within the application. Let's begin by creating the video player component! This component will display our stream output on the phone.
 
 1. Navigate to ./src/components/App/Video/Component.js
-2. First, we need to write the function definitions for setVideoDimensions() and the Render() function.
-3.  Lets now take a look at the setVideoDimensions() function. Lets paste this code snippet into the function. Here we set the values for the Hight and Width of the player which will be visible on the screen in our react application.
+1. First, we need to write the function definitions for setVideoDimensions() and the Render() function.
+1.  Lets now take a look at the setVideoDimensions() function. Lets paste this code snippet into the function. Here we set the values for the Hight and Width of the player which will be visible on the screen in our react application.
 ```
 this.setState({
         styles: {
@@ -52,7 +52,7 @@ this.setState({
         }
     });
 ```
-5. The final step is to define the render function. This is the code that will draw our component on the screen. In this case the render function will place our video player over the entire area of the screen! Paste in this code into the render function. **REMEMBER TO REPLACE THE SOURCE URI WITH YOUR MEDIASTORE EGRESS URL!**
+1. The final step is to define the render function. This is the code that will draw our component on the screen. In this case the render function will place our video player over the entire area of the screen! Paste in this code into the render function. **REMEMBER TO REPLACE THE SOURCE URI WITH YOUR MEDIASTORE EGRESS URL!**
 ```         return(
                 <ReactNativeVideoPlayer
                     source={{uri: "INSERT_MEDIAPACKAGE_URL"}}
