@@ -116,7 +116,7 @@ let self = this;
 
 Now that our stream is playing and our subscriptions are set up. The last thing to do is to create the modal which displays the question and choices when a messaged, housing a new question or answer, is received by our listeners.
 
-1.  The first step is to create the view for when a new question is pushed. Paste the following function into in the game component below the large commented code block.
+1. The first step is to create the view for when a new question is pushed. Paste the following function into in the game component below the large commented code block.
 
 ```
     question = () => {
@@ -145,7 +145,7 @@ Now that our stream is playing and our subscriptions are set up. The last thing 
     }
 ```
 
-   3. We will then create a similar view. This time for when an answered question is returned to the user displaying the correct and incorrect answer choices. Implement this view by pasting in the following code.
+1. We will then create a similar view. This time for when an answered question is returned to the user displaying the correct and incorrect answer choices. Implement this view by pasting in the following code.
 
 ```
     answer = () => {
@@ -291,15 +291,4 @@ Now that we have every section of the application implemented, it's time to run 
 Congratulations! You have now successfully implemented a UnicornTrivia application on one of three suported platforms!
 
 Below are some additional resources for further development! Feel free to skip on forward to the clean up section ![here](https://github.com/awslabs/aws-amplify-unicorntrivia-workshop#wrap-up)!
-
-
-
-
-
-
-
-
-
-
-
 
