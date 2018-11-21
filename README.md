@@ -212,6 +212,65 @@ Now that our stream is playing and our subscriptions are set up. The last thing 
 **5. The last thing to do is define how all the components are laid out on the screen, as well as define the logic of what happens on button clicks. In order to do this, uncomment the large code block for our answerButtons function.**
 ^^^^^^ **NEEDS TO CHANGE**
 
+
+### Step Five: Recording answers
+
+# TODO MIGUEL
+
+
+1. Still in the `ViewController.swift` file we need to now perfom a mutation to add an user to our database.
+1. Add this code to `func setupUser(username: String)` to start creating users.
+    ```swift
+    appSyncClient?.perform(mutation: CreateAnswerMutation(input: CreateAnswerInput(username: username)), queue: DispatchQueue.main, optimisticUpdate: nil, conflictResolutionBlock: nil, resultHandler: { (result, error) in
+        
+        self.questionView.setupClient(appSyncClient: self.appSyncClient!, userID: (result?.data?.createAnswer?.id)!)
+
+    })
+    ```
+    This code is very similiar to what we did in our AdminPanel code. We just created a new User for our AnswersTable.
+1. Now navigate to `UnicornTrivia/QuestionView.swift` in Xcode.
+1. Once again add `import AWSAppSync` to the top of the file.
+1. We need to configure our client and variables again so under `private var showTimer: Bool!` paste in:
+    ```swift
+    private var graphqlClient : AWSAppSyncClient!
+    private var yourID : GraphQLID!
+
+    func setupClient(appSyncClient: AWSAppSyncClient, userID: GraphQLID){
+        graphqlClient = appSyncClient
+        yourID = userID
+    }
+    ```
+    This will enable passing of the AppSync configuration and also the user id to the view.
+1. Finally we now need to send the answer up to the cloud. To do this we need to add this code to `func sendAnswer()`
+    ```swift
+    graphqlClient?.perform(mutation: UpdateAnswerMutation(input: UpdateAnswerInput(id: yourID, answer: [yourAnswer])))
+    ```
+1. Now that we are pushing to the cloud we should check the backend table to observe our answers being saved, but only one answer is being saved in the array. This seems to be an error. We can fix this though through the AppSync console using a resolver.
+1. Open the [AppSync Console](https://console.aws.amazon.com/appsync/home) and navigate to your AppSync endpoint.
+1. Once you select your AppSync endpoint on the left side select Schema.
+    ![Appsync Schema](Assets/Appsync_Schema.png)
+1. You now should see your schema that was auto generated for you from Amplify. On the right side you should see a section called Resolvers. Search for `Mutation` in the text box and then select the clickable link next to `updateAnswer(...):Answer`
+    ![Appsync Resolver](Assets/Appsync_Resolvers.png)
+1. You are now presented with a Request Mapping Template and a Response Mapping Template.
+    1. We are going to change the Request Mapping Templateto do the appending of the array.
+    1. Navigate to `#set( $expression = "SET" )` and look for this line:
+        ```vtl
+        #set( $expression = "$expression $entry.key = $entry.value" )
+        ```
+    1. Replace this line with:
+        ```vtl
+        #if ($util.matches($entry.key, "#answer"))
+            #set( $expression = "$expression $entry.key = list_append(if_not_exists($entry.key, :empty_list), $entry.value)" )
+            $util.qr($expValues.put(":empty_list", $util.dynamodb.toDynamoDB([])))
+        #else
+            #set( $expression = "$expression $entry.key = $entry.value" )
+        #end
+        ```
+        This checks to see if the field being set is the answer array. If it is the array then it will append the value. We also do a check to see if the field exists and if it doesn't we create an empty array to append our first value to.
+    1. Save the resolver in the top right corner.
+1. Run the app again and now you should observe the answers are being correctly appended to the array.
+
+
 ## Step 5: Running the application!
 
 Now that we have every section of the application implemented, it's time to run the app in our emulator.
