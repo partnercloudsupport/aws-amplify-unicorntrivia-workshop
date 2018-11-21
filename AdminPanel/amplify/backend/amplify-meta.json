@@ -1,0 +1,54 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "dminanel-20181119133755-authRole",
+			"UnauthRoleArn": "arn:aws:iam::585391604912:role/dminanel-20181119133755-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::585391604912:role/dminanel-20181119133755-authRole",
+			"Region": "us-west-2",
+			"DeploymentBucketName": "dminanel-20181119133755-deployment",
+			"UnauthRoleName": "dminanel-20181119133755-unauthRole",
+			"StackName": "dminanel-20181119133755",
+			"StackId": "arn:aws:cloudformation:us-west-2:585391604912:stack/dminanel-20181119133755/609ebd60-ec43-11e8-bb79-503aca41a061"
+		}
+	},
+	"Elemental": {
+		"admin3": {
+			"service": "Elemental",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/dminanel-20181119133755-deployment/amplify-cfn-templates/Elemental/admin3-live-workflow-template.json",
+				"logicalId": "Elementaladmin3"
+			},
+			"lastPushTimeStamp": "2018-11-19T21:52:04.439Z",
+			"output": {
+				"oMediaStoreContainerArn": "arn:aws:mediastore:us-west-2:585391604912:container/admin3",
+				"oPrimaryMediaStoreEgressUrl": "https://ryzvgfgoqe4sbm.data.mediastore.us-west-2.amazonaws.com/p/index.m3u8",
+				"oMediaLiveChannelName": "admin3",
+				"oMediaLivePrimaryIngestUrl": "rtmp://50.112.146.204:1935/admin3-p",
+				"oMediaLiveBackupIngestUrl": "rtmp://52.35.55.148:1935/admin3-b",
+				"oMediaLiveChannelId": "8629677",
+				"oMediaStoreContainerName": "admin3",
+				"oBackupMediaStoreEgressUrl": "https://ryzvgfgoqe4sbm.data.mediastore.us-west-2.amazonaws.com/b/index.m3u8"
+			},
+			"lastPushDirHash": "NwhFB+UrYaeeMyYF6qUsS5LXja0="
+		}
+	},
+	"api": {
+		"admin3": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"securityType": "API_KEY",
+				"GraphQLAPIIdOutput": "zsfrxuqxtvhh3fwk2kx2uibe3i",
+				"GraphQLAPIEndpointOutput": "https://pvtsxv4dwvbk5nfklm6larzgii.appsync-api.us-west-2.amazonaws.com/graphql",
+				"GraphQLAPIKeyOutput": "da2-433qipvjq5dkri7ndroqdb4aom"
+			},
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/dminanel-20181119133755-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"logicalId": "apiadmin3"
+			},
+			"lastPushTimeStamp": "2018-11-19T21:52:05.759Z",
+			"lastPushDirHash": "H9nR/EmiD9i+u7i/FCHhJOhF38Y="
+		}
+	}
+}
