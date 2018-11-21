@@ -325,14 +325,14 @@ Now that we have implemented every section of the application! It is time to run
 
 1. First we want to open up the root path of our project in Android Studio.
 1. The next step is to create and launch an Android emulator. We will start by clicking the purple phone icon in the menu bar.
-![assets/android_studio_launch_emu.png](AndroidLaunchEmu)
+![AndroidLaunchEmu](assets/android_studio_launch_emu.png)
 1. Next we will chose the create virtual device button
-![assets/android_studio_create_device.png](AndroidLaunchEmu)
+![AndroidLaunchEmu](assets/android_studio_create_device.png)
 1. We need to choose a device compatible with older versions of the API. Lets choose a Nexus 5X device! Then select Next.
-![assets/android_studio_choose_device.png](AndroidLaunchEmu)
+![AndroidLaunchEmu](assets/android_studio_choose_device.png)
 1. Finally we need the android API Level 27 system image. This should be Android Oreo. If you don't already have it installed go ahead and begin the download (remember to check your drive for available space as these downloads can be fairly large)
 1. Now select next and finish to return back to the previous screen. You should see your newely created virtual device. From here choose the green 'Play' button to launch the emulator!
-![assets/android_studio_play_device.png](AndroidLaunchEmu)
+![AndroidLaunchEmu](assets/android_studio_play_device.png)
 ![Amplify Configure Project](assets/android_studio_play_device.png)
 1. Wait for android to launch and the home screen to appear. Then return to the terminal and navigate back to the root directory of our application.
 1. From here run the command `react-native run-android` to launch the application in the emulator
