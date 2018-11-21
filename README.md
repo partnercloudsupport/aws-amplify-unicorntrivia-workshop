@@ -321,6 +321,7 @@ Now that our stream is playing and our subscriptions are set up. The last thing 
 ## Step 6: Running the application!
 
 **Android**
+
 Now that we have implemented every section of the application! It is time to run the app in our emulator.
 
 1. First we want to open up the root path of our project in Android Studio.
@@ -337,6 +338,7 @@ Now that we have implemented every section of the application! It is time to run
 1. From here run the command `react-native run-android` to launch the application in the emulator
 
 **IOS**
+
 1. Return the terminal to the root directory of our project.
 1. Run the command `react-native run-ios`
 1. The Xcode emulator should now launch and run your application.
