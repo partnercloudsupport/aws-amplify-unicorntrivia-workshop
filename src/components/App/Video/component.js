@@ -29,7 +29,22 @@ class Video extends Component {
 	}
 
 	render(){
-		/* Code goes here */
+		return(
+			<ReactNativeVideoPlayer
+				//source={{uri: "https://content.jwplatform.com/manifests/yp34SRmf.m3u8"}}
+				source={{uri: "https://dax6jm3kkv5ekk.data.mediastore.us-west-2.amazonaws.com/p/index.m3u8"}}
+				ref={(ref) => {
+					this.player = ref
+				}}
+				resizeMode={"stretch"}
+				muted={true}
+				style={{
+					minWidth: Dimensions.get('window').width + 200,
+					minHeight: Dimensions.get('window').height,
+					left: -100
+				}}
+			/>
+		);
 	}
 }
 
