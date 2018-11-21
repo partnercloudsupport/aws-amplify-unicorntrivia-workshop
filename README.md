@@ -214,9 +214,7 @@ Now that our stream is playing and our subscriptions are set up. The last thing 
 
 ## Step 5: Running the application!
 
-**Android**
-
-Now that we have implemented every section of the application! It is time to run the app in our emulator.
+Now that we have every section of the application implemented, it's time to run the app in our emulator.
 
 1. First we want to open up the root path of our project in Android Studio.
 1. The next step is to create and launch an Android emulator. We will start by clicking the purple phone icon in the menu bar.
@@ -230,14 +228,6 @@ Now that we have implemented every section of the application! It is time to run
 ![AndroidLaunchEmu](assets/android_studio_play_device.png)
 1. Wait for android to launch and the home screen to appear. Then return to the terminal and navigate back to the root directory of our application.
 1. From here run the command `react-native run-android` to launch the application in the emulator
-
-**IOS** 
-
-**Only works on Macs**
-
-1. Return the terminal to the root directory of our project.
-1. Run the command `react-native run-ios`
-1. The Xcode emulator should now launch and run your application.
 
 Congratulations! You have now successfully implemented a UnicornTrivia application on one of three suported platforms!
 
