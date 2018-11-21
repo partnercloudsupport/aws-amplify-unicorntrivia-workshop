@@ -90,7 +90,9 @@ let self = this;
         }
      })
 ```
-Explain what the code does. So we do a subscribe to the mutation called onCreateQuestion then do something with state.
+**TODO MIGUEL**
+
+**Explain what the code does**. So we do a subscribe to the mutation called onCreateQuestion then do something with state.
 
 1. Find the function named “listenForAnswers” and paste in the following code.
 ```
