@@ -1,0 +1,12 @@
+type Question @model {
+    id: ID!
+    question: String!
+    answers: [String]!
+    answerId: Int
+}
+
+type Answer @model {
+    id: ID!
+    username: String!
+    answer: [Int]
+}
