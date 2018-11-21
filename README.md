@@ -2,6 +2,101 @@
 
 This is repository contains a self-paced workshop that uses AWS AppSync, AWS Amplify and AWS Elemental Media Services to implement a live streaming trivia system.
 
+## AdminPanel Walkthrough
+1. Open a terminal and navigate to your root directory of the AdminPanel.
+1. Once you are in the adminpanel directory install the dependancies using `npm install` for the adminpanel 
+1. Now to start the local deployment of the AdminPanel run the command `npm start`
+    1. A tab should now automatically open in your default browser to `http://localhost:3000/`. You have now successfully deployed the administrator panel for UnicornTrivia!
+    1. When you issue the command `npm start` from the root directory of your React project, NodeJS will look for a scripts object in your package.json file. If found, it will look for a script with the key start and run the command specified as its value. You can view which scripts will be run by taking a look into package.json and taking a look at the "scripts" object.
+1. Now that you have the AdminPanel installed and running now it it is time to add in your API. Just like before when we setup the live-stream we will be using Amplify to setup the backend for the AdminPanel. So run `amplify api add` and use these values
+    1. Please select from one of the below mentioned services: `GraphQL`
+    1. Provide API name: `You Choose`
+    1. Choose an authorization type for the API: `API key`
+    1. Do you have an annotated GraphQL schema? `N`
+    1. Do you want a guided schema creation? `Y`
+    1. What best describes your project: `Single object with fields`
+    1. Do you want to edit the schema now? `Y`
+        1. This will open your default editor that you configured with a GraphQL model:
+            ```graphql
+            type Todo @model {
+              id: ID!
+              name: String!
+              description: String
+            }
+            ```
+        1. We will be changing the model to:
+            ```graphql
+            type Question @model {
+                id: ID!
+                question: String!
+                answers: [String]!
+                answerId: Int
+            }
+
+            type Answer @model {
+                id: ID!
+                username: String!
+                answer: [Int]
+            }
+            ```
+1. Now run `amplify push` to create the backend resources.
+    1.  a. Y
+    1. Y - Codegen time!
+    1. javascript
+    1. leave as default
+    1. Y
+    1. So what does the models you defined above create for you in the backend:
+        ![Appsync Backend](Assets/AppSyncBackend.png)
+        Each one of these models will have a DynamoDB table associated with it and each will be connected to AppSync through Resolvers. Resolvers are how AWS AppSync translates GraphQL requests and fetches information from your AWS resources (in this case the DynamoDB table). Resolvers can also transform the information sent to and received from your AWS resources. We will dive deeper in a later section on this.
+1. Time to add the ablity to push questions
+1. Open the src/App.js file in your favorite text editor.
+1. Add this code this code to the top of the file:
+    ```javascript
+     import {createQuestion, updateQuestion} from './graphql/mutations.js';
+     import {onCreateQuestion} from './graphql/subscriptions.js';
+     import aws_exports from './aws-exports';
+    ```
+1. Add this under all the imports:
+    `Amplify.configure(aws_exports);`
+    This gets the info from the aws-exports.js file and this will be updated as you update your backend resources using amplify.
+1. Add this code to LOCATION1:
+    ```javascript
+    const question = {
+        input: {
+          question: rowData["Question"],
+          answers: rowData["Answers"]
+        }
+      }
+    API.graphql(graphqlOperation(createQuestion, question)).then(response => {
+          rowData["id"] = response.data.createQuestion.id;
+          console.log(response.data.createQuestion);
+        });
+    ```
+    This creates a question from the table data in the format of input.
+1. Add this code to LOCATION2:
+    ```javascript
+    const question = {
+          input: {
+            id: rowData["id"],
+            answerId: rowData["Answer"]
+          }
+        }
+    API.graphql(graphqlOperation(updateQuestion, question)).then(response => {
+          console.log(response.data.updateQuestion)
+        });
+    ```
+    Talk about how this is different then the createQuestion above. Mainly it requires the ID from the question so that we know which response we need to give.
+
+1. `npm start` and observe we are now pushing questions in the console. We observe the object changing.
+
+1. **Extra Credit** To view subscriptions you can add this at the top of your file:
+    ```javascript
+    const subscription = API.graphql(
+        graphqlOperation(onCreateQuestion)
+    ).subscribe({
+        next: (eventData) => console.log('Subscribe:', eventData)
+    });
+    ```
 ## Live-Stream Walkthrough
 1. First, open a terminal and navigate to your root directory of the AdminPanel.
 1. Run `amplify init`. This command creates new AWS backend resources(in this case a single S3 bucket to host your cloudformation templates) and pull the AWS service configurations into the app!
