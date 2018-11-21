@@ -53,7 +53,7 @@ this.setState({
     });
 ```
 5. The final step is to define the render function. This is the code that will draw our component on the screen. In this case the render function will place our video player over the entire area of the screen! Paste in this code into the render function. **REMEMBER TO REPLACE THE SOURCE URI WITH YOUR MEDIASTORE EGRESS URL!**
-6.         return(
+```         return(
                 <ReactNativeVideoPlayer
                     source={{uri: "INSERT_MEDIAPACKAGE_URL"}}
                     ref={(ref) => {
@@ -68,7 +68,7 @@ this.setState({
                     }}
                 />
             );
-
+```
 ## Step 3: Subscribing to the GraphQL API back end
 
 1. Creating/migrating the aws_exports file and also the API.js files
