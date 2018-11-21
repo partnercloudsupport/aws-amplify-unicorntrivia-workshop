@@ -290,7 +290,10 @@ Now that we have every section of the application implemented, it's time to run 
 1. Wait for android to launch and the home screen to appear. Then return to the terminal and navigate back to the root directory of our application.
 1. From here run the command `react-native run-android` to launch the application in the emulator
 
-Congratulations! You have now successfully implemented a UnicornTrivia application on one of three suported platforms!
+**Congratulations!** You have now successfully implemented a UnicornTrivia application on one of three suported platforms! 
+Now Try sending some questions and answers using the admin panel we configured previously.
+
+If you closed the terminal window running the admin panel no problem! Just open a new terminal window and navigate to the admin panel root directory and run `npm start`. Your default browser should now open up the admin panel on localhost:3000!
 
 Below are some additional resources for further development! Feel free to skip on forward to the clean up section ![here](https://github.com/awslabs/aws-amplify-unicorntrivia-workshop#wrap-up)!
 
