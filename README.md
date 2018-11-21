@@ -2,6 +2,17 @@
 
 This is repository contains a self-paced workshop that uses AWS AppSync, AWS Amplify and AWS Elemental Media Services to implement a live streaming trivia system.
 
+### Configuring your computer.
+Before doing this workshop please install these required programs
+
+
+1. Download and install Xcode from the [AppStore](http://appstore.com/mac/apple/xcode)
+1. Download and install OBS from [obsproject.com](https://obsproject.com/download)
+1. Install Amplify CLI using this command `npm install -g @aws-amplify/cli`
+1. Install Pods using this command `sudo gem install cocoapods`, if you have pods installed then run `pods update`
+1. Clone the UnicornTrivia project repository using `git clone https://github.com/wizage/UnicornTriviaWorkshop.git` **This will change**
+1. Intall the amplify livestream plugin `npm install -g <insert url>` or cd into `AmplifyElementalPlugin` and run `npm install -g`
+
 ## AdminPanel Walkthrough
 1. Open a terminal and navigate to your root directory of the AdminPanel.
 1. Once you are in the adminpanel directory install the dependancies using `npm install` for the adminpanel 
