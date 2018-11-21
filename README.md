@@ -20,10 +20,13 @@ Before continuing with this workshop please install these required programs:
 
 1. Download and install Open Broadcaster Software (OBS) from [obsproject.com](https://obsproject.com/download)
 1. Install AWS Amplify CLI using this command `npm install -g @aws-amplify/cli`
-1. Clone the UnicornTrivia project repository using `git clone https://github.com/wizage/UnicornTriviaWorkshop.git` **This will change**
-1. Intall the amplify livestream plugin `npm install -g <insert url>` or cd into `AmplifyElementalPlugin` and run `npm install -g`
+1. Clone the UnicornTrivia project repository using `git clone https://github.com/awslabs/aws-amplify-unicorntrivia-workshop`
+1. Install the amplify livestream plugin by moving into `AmplifyElementalPlugin` directory and running `npm install -g`
 
 ## Live Streaming Service Walkthrough
+
+*** ADD SUMMARY ***
+
 1. First, open a terminal and navigate to your root directory of the AdminPanel.
 1. Run `amplify init`. This command creates new AWS backend resources (in this case a single S3 bucket to host your cloudformation templates) and pull the AWS service configurations into the app!
 1. Follow the prompts as shown in the below Image.
@@ -67,6 +70,9 @@ Congratulations! You have now hosting a Live Stream on AWS! Now let's setup the 
 
 
 ## Administrator Panel
+
+*** ADD SUMMARY OF ADMIN PANEL ***
+
 1. Open a terminal and navigate to your root directory of the AdminPanel.
 1. Once you are in the adminpanel directory install the dependancies using `npm install` for the adminpanel 
 1. Now to start the local deployment of the AdminPanel run the command `npm start`
@@ -161,6 +167,28 @@ Congratulations! You have now hosting a Live Stream on AWS! Now let's setup the 
         next: (eventData) => console.log('Subscribe:', eventData)
     });
     ```
+
+## Client Walkthrough
+
+*** UPDATE LINKS WITH ANCHORS ***
+
+Select which client your interested in building.
+
+[Web](https://github.com/awslabs/aws-amplify-unicorntrivia-workshop/tree/unicorn-trivia-web-workshop) - Based on React
+
+[iOS](https://github.com/awslabs/aws-amplify-unicorntrivia-workshop/tree/unicorn-trivia-ios-workshop) - Based on Swift, requires XCode and Cocoapods
+
+[Android](https://github.com/awslabs/aws-amplify-unicorntrivia-workshop/tree/unicorn-trivia-react-native-workshop) - Based on React Native, requires Android Studio
+
+
+## Wrap-up
+
+It is absolutely critical to remove the backend resources when you have completed the workshop to avoid charges.
+
+Remove all backend resources associated to the amplify project: `amplify delete`
+
+Remove just the livestream component: `amplify livestream delete`
+
 ## License
 
 This library is licensed under the Apache 2.0 License. 
