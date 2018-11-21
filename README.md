@@ -12,7 +12,7 @@ This is repository contains a self-paced workshop that uses AWS AppSync, AWS Amp
 1. Again, follow the prompts as shown in the below image (remember to say no to the "Create Distribution" prompt!)
      ![livestream](assets/amplify_livestream.png) 
 1. Once the prompts complete, make sure the module was added by checking `amplify status`
-    ![status](assets/status.png)
+    ![status](assets/amplify_status.png)
 1. Now it is time to create our resources! Now run `amplify push` to create the backend resources for the livestream component! It will take a few minutes to stage and create the resources in your AWS environment.
 1. Let's take a brief look at what was just created!
 ![Streaming Architecture](assets/streaming_architecture.png)
