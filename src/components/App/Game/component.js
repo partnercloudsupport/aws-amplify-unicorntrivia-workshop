@@ -48,74 +48,59 @@ class Game extends Component {
 	answerChosen = (index) => {
 		/* Code goes here */
 	}
+	
+	button = (index, value) => {
+		let self = this;
+		let touchableOpacityBackgroundColor,
+			touchableOpacityBorderColor,
+			textColor;
+		if(this.state.questionAvailable){
+			backgroundColor = this.state.selectedAnswerButton == index ? "#666666" : "#FFFFFF";
+			borderColor = this.state.selectedAnswerButton == index ? "#666666" : "#CCCCCC";
+			color = this.state.selectedAnswerButton == index ? "#FFFFFF" : "#000";
+
+		} else if(this.state.answerAvailable){
+			if(value == this.state.answer.onUpdateQuestion.answers[this.state.answer.onUpdateQuestion.answerId]){
+				touchableOpacityBackgroundColor = "#02DC2A";
+				touchableOpacityBorderColor = "#02DC2A";
+				textColor = "#FFFFFF";
+			} else {
+				backgroundColor = this.state.answerChosen.index == index ? "#FE0000" : "#FFFFFF";
+				borderColor = this.state.answerChosen.index == index ? "#FE0000" : "#CCCCCC";
+				color = this.state.answerChosen.index == index ? "#FFFFFF" : "#000";
+			}
+		}
+		return(
+			<TouchableOpacity
+				key={index}
+				disabled={this.state.buttonsDisabled}
+				onPress={this.state.questionAvailable ? ((e) => self.answerChosen(index)) : null}
+				style={{
+					...styles.answerButton,
+					backgroundColor: touchableOpacityBackgroundColor,
+					borderColor: touchableOpacityBorderColor
+				}}
+			>
+				<Text
+					key={index}
+					style={{
+						...styles.answerButtonText,
+						color: textColor
+					}}
+				>{ value }</Text>
+			</TouchableOpacity>
+		);
+	}
 
 	answerButtons = () => {
 		let self = this;
 		if(this.state.questionAvailable){
 			return this.state.question.onCreateQuestion.answers.map((value, index) => {
-				return(
-					<TouchableOpacity
-						key={index}
-						disabled={self.state.buttonsDisabled}
-						onPress={(e) => self.answerChosen(index)}
-						style={{
-							...styles.answerButton,
-							backgroundColor: self.state.selectedAnswerButton == index ? "#666666" : "#FFFFFF",
-							borderColor: self.state.selectedAnswerButton == index ? "#666666" : "#CCCCCC"
-						}}
-					>
-						<Text
-							key={index}
-							style={{
-								...styles.answerButtonText,
-								color: self.state.selectedAnswerButton == index ? "#FFFFFF" : "#000"
-							}}
-						>{ value }</Text>
-					</TouchableOpacity>
-				);
+				return self.button(index, value);
 			})
 		} else if(this.state.answerAvailable){
 			return this.state.answer.onUpdateQuestion.answers.map((value, index) => {
-				if(value == self.state.answer.onUpdateQuestion.answers[self.state.answer.onUpdateQuestion.answerId]){
-					return(
-						<TouchableOpacity
-							key={index}
-							disabled={self.state.buttonsDisabled}
-							style={{
-								...styles.answerButton,
-								backgroundColor: "#02DC2A",
-								borderColor: "#02DC2A"
-							}}
-						>
-							<Text
-								key={index}
-								style={{
-									...styles.answerButtonText,
-									color: "white"
-								}}
-							>{ value }</Text>
-						</TouchableOpacity>
-					);
-				}
-				return(
-					<TouchableOpacity
-						key={index}
-						disabled={self.state.buttonsDisabled}
-						style={{
-							...styles.answerButton,
-							backgroundColor: self.state.answerChosen.index == index ? "#FE0000" : "#FFFFFF",
-							borderColor: self.state.answerChosen.index == index ? "#FE0000" : "#CCCCCC"
-						}}
-					>
-						<Text
-							key={index}
-							style={{
-								...styles.answerButtonText,
-								color: self.state.answerChosen.index == index ? "#FFFFFF" : "#000"
-							}}
-						>{ value }</Text>
-					</TouchableOpacity>
-				);
+				return self.button(index, value);
 			})
 		}
 	}
