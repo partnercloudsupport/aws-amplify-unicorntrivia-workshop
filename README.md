@@ -28,15 +28,13 @@ Install the AWS amplify CLI with the node package manager(npm) using the followi
 
 1. npm install -g @aws-amplify/cli
 
-
-
 ## Step 1:  Android Studio Configuration
 
 1. clone the project with git clone 
 2. run export JAVA_HOME=`/usr/libexec/java_home -v 1.8` to get the right JDK version
 3. Navigate to the root directory of the project
 4. Run`npm install` to install dependencies detailed in package.json
-5. Run react native link to link the React Native modules libraries to the project.
+5. Run `react-native link` to link the React Native modules libraries to the project.
 
 ## Step 2: AdminPanel Walkthrough
 1. Open a terminal and navigate to your root directory of the AdminPanel.
@@ -317,8 +315,44 @@ Now that our stream is playing and our subscriptions are set up. The last thing 
     }
 ```
 
-5. The last thing to do is define how all the components are laid out on the screen, as well as define the logic of what happens on button clicks. In order to do this, uncomment the large code block for our answerButtons function.
+**5. The last thing to do is define how all the components are laid out on the screen, as well as define the logic of what happens on button clicks. In order to do this, uncomment the large code block for our answerButtons function.**
+^^^^^^ **NEEDS TO CHANGE**
 
-Install Amplify CLI using this command `npm install -g @aws-amplify/cli`
+## Step 6: Running the application!
+
+**Android**
+Now that we have implemented every section of the application! It is time to run the app in our emulator.
+
+1. First we want to open up the root path of our project in Android Studio.
+1. The next step is to create and launch an Android emulator. We will start by clicking the purple phone icon in the menu bar.
+![AndroidLaunchEmu](Assets/android_studio_launch_emu.png)
+1. Next we will chose the create virtual device button
+![AndroidLaunchEmu](Assets/android_studio_create_device.png)
+1. We need to choose a device compatible with older versions of the API. Lets choose a Nexus 5X device! Then select Next.
+![AndroidLaunchEmu](Assets/android_studio_choose_device.png)
+1. Finally we need the android API Level 27 system image. This should be Android Oreo. If you don't already have it installed go ahead and begin the download (remember to check your drive for available space as these downloads can be fairly large)
+1. Now select next and finish to return back to the previous screen. You should see your newely created virtual device. From here choose the green 'Play' button to launch the emulator!
+![AndroidLaunchEmu](Assets/android_studio_play_device.png)
+1. Wait for android to launch and the home screen to appear. Then return to the terminal and navigate back to the root directory of our application.
+1. From here run the command `react-native run-android` to launch the application in the emulator
+
+**IOS**
+1. Return the terminal to the root directory of our project.
+1. Run the command `react-native run-ios`
+1. The Xcode emulator should now launch and run your application.
+
+Congratulations! You have now successfully implemented a UnicornTrivia application on one of three suported platforms!
+
+Below are some additional resources for further development! Feel free to skip on forward to the clean up section ![here](https://github.com/awslabs/aws-amplify-unicorntrivia-workshop#wrap-up)!
+
+
+
+
+
+
+
+
+
+
 
 
