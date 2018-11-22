@@ -1,31 +1,35 @@
 ![logo](.images/unicorntrivialogo.png)
 
-Welcome to UnicornTrivia, a self-paced workshop that uses AWS AppSync, AWS Amplify, and AWS Elemental Media Services to implement a live streaming trivia system. This 300-level re:Invent 2018 workshop is designed for intermediate developers who are familiar with Amazon Web Services and mobile application development.
+Welcome to UnicornTrivia, a self-paced workshop that uses AWS AppSync, AWS Amplify, and AWS Elemental Media Services to implement a live trivia app as a native mobile app and for web. This 300-level re:Invent 2018 workshop is designed for intermediate developers who are familiar with Amazon Web Services, mobile application development, and command-line tools.
 
-UnicornTrivia is a venture capital backed Silicon Valley stealth startup building the next big thing in entertainment - a live trivia gameshow app where anyone can tune-in to compete for prize money by correctly answering questions. You've just been hired as their lead developer and it's now your priority to ship a prototype of the app. You've been given complete freedom to build the stack as long as you ship quickly and you've heard of a few new tools, like AWS Appsync, AWS Amplify, and AWS Elemental, that can remove a lot of the heavy lifting in building a mobile apps and video streaming service. The following workshop is your adventure in building this prototype.
+UnicornTrivia is a Silcon Valley-based, stealth startup building the next big thing in entertainment - a live gameshow app where anyone can tune-in to compete for prize money by correctly answering trivia questions. You've just been hired as their lead developer and it's now your priority to ship a prototype of the app that they can use to pitch to investors. You've been given complete freedom to build the stack as long as you ship quickly and you've heard of a few new tools, like AWS Appsync, AWS Amplify, and AWS Elemental, that can remove a lot of the heavy lifting in building a mobile apps and video streaming services. This is your adventure in building UnicornTrivia's app.
 
-## Table of Contents
+This workshop is split into three sections outlined below. You will need to build the Live Streaming Service and Administrator Panel, but can choose which client(s) to implement.
 
-This workshop is split into three primary sections outlined below. All participants will need to build the Live Streaming Service and Administrator Panel, but can choose which clients to implement.
+**Live Streaming Service** - This service will encode and host a live video stream from a studio environment to the end users playing UnicornTrivia.
 
-Live Streaming Service - This will carry a live video stream from a studio environment to the end users playing
+**Admin Panel** - This allows a host to submit questions and collect answers from participants.
 
-Admin Panel - This will allow you to submit questions and collect answers from participants
-
-Clients - This allows users to connect to our livestream and answer questions during the show. Implemented on iOS, Android, and/or a web browser.
+**Client** - This allows users to connect to the live stream and answer questions during the show using iOS, Android, and/or a web browser.
 
 ## Configuring your development environment
 
-Before continuing with this workshop please install these required programs:
+You just started at UnicornTrivia and they hooked you up with a brand new laptop - _sweeeet!_ Now let's configure your development environment.
 
-1. Download and install Open Broadcaster Software (OBS) from [obsproject.com](https://obsproject.com/download)
-1. Install AWS Amplify CLI using this command `npm install -g @aws-amplify/cli`
 1. Clone the UnicornTrivia project repository using `git clone https://github.com/awslabs/aws-amplify-unicorntrivia-workshop`
-1. Install the amplify livestream plugin by moving into `AmplifyElementalPlugin` directory and running `npm install -g`
+1. Download and install Node and Node Package Manager (NPM) if you don't already have it from [nodejs.org](https://nodejs.org/en/download/)
+1. Install AWS Amplify CLI using this command `npm install -g @aws-amplify/cli`
+1. Install a custom AWS Amplify CLI livestream plugin by moving into `AmplifyElementalPlugin` directory and running `npm install -g`
+1. Download and install Open Broadcaster Software (OBS) from [obsproject.com](https://obsproject.com/download)
 
-## Live Streaming Service Walkthrough
+## Live Streaming Service
 
-*** ADD SUMMARY ***
+We'll start by building a live streaming service that can receive a source signal from a studio, transcode the source into Adaptive BitRate (ABR), and serve the content to our application. ABR streaming protocols like Apple HTTP Live Streaming (HLS) and MPEG Dynamic Adaptive Streaming over HTTP (DASH) allow clients to access the live stream over any network connection and provide the best viewing experience to users. 
+
+To encode a stream into ABR you need a real-time video encoder. There are many open-source and commercial options for real-time encoding, but many of them would require you to manage the deployment, scaling, and failover - _you're not interested in any of this_ - that's where AWS Elemental MediaLive comes in. MediaLive is a fully-managed AWS service that can process live media and create ABR protocols like HLS and DASH. MediaLive *does not* act as an origin to serve the streaming video, for that, we'll need another service.
+
+For video files, S3 Static Hosting is a popular way to host video. In a live streaming scenario, however, it's not recommended to use S3 as a live streaming origin due to the way many ABR protocols work and the (S3 Data Consistancy Model)[https://docs.aws.amazon.com/AmazonS3/latest/dev/Introduction.html#overview]. What other options do we have? AWS Elemental released two other services to help us with content origination - MediaPackage and MediaStore. The application is interactive, so we want to keep the latency from the studio to our end users under 10 seconds and a big part of the overall latency will be introduced by the encoder and origin. You did some research and found that for our use case, MediaStore is the best fit. Let's get building!
+
 
 1. First, open a terminal and navigate to your root directory of the AdminPanel.
 1. Run `amplify init`. This command creates new AWS backend resources (in this case a single S3 bucket to host your cloudformation templates) and pull the AWS service configurations into the app!
@@ -71,7 +75,7 @@ Congratulations! You have now hosting a Live Stream on AWS! Now let's setup the 
 
 ## Administrator Panel
 
-*** ADD SUMMARY OF ADMIN PANEL ***
+***summary***
 
 1. Open a terminal and navigate to your root directory of the AdminPanel.
 1. Once you are in the adminpanel directory install the dependancies using `npm install` for the adminpanel 
@@ -168,7 +172,9 @@ Congratulations! You have now hosting a Live Stream on AWS! Now let's setup the 
     });
     ```
 
-## Client Walkthrough
+## Client
+
+**SUMMARY WHY REACT/AMPLIFY/ETC**
 
 *** UPDATE LINKS WITH ANCHORS ***
 
