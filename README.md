@@ -79,6 +79,8 @@ Congratulations! You have now hosting a Live Stream on AWS! Now let's setup the 
 
 ***summary***
 
+Our next step is to build an administrator panel which can be used to fire off API calls. This panel will be used by the host of the game to push questions and answers to the clients. In previous meetings, the UnicornTrivia dev team has settled on GraphQL to implement the api. Due to time to market being a critical business driver we have decided on using a managed GraphQL service. Due to its tight integration with other AWS services, AWS AppSync and the AWS Amplify library will be our engine of choice to serve our back end requests.
+
 1. Open a terminal and navigate to your root directory of the AdminPanel.
 1. Once you are in the adminpanel directory install the dependancies using `npm install` for the adminpanel 
 1. Now to start the local deployment of the AdminPanel run the command `npm start`
