@@ -179,7 +179,7 @@ We will also be using the [AWS Amplify](https://aws-amplify.github.io/) library 
 
 ## Client
 
-**SUMMARY WHY REACT/AMPLIFY/ETC**
+The final step in getting your prototype built is to create the clients. The clients will be able to subscribe to the questions and answers being sent from the Admin Panel as well as submit answers back. Since you don't want to write any extra code we will want to utilize Amplify's built in codegen funcionality. With the codegen you can easily update the clients without having to write a lot of extra code. On top of using Amplify's codegen you will also be using the Amplify SDK. This SDK does a lot of the heavy lifting for all of the apps including: authentication, graphql transformations and subscriptions, offline capabilities and much more. When it came to write the code we choose three different clients to develop for. We choose React, iOS and React-Native. The reason why we choose these three to go to market is because React and React-native can reach the most amount of users devices by default. iOS was choosen for native development due to the user base surounding the iOS App Store being very active.
 
 *** UPDATE LINKS WITH ANCHORS ***
 
