@@ -59,6 +59,8 @@ Now you need to deploy MediaLive and MediaStore. Sure, you could use the AWS Con
 1. In the "URL" field paste the **MediaLive Primary Ingest URL**
 1. In the "Stream Key" field paste the **MediaLive Primary Stream Key**
 ![OBS SettingsSettings](.images/obs_stream_settings.png)
+1. Now we need to change the bitrate of our stream. Let's now choose output in the sidebar and change Video Bitrate to 1000.
+![OBS_Changebitrate](.images/obs_change_bitrate.png)
 1. Click OK to return to the main OBS panel.
 1. The last step is adding an audio and video source. Under Sources on the bottom left hand side, select the **+** icon to add a source.
 1. Choose Video Capture Device. Click the "Create New" radio button and provide a unique name and select ok.
