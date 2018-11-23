@@ -7,6 +7,7 @@
 
 import UIKit
 import QuartzCore
+import AWSAppSync
 
 class QuestionView: UIView, UIGestureRecognizerDelegate {
     
@@ -21,10 +22,17 @@ class QuestionView: UIView, UIGestureRecognizerDelegate {
     //Private Vars
     private var yourAnswer : Int!
     private var showTimer : Bool!
+    private var graphqlClient : AWSAppSyncClient!
+    private var yourID : GraphQLID!
+    
+    func setupClient(appSyncClient: AWSAppSyncClient, userID: GraphQLID){
+        graphqlClient = appSyncClient
+        yourID = userID
+    }
     
     /* Step five */
     func sendAnswer(){
-        
+        graphqlClient?.perform(mutation: UpdateAnswerMutation(input: UpdateAnswerInput(id: yourID, answer: [yourAnswer])))
     }
     
     func setupView(){

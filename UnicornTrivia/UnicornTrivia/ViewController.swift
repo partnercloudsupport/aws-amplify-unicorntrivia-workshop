@@ -7,9 +7,11 @@
 
 import UIKit
 import AVKit
-//import AWSAppSync
+import AWSAppSync
 
 class ViewController: UIViewController {
+    
+    let videoURL = "INSERT_URL_HERE"
 
     @IBOutlet weak var playerView: UIView!
     @IBOutlet weak var questionView: QuestionView!
@@ -17,12 +19,19 @@ class ViewController: UIViewController {
     var gameStarted : Bool!
     var player : AVPlayer!
     
+    var appSyncClient: AWSAppSyncClient?
+    var newQuestionSubWatcher: AWSAppSyncSubscriptionWatcher<OnCreateQuestionSubscription>?
+    var updateQuestionSubWatcher: AWSAppSyncSubscriptionWatcher<OnUpdateQuestionSubscription>?
+    
     private var questionYConstraint : NSLayoutConstraint?
     private var totalQuestions : Int!
     private var answeredQuestions : Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appSyncClient = appDelegate.appSyncClient
         
         //Setup total number of questions
         totalQuestions = 12
@@ -36,22 +45,55 @@ class ViewController: UIViewController {
     }
     /* Step two */
     func playVideoEmbedded() {
-        
+        guard let url = URL(string: videoURL) else {
+            return
+        }
+        self.addVideoPlayer(videoUrl: url, to: self.playerView)
     }
     
     /* Step three */
     func startSubForQuestions(){
-        
+        let subscriptionRequest = OnCreateQuestionSubscription()
+        do {
+            newQuestionSubWatcher = try appSyncClient?.subscribe(subscription: subscriptionRequest, resultHandler: { (result, transaction, error) in
+                let question = result?.data?.onCreateQuestion?.question
+                let answers = result?.data?.onCreateQuestion?.answers as! [String]?
+                if ((question != nil) && answers?.count == 3){
+                    self.questionView.updateView(question: question, answers:answers)
+                } else {
+                    print("%@", error)
+                }
+                self.view.layoutIfNeeded()
+                self.animateAfterQuestionReturn()
+            })
+            
+        } catch {
+            print("Subscribe error")
+        }
     }
     
     /* Step four */
     func startSubForAnswers(){
-        
+        let subscriptionRequest2 = OnUpdateQuestionSubscription()
+        do {
+            
+            updateQuestionSubWatcher = try appSyncClient?.subscribe(subscription: subscriptionRequest2, resultHandler: { (result, transaction, error) in
+                self.questionView.showAnswer(correctAnswer: (result?.data?.onUpdateQuestion?.answerId)!)
+                self.animateAfterAnswerReturn()
+            })
+            
+        } catch {
+            print("Subscribe error")
+        }
     }
     
     /* Step five */
     func setupUser(username: String){
-        
+        appSyncClient?.perform(mutation: CreateAnswerMutation(input: CreateAnswerInput(username: username)), queue: DispatchQueue.main, optimisticUpdate: nil, conflictResolutionBlock: nil, resultHandler: { (result, error) in
+            
+            self.questionView.setupClient(appSyncClient: self.appSyncClient!, userID: (result?.data?.createAnswer?.id)!)
+            
+        })s
     }
     
     /*

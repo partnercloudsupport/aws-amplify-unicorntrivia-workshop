@@ -6,14 +6,25 @@
 //
 
 import UIKit
+import AWSAppSync
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var appSyncClient:AWSAppSyncClient?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        do {
+            let appSyncConfig = try AWSAppSyncClientConfiguration(appSyncClientInfo: AWSAppSyncClientInfo())
+            // initialize the AppSync client configuration configuration
+            // initialize app sync client
+            appSyncClient = try AWSAppSyncClient(appSyncConfig: appSyncConfig)
+            
+        } catch {
+            print("Error initializing AppSync client. \(error)")
+        }
         
         return true
     }
