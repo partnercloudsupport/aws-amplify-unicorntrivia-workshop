@@ -19,17 +19,22 @@ class Video extends Component {
 				this.player.play();
 			}).bind(this));
 		// Safari Mobile Detected
-		} else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+		} else if (this.player.canPlayType('application/vnd.apple.mpegurl')) {
 			this.player.src = this.state.src;
 			this.player.addEventListener('loadedmetadata', (() => {
 				this.player.play();
 			}).bind(this));
-		  }
+		}
 	}
-	
+
 	render(){
 		return(
-			<video ref={(player) => this.player = player} autoPlay muted></video>	
+			<div className="video-container">
+				<video ref={(player) => this.player = player} autoPlay muted></video>
+				<div className="mute-container">
+					<button onClick={this.toggleMute} className="mute-button btn btn-sm btn-warning">Un-mute</button>	
+				</div>
+			</div>
 		);
 	}
 }
