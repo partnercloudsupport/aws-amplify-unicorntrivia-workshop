@@ -17,7 +17,7 @@ Before doing this workshop please install these required programs
 
 ### Step Two: Displaying your HLS Stream
 1. If you lost your egress url from the `amplify livestream` setup then you can run `amplify livestream get-info` again to get the MediaStore url. It should look something like this: `url`
-1. Navigate to UnicornTrivia/ViewController.swift in Xcode. Then, insert where you find the text `INSERT_URL_HERE`
+1. Navigate to UnicornTrivia/ViewController.swift in Xcode. Then insert the url where you find the text `INSERT_URL_HERE`
 
 ## Step Three: Update the backend
 1. Open the [AppSync Console](https://console.aws.amazon.com/appsync/home) and navigate to your AppSync endpoint.
