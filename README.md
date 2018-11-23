@@ -36,21 +36,42 @@ Install the AWS amplify CLI with the node package manager(npm) using the followi
 Now that our environment is all set up we are ready to begin implementing our application! React applications are broken up into “Components” or microservices within the application. Let's begin by creating the video player component! This component will display our stream output on the phone.
 
 1. Navigate to ./src/components/App/Video/Component.js
-1. First, we need to write the function definitions for setVideoDimensions() and the Render() function.
-1.  Lets now take a look at the setVideoDimensions() function. Lets paste this code snippet into the function. Here we set the values for the Hight and Width of the player which will be visible on the screen in our react application.
+
+1. The `Component.js` file houses the code which defines how we display our livestream on the client device. Let's take a deeper look at the functions in this file. 
+
+First we have our Constructor which defines the internal data model. In this case we have variables which define the height and width of the player such that it fits the entire screen of the mobile device.
 ```
-this.setState({
-        styles: {
-            ...this.state.styles,
-            height: this.state.dimensions.scale * this.state.dimensions.width,
-            width: this.state.dimensions.scale * this.state.dimensions.height
-        }
-    });
+	constructor(props){
+		super(props);
+		this.state = {
+			dimensions: Dimensions.get('window'),
+			styles: {
+				height: null,
+				width: null
+			}
+		};
 ```
-1. The final step is to define the render function. This is the code that will draw our component on the screen. In this case the render function will place our video player over the entire area of the screen! Paste in this code into the render function. **REMEMBER TO REPLACE THE SOURCE URI WITH YOUR MEDIASTORE EGRESS URL!**
+Furthermore, setVideoDimension function can be called to change the dimensions of the player by changing the internal data model defined above!
+
+```
+	setVideoDimensions = () => {
+		this.setState({
+			styles: {
+				...this.state.styles,
+				height: this.state.dimensions.scale * this.state.dimensions.width,
+				width: this.state.dimensions.scale * this.state.dimensions.height
+			}
+		});
+	}
+```
+
+1. Our goal for the Video Component is to define the render function that will draw our component on the screen. In this case the render function will place our video player over the entire area of the screen! We will connect the video player to our live streaming backend using the Medistore egress URL generated in the previous step. 
+
+
+**REMEMBER TO REPLACE THE SOURCE URI WITH YOUR MEDIASTORE EGRESS URI!**
 ```         return(
                 <ReactNativeVideoPlayer
-                    source={{uri: "INSERT_MEDIAPACKAGE_URL"}}
+                    source={{uri: "INSERT_MEDIASTORE_URL"}}
                     ref={(ref) => {
                         this.player = ref
                     }}
