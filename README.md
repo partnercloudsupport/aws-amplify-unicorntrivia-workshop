@@ -25,6 +25,21 @@ Install the react-native-cli with the node package manager(npm) using the follow
 Install the AWS amplify CLI with the node package manager(npm) using the following command:
 * `npm install -g @aws-amplify/cli`
 
+**Configure the ANDROID_HOME environment variable**
+The React Native tools require some environment variables to be set up in order to build apps with native code.
+
+Add the following lines to your $HOME/.bash_profile config file:
+```
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+```
+The last step is to source the file. Run `source $HOME/.bash_profile`
+
+You can make sure it worked by running `echo $PATH`!
+
 ### Android && Windows
 
 You will need Node, the React Native command line interface, Python2, a JDKm and Android Studio. While you can use any ditor of your choice to develop your app, you will need to install Android Studio in order to set up the necessary tooling to build your React Native app for Android.
@@ -40,6 +55,21 @@ Open an Administrator Command Prompt (right click command prompt and select "Run
 **The React Native CLI**
 
 Install the CLI using `npm install -g react-native-cli`
+
+**Configure the ANDROID_HOME environment variable**
+The React Native tools require some environment variables to be set up in order to build apps with native code.
+
+Open the System pane under System and Security in the Windows Control Panel, then click on Change settings.... Open the Advanced tab and click on Environment Variables.... Click on New... to create a new ANDROID_HOME user variable that points to the path to your Android SDK:
+
+![Appsync Schema](Assets/Appsync_Schema.png)
+
+The SDK is installed, by default, at the following location:`c:\Users\YOUR_USERNAME\AppData\Local\Android\Sdk`
+
+You can find the actual location of the SDK in the Android Studio "Preferences" dialog, under Appearance & Behavior → System Settings → Android SDK.
+
+Open a new Command Prompt window to ensure the new environment variable is loaded before proceeding to the next step.
+
+
 
 ## Step 1:  Android Studio Configuration
 
