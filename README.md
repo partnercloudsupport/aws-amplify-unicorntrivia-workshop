@@ -15,6 +15,7 @@ Before doing this workshop please install these required programs
 1. Open the UnicornTrivia.xcworkspace that was generated
 1. Navigate to the root of the project and change the bundle identifier to `yourname.unicorntriva` and make sure that the Team section is set to None. Should look something like this:
     ![Xcode Project Configure](.images/XcodeConfigureProject.png)
+1. Change your simulator from iPhone XR to iPhone 8 - **This is important for older computers**
 1. Copy your `amplify` folder from your `AdminPanel` folder that you created in our last section and place a copy in the root directory of the iOS project.
 1. Then run `amplify configure project`. This will allow Amplify to generate iOS code unique to your API endpoint.
     1. Keep all your values the same except change your type of app you are building from `javascript` to `ios`. 
@@ -127,7 +128,7 @@ Before doing this workshop please install these required programs
     If you run your app again you will now observe that you can send questions and answers to users and actually can win the game. Though no answers were sent to the cloud so we wouldn't be able to verify that the user won the game.
 
 ### Step Five: Recording answers
-1. Still in the `ViewController.swift` file we need to now perfom a mutation to add an user to our database.
+1. Still in the `ViewController.swift` file we need to now perfom a mutation to add a user to our database.
 1. Add this code to `func setupUser(username: String)` to start creating users.
     ```swift
     appSyncClient?.perform(mutation: CreateAnswerMutation(input: CreateAnswerInput(username: username)), queue: DispatchQueue.main, optimisticUpdate: nil, conflictResolutionBlock: nil, resultHandler: { (result, error) in
@@ -161,7 +162,7 @@ Before doing this workshop please install these required programs
 1. You now should see your schema that was auto generated for you from Amplify. On the right side you should see a section called Resolvers. Search for `Mutation` in the text box and then select the clickable link next to `updateAnswer(...):Answer`
     ![Appsync Resolver](.images/Appsync_Resolvers.png)
 1. You are now presented with a Request Mapping Template and a Response Mapping Template.
-    1. We are going to change the Request Mapping Templateto do the appending of the array.
+    1. We are going to change the Request Mapping Template to do the appending of the array.
     1. Navigate/search for `#set( $expression = "SET" )` and look for this line (should be near line 42):
         ```vtl
         #set( $expression = "$expression $entry.key = $entry.value" )
