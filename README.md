@@ -27,7 +27,7 @@ Install the AWS amplify CLI with the node package manager(npm) using the followi
 
 ### Android && Windows
 
-1. You will need Node, the React Native command line interface, Python2, a JDKm and Android Studio. While you can use any ditor of your choice to develop your app, you will need to install Android Studio in order to set up the necessary tooling to build your React Native app for Android.
+You will need Node, the React Native command line interface, Python2, a JDKm and Android Studio. While you can use any ditor of your choice to develop your app, you will need to install Android Studio in order to set up the necessary tooling to build your React Native app for Android.
 
 **Node, Python2, JDK**
 
