@@ -61,7 +61,7 @@ The React Native tools require some environment variables to be set up in order 
 
 Open the System pane under System and Security in the Windows Control Panel, then click on Change settings.... Open the Advanced tab and click on Environment Variables.... Click on New... to create a new ANDROID_HOME user variable that points to the path to your Android SDK:
 
-![Appsync Schema](Assets/Appsync_Schema.png)
+![Appsync Schema](Assets/windows_env_var.png)
 
 The SDK is installed, by default, at the following location:`c:\Users\YOUR_USERNAME\AppData\Local\Android\Sdk`
 
