@@ -1,5 +1,5 @@
 projects:
-  admin3:
+  unicorntrivia:
     schemaPath: src/graphql/schema.json
     includes:
       - src/graphql/**/*.js
@@ -10,7 +10,7 @@ projects:
         codeGenTarget: javascript
         generatedFileName: ''
         docsFilePath: src/graphql
-        graphQLApiId: zsfrxuqxtvhh3fwk2kx2uibe3i
+        graphQLApiId: bicvedvqcjaorba25xtzv2yeua
       endpoints:
         prod: >-
-          https://pvtsxv4dwvbk5nfklm6larzgii.appsync-api.us-west-2.amazonaws.com/graphql
+          https://q7uvq3sw25cy7mkg4mpk7xqzsu.appsync-api.us-west-2.amazonaws.com/graphql

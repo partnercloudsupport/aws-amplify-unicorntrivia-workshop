@@ -1,14 +1,54 @@
 {
-    "providers": {
-        "awscloudformation": {
-            "AuthRoleName": "dminanel-20181123033254-authRole",
-            "UnauthRoleArn": "arn:aws:iam::379063898357:role/dminanel-20181123033254-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::379063898357:role/dminanel-20181123033254-authRole",
-            "Region": "us-west-2",
-            "DeploymentBucketName": "dminanel-20181123033254-deployment",
-            "UnauthRoleName": "dminanel-20181123033254-unauthRole",
-            "StackName": "dminanel-20181123033254",
-            "StackId": "arn:aws:cloudformation:us-west-2:379063898357:stack/dminanel-20181123033254/853302d0-ef13-11e8-97ee-0ae846f1e916"
-        }
-    }
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "dminanel-20181123033254-authRole",
+			"UnauthRoleArn": "arn:aws:iam::379063898357:role/dminanel-20181123033254-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::379063898357:role/dminanel-20181123033254-authRole",
+			"Region": "us-west-2",
+			"DeploymentBucketName": "dminanel-20181123033254-deployment",
+			"UnauthRoleName": "dminanel-20181123033254-unauthRole",
+			"StackName": "dminanel-20181123033254",
+			"StackId": "arn:aws:cloudformation:us-west-2:379063898357:stack/dminanel-20181123033254/853302d0-ef13-11e8-97ee-0ae846f1e916"
+		}
+	},
+	"Elemental": {
+		"AdminPanelDemo": {
+			"service": "Elemental",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/dminanel-20181123033254-deployment/amplify-cfn-templates/Elemental/AdminPanelDemo-live-workflow-template.json",
+				"logicalId": "ElementalAdminPanelDemo"
+			},
+			"lastPushTimeStamp": "2018-11-23T11:59:22.126Z",
+			"output": {
+				"oMediaStoreContainerArn": "arn:aws:mediastore:us-west-2:379063898357:container/AdminPanelDemo",
+				"oPrimaryMediaStoreEgressUrl": "https://nafx23tqiib7ag.data.mediastore.us-west-2.amazonaws.com/p/index.m3u8",
+				"oMediaLiveChannelName": "AdminPanelDemo",
+				"oMediaLivePrimaryIngestUrl": "rtmp://54.203.96.26:1935/AdminPanelDemo-p",
+				"oMediaLiveBackupIngestUrl": "rtmp://35.155.152.82:1935/AdminPanelDemo-b",
+				"oMediaLiveChannelId": "358955",
+				"oMediaStoreContainerName": "AdminPanelDemo",
+				"oBackupMediaStoreEgressUrl": "https://nafx23tqiib7ag.data.mediastore.us-west-2.amazonaws.com/b/index.m3u8"
+			},
+			"lastPushDirHash": "Jxm06gkG3cZwgpclCyPJQGqW56g="
+		}
+	},
+	"api": {
+		"unicorntrivia": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"securityType": "API_KEY",
+				"GraphQLAPIIdOutput": "bicvedvqcjaorba25xtzv2yeua",
+				"GraphQLAPIEndpointOutput": "https://q7uvq3sw25cy7mkg4mpk7xqzsu.appsync-api.us-west-2.amazonaws.com/graphql",
+				"GraphQLAPIKeyOutput": "da2-dqyyyvva2rgldbimzi2grkwj2m"
+			},
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/dminanel-20181123033254-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"logicalId": "apiunicorntrivia"
+			},
+			"lastPushTimeStamp": "2018-11-23T11:59:22.957Z",
+			"lastPushDirHash": "8b9qv/jxy3SFR7zzy+o+0yqR0G8="
+		}
+	}
 }
