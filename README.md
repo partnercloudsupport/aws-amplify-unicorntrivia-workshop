@@ -14,15 +14,15 @@ Before doing this workshop please install these required programs
 1. Run `pod install` to install required SDKs for the application.
 1. Open the UnicornTrivia.xcworkspace that was generated
 1. Navigate to the root of the project and change the bundle identifier to `yourname.unicorntriva` and make sure that the Team section is set to None. Should look something like this:
-    ![Xcode Project Configure](Assets/XcodeConfigureProject.png)
+    ![Xcode Project Configure](.images/XcodeConfigureProject.png)
 1. Copy your `amplify` folder from your `AdminPanel` folder that you created in our last section and place a copy in the root directory of the iOS project.
 1. Then run `amplify configure project`. This will allow Amplify to generate iOS code unique to your API endpoint.
     1. Keep all your values the same except change your type of app you are building from `javascript` to `ios`. 
     1. When done it should looks something like this: 
-    ![Amplify Configure Project](Assets/AmplifyConfigureProject.png)
+    ![Amplify Configure Project](.images/AmplifyConfigureProject.png)
 1. Once you change the project configurations run `amplify codegen add`.
     1. Walkthrough the steps and use all the default parameters. It should looke something like this:
-    ![Amplify Configure Codegen](Assets/AmplifyCodegenConfig.png)
+    ![Amplify Configure Codegen](.images/AmplifyCodegenConfig.png)
     1. When Codegen finishes you should have a `API.swift` file and a `awsconfiguration.json` file in the root of your project.
 1. Back in Xcode, Navigate to `File->Add files to "Unicorn Trivia"`. Then select the `API.swift` and `awsconfiguration.json` files to add to your project.
 1. Now your project has been configured.
@@ -149,9 +149,9 @@ Before doing this workshop please install these required programs
 1. Now that we are pushing to the cloud we should check the backend table to observe our answers being saved, but only one answer is being saved in the array. This seems to be an error. We can fix this though through the AppSync console using a resolver.
 1. Open the [AppSync Console](https://console.aws.amazon.com/appsync/home) and navigate to your AppSync endpoint.
 1. Once you select your AppSync endpoint on the left side select Schema.
-    ![Appsync Schema](Assets/Appsync_Schema.png)
+    ![Appsync Schema](.images/Appsync_Schema.png)
 1. You now should see your schema that was auto generated for you from Amplify. On the right side you should see a section called Resolvers. Search for `Mutation` in the text box and then select the clickable link next to `updateAnswer(...):Answer`
-    ![Appsync Resolver](Assets/Appsync_Resolvers.png)
+    ![Appsync Resolver](.images/Appsync_Resolvers.png)
 1. You are now presented with a Request Mapping Template and a Response Mapping Template.
     1. We are going to change the Request Mapping Templateto do the appending of the array.
     1. Navigate/search for `#set( $expression = "SET" )` and look for this line (should be near line 42):
