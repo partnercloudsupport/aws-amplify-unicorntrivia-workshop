@@ -185,7 +185,7 @@ Now that our stream is playing and our subscriptions are set up. The last thing 
                     setTimeout(() => {
                         self.setState({
                             modalVisible: true,
-                            modalBackground: "transparent"
+                            modalBackground: "#FFFFFF"
                         }, () => {
                             console.log("final state: ", self.state);
                         })
