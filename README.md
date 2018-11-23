@@ -19,7 +19,7 @@ You just started at UnicornTrivia and they hooked you up with a brand new laptop
 1. Clone the UnicornTrivia project repository using `git clone https://github.com/awslabs/aws-amplify-unicorntrivia-workshop`
 1. Download and install Node and Node Package Manager (NPM) if you don't already have it from [nodejs.org](https://nodejs.org/en/download/)
 1. Install AWS Amplify CLI using this command `npm install -g @aws-amplify/cli`
-1. Install a custom AWS Amplify CLI livestream plugin by moving into `AmplifyElementalPlugin` directory and running `npm install -g`
+1. Install a custom AWS Amplify CLI livestream plugin by moving into `AmplifyElementalPlugin` directory and running `npm install -g` or by running `npm install amplify-elemental-plugin -g`
 1. Download and install Open Broadcaster Software (OBS) from [obsproject.com](https://obsproject.com/download)
 
 ## Live Streaming Service
