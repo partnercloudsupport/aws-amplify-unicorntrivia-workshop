@@ -167,7 +167,7 @@ Our next step is to build an administrator panel which can be used to fire off A
     Talk about how this is different then the createQuestion above. Mainly it requires the ID from the question so that we know which response we need to give.
 
 1. `npm start` and observe we are now pushing questions in the console. We observe the object changing.
-
+1. **Important**: In the AdminPanel directory, make a copy of the entire `amplify` folder and place it somewhere you can easily access again, for ex. your desktop. We will be reusing this folder when we build out the clients.
 1. **Extra Credit** To view subscriptions you can add this at the top of your file:
     ```javascript
     const subscription = API.graphql(
