@@ -55,9 +55,9 @@ class Game extends Component {
 			touchableOpacityBorderColor,
 			textColor;
 		if(this.state.questionAvailable){
-			backgroundColor = this.state.selectedAnswerButton == index ? "#666666" : "#FFFFFF";
-			borderColor = this.state.selectedAnswerButton == index ? "#666666" : "#CCCCCC";
-			color = this.state.selectedAnswerButton == index ? "#FFFFFF" : "#000";
+			touchableOpacityBackgroundColor = this.state.selectedAnswerButton == index ? "#666666" : "#FFFFFF";
+			touchableOpacityBorderColor = this.state.selectedAnswerButton == index ? "#666666" : "#CCCCCC";
+			textColor = this.state.selectedAnswerButton == index ? "#FFFFFF" : "#000";
 
 		} else if(this.state.answerAvailable){
 			if(value == this.state.answer.onUpdateQuestion.answers[this.state.answer.onUpdateQuestion.answerId]){
@@ -65,9 +65,9 @@ class Game extends Component {
 				touchableOpacityBorderColor = "#02DC2A";
 				textColor = "#FFFFFF";
 			} else {
-				backgroundColor = this.state.answerChosen.index == index ? "#FE0000" : "#FFFFFF";
-				borderColor = this.state.answerChosen.index == index ? "#FE0000" : "#CCCCCC";
-				color = this.state.answerChosen.index == index ? "#FFFFFF" : "#000";
+				touchableOpacityBackgroundColor = this.state.answerChosen.index == index ? "#FE0000" : "#FFFFFF";
+				touchableOpacityBorderColor = this.state.answerChosen.index == index ? "#FE0000" : "#CCCCCC";
+				textColor = this.state.answerChosen.index == index ? "#FFFFFF" : "#000";
 			}
 		}
 		return(
