@@ -1,55 +1,82 @@
 import React, { Component } from 'react';
+import { API, graphqlOperation } from 'aws-amplify';
+import { print as gqlToString } from 'graphql/language';
+import { onCreateQuestion, onUpdateQuestion } from '../../graphql/subscriptions';
+
 import Video from '../Video';
+import Modal from '../Modal';
 
 class Game extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			modalBottom: 0,
-			modalClosed: false,
-			modalAnimationInProgress: false,
-			id: null
+			modalVisible: false,
+			modalBackground: "#FFFFFF",
+			question: {},
+			answer: {},
+			questionAvailable: false,
+			answerAvailable: false,
+			answerChosen: "",
+			selectedAnswerButton: null,
+			buttonsDisabled: false,
+			questionCount: 0,
+			wrongQuestions: [],
+			gameOver: false,
+			winner: false,
+			loser: false
 		};
 	}
 
-	animateTo = (position) => {
-		if((this.state.modalBottom <= position && !this.state.modalClosed) ||
-			(this.state.modalBottom >= position && this.state.modalClosed)){
-			this.setState({
-				modalClosed: !this.state.modalClosed,
-				modalAnimationInProgress: false
-			});
-			clearInterval(this.state.aTo);
-		} else {
-			this.setState({
-				modalBottom: this.state.modalClosed ? (this.state.modalBottom + 10) : (this.state.modalBottom - 10)
-			});
-		}
+	componentDidMount(){
+		this.listenForQuestions();
+		this.listenForAnswers();
 	}
 
-	toggleModal = () => {
+	listenForQuestions = () => {
 		let self = this;
-		if(this.state.modalAnimationInProgress){
-			return
-		}
-		this.setState({
-			aTo: setInterval((() => {
-				this.animateTo(
-					this.state.modalClosed ? 0 : -320
-				);
-			}).bind(this), 5),
-			modalAnimationInProgress: true
-		});
+		API.graphql(
+			graphqlOperation(onCreateQuestion)
+		).subscribe({
+			next: (data) => {
+				self.setState({
+					question: data.value.data,
+					answerAvailable: false,
+					questionAvailable: true,
+					modalVisible: true
+				});
+			}
+		})
+	}
+
+	listenForAnswers = () => {
+		let self = this;
+		API.graphql(
+			graphqlOperation(onUpdateQuestion)
+		).subscribe({
+			next: (data) => {
+				self.setState({
+					answer: data.value.data,
+					answerAvailable: true,
+					questionAvailable: false,
+					modalVisible: true
+				});
+			}
+		})
+	}
+
+	game = () => {
+		return(
+			<div>asdfadsfadfadfa</div>
+		);
 	}
 
 	render(){
 		return(
 			<div className="game-container">
 				<Video />
-				<div className="modal-container" style={{bottom: this.state.modalBottom}}>
-					adf	
-				</div>
-				<div style={{position: "fixed", top: 0, backgroundColor: "blue", width: "50px"}} onClick={this.toggleModal}>toggle</div>
+				<Modal visible={this.state.modalVisible}>
+					{ this.game() }
+				</Modal>
 			</div>
 		);
 	}
