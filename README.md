@@ -10,7 +10,7 @@ Before doing this workshop please install these required programs
 ## iOS Walkthrough
 
 ### Step One: Configuring your Xcode Enviroment
-1. Open a terminal and navigate to your root directory of the iOS app.
+1. Unzip the file you downloaded and then open a terminal and navigate to your root directory of the iOS app via the Terminal
 1. Run `pod install` to install required SDKs for the application.
 1. Open the UnicornTrivia.xcworkspace that was generated
 1. Navigate to the root of the project and change the bundle identifier to `yourname.unicorntriva` and make sure that the Team section is set to None. Should look something like this:
