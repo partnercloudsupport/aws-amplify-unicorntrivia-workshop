@@ -9,19 +9,106 @@
 
 Before doing this workshop, please install these required programs for the platform you will be running.
 
-### Android
 
-1. Install Node and Watchman using [Homebrew](http://brew.sh/)
-2. Install Intel x86 Atom_64 System Image from the Android Studio SDK menu
+<style>
+  .toggler li {
+    display: inline-block;
+    position: relative;
+    top: 1px;
+    padding: 10px;
+    margin: 0px 2px 0px 2px;
+    border: 1px solid #05A5D1;
+    border-bottom-color: transparent;
+    border-radius: 3px 3px 0px 0px;
+    color: #05A5D1;
+    background-color: transparent;
+    font-size: 0.99em;
+    cursor: pointer;
+  }
+  .toggler li:first-child {
+    margin-left: 0;
+  }
+  .toggler li:last-child {
+    margin-right: 0;
+  }
+  .toggler ul {
+    width: 100%;
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    border-bottom: 1px solid #05A5D1;
+    cursor: default;
+  }
+  @media screen and (max-width: 960px) {
+    .toggler li,
+    .toggler li:first-child,
+    .toggler li:last-child {
+      display: block;
+      border-bottom-color: #05A5D1;
+      border-radius: 3px;
+      margin: 2px 0px 2px 0px;
+    }
+    .toggler ul {
+      border-bottom: 0;
+    }
+  }
+  .toggler a {
+    display: inline-block;
+    padding: 10px 5px;
+    margin: 2px;
+    border: 1px solid #05A5D1;
+    border-radius: 3px;
+    text-decoration: none !important;
+  }
+  .display-guide-quickstart .toggler .button-quickstart,
+  .display-guide-native .toggler .button-native,
+  .display-os-mac .toggler .button-mac,
+  .display-os-linux .toggler .button-linux,
+  .display-os-windows .toggler .button-windows,
+  .display-platform-ios .toggler .button-ios,
+  .display-platform-android .toggler .button-android {
+    background-color: #05A5D1;
+    color: white;
+  }
+  block { display: none; }
+  .display-guide-quickstart.display-platform-ios.display-os-mac .quickstart.ios.mac,
+  .display-guide-quickstart.display-platform-ios.display-os-linux .quickstart.ios.linux,
+  .display-guide-quickstart.display-platform-ios.display-os-windows .quickstart.ios.windows,
+  .display-guide-quickstart.display-platform-android.display-os-mac .quickstart.android.mac,
+  .display-guide-quickstart.display-platform-android.display-os-linux .quickstart.android.linux,
+  .display-guide-quickstart.display-platform-android.display-os-windows .quickstart.android.windows,    .display-guide-native.display-platform-ios.display-os-mac .native.ios.mac,
+  .display-guide-native.display-platform-ios.display-os-linux .native.ios.linux,
+  .display-guide-native.display-platform-ios.display-os-windows .native.ios.windows,
+  .display-guide-native.display-platform-android.display-os-mac .native.android.mac,
+  .display-guide-native.display-platform-android.display-os-linux .native.android.linux,
+  .display-guide-native.display-platform-android.display-os-windows .native.android.windows {
+    display: block;
+  }
+</style>
 
-Install Node and Watchman using Homebrew using the below commands:
+This page will help you install and build your first React Native app. If you already have React Native installed, you can skip ahead to the [Tutorial](tutorial.md).
 
-1. `brew install node`
-2. `brew install watchman`
+<div class="toggler">
+  <ul role="tablist" >
+    <li id="quickstart" class="button-quickstart" aria-selected="false" role="tab" tabindex="0" aria-controls="quickstarttab" onclick="displayTab('guide', 'quickstart')">
+      Quick Start
+    </li>
+    <li id="native" class="button-native" aria-selected="false" role="tab" tabindex="-1" aria-controls="nativetab" onclick="displayTab('guide', 'native')">
+      Building Projects with Native Code
+    </li>
+  </ul>
+</div>
 
-Install the AWS amplify CLI with the node package manager(npm) using the following command:
+<block class="quickstart mac windows linux ios android" />
 
-1. `npm install -g @aws-amplify/cli`
+[Expo](https://expo.io) is the easiest way to start building a new React Native application. It allows you to start a project without installing or configuring any tools to build native code - no Xcode or Android Studio installation required (see [Caveats](getting-started.md#caveats)).
+
+Assuming that you have [Node](https://nodejs.org/en/download/) installed, you can use npm to install the Expo CLI command line utility:
+
+```sh
+npm install -g expo-cli
+```
+
 
 ## Step 1:  Android Studio Configuration
 
