@@ -285,9 +285,6 @@ Now that our stream is playing and our subscriptions are set up. The last thing 
     }
 ```
 
-**5. The last thing to do is define how all the components are laid out on the screen, as well as define the logic of what happens on button clicks. In order to do this, uncomment the large code block for our answerButtons function.**
-^^^^^^ **NEEDS TO CHANGE**
-
 
 ### Step Five: Recording answers
 
