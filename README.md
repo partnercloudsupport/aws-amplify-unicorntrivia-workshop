@@ -69,7 +69,8 @@ Furthermore, setVideoDimension function can be called to change the dimensions o
 
 
 **REMEMBER TO REPLACE THE SOURCE URI WITH YOUR MEDIASTORE EGRESS URI!**
-```         return(
+```javascript         
+return(
                 <ReactNativeVideoPlayer
                     source={{uri: "INSERT_MEDIASTORE_URL"}}
                     ref={(ref) => {
@@ -84,6 +85,7 @@ Furthermore, setVideoDimension function can be called to change the dimensions o
                     }}
                 />
             );
+	    
 ```
 ## Step 3: Subscribing to the GraphQL API back end
 In this section we will be subscribing our client to the back end GraphQL API hosted in AWS AppSync. ~~~
