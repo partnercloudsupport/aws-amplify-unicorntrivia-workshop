@@ -24,7 +24,8 @@ Before doing this workshop please install these required programs
     1. Walkthrough the steps and use all the default parameters. It should looke something like this:
     ![Amplify Configure Codegen](.images/AmplifyCodegenConfig.png)
     1. When Codegen finishes you should have a `API.swift` file and a `awsconfiguration.json` file in the root of your project.
-1. Back in Xcode, Navigate to `File->Add files to "Unicorn Trivia"`. Then select the `API.swift` and `awsconfiguration.json` files to add to your project.
+1. Back in Xcode, Navigate to `File->Add files to "Unicorn Trivia"`. Then select the `API.swift` and `awsconfiguration.json` files to add to your project and make sure the radio `Copy items if needed` is selected. It should looks somethign like this:
+    ![CopyFilesIn](.images/CopyFilesIn.png)
 1. Now your project has been configured.
 
 ### Step Two: Displaying your HLS Stream
@@ -46,7 +47,7 @@ Before doing this workshop please install these required programs
     import AWSAppSync
     ```
 1. Next we need to create a AppSync client variable so that way we can use it throughout the application. Under `var window: UIWindow?` put `var appSyncClient:AWSAppSyncClient?`.
-1. Now we get to configure the client variable. Find `func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool` and paste in this code:
+1. Now we get to configure the client variable. Find `func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool` and paste in this code (you can replace everything in the function with this code):
     ```swift
     do {
         let appSyncConfig = try AWSAppSyncClientConfiguration(appSyncClientInfo: AWSAppSyncClientInfo())
@@ -57,6 +58,8 @@ Before doing this workshop please install these required programs
     } catch {
         print("Error initializing AppSync client. \(error)")
     }
+
+    return true;
     ```
     This code configures our AppSync client from the `awsconfiguration.json` file we copied into the project earlier.
 1. Now that we have a configured AppSync client we need to now subscribe to our onQuestionsCreate that our AdminPanel is pushing out.
@@ -67,7 +70,7 @@ Before doing this workshop please install these required programs
     var appSyncClient: AWSAppSyncClient?
     var newQuestionSubWatcher: AWSAppSyncSubscriptionWatcher<OnCreateQuestionSubscription>?
     ```
-1. Now in `override func viewDidLoad()` copy in:
+1. Now in `override func viewDidLoad()` in the file UnicornTrivia/ViewController.swift copy in:
     ```swift
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     appSyncClient = appDelegate.appSyncClient
@@ -101,7 +104,12 @@ Before doing this workshop please install these required programs
 
 ### Step Four: Show correct answers to the player
 1. This is very similiar to what we did in the show Questions section of our app. Except instead of subscribing to `OnCreateQuestion` we instead subscribe to `OnUpdateQuestion`
-1. Copy `var updateQuestionSubWatcher: AWSAppSyncSubscriptionWatcher<OnUpdateQuestionSubscription>?` right under our other subscription variable `var newQuestionSubWatcher`
+1. Copy `var updateQuestionSubWatcher: AWSAppSyncSubscriptionWatcher<OnUpdateQuestionSubscription>?` right under our other subscription variable `var newQuestionSubWatcher` so it should look like:
+    ```swift
+    var appSyncClient: AWSAppSyncClient?
+    var newQuestionSubWatcher: AWSAppSyncSubscriptionWatcher<OnCreateQuestionSubscription>?
+    var updateQuestionSubWatcher: AWSAppSyncSubscriptionWatcher<OnUpdateQuestionSubscription>?
+    ```
 1. Next add this code to `func startSubForAnswers()`. This code should look very familiar to what we did in Step Three with the questions.
     ```swift
     let subscriptionRequest2 = OnUpdateQuestionSubscription()
