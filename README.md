@@ -16,14 +16,14 @@ Before doing this workshop, please install these required programs for the platf
 
 Install Node and Watchman using Homebrew using the below commands:
 
-1. `brew install node`
-1. `brew install watchman`
+	`brew install node`
+	`brew install watchman`
 
 Install the react-native-cli with the node package manager(npm) using the following command:
-1. npm `install -g react-native-cli`
+	npm `install -g react-native-cli`
 
 Install the AWS amplify CLI with the node package manager(npm) using the following command:
-1. `npm install -g @aws-amplify/cli`
+	`npm install -g @aws-amplify/cli`
 
 ### Android && Windows
 
