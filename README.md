@@ -179,7 +179,7 @@ Now that our stream is playing and our subscriptions are set up. The last thing 
         let self = this;
         if(this.state.answerAvailable){
             setTimeout((()=> {
-                let gameOver = this.state.questionCount == 1 ? true : false;
+                let gameOver = this.state.questionCount == 12 ? true : false;
                 let wrongQuestions = this.state.answerChosen.answer !== this.state.answer.onUpdateQuestion.answers[this.state.answer.onUpdateQuestion.answerId] ? [...this.state.wrongQuestions, {question: this.state.answer, answer: this.state.answerChosen.answer}] : [...this.state.wrongQuestions];
                 if(gameOver){
                     setTimeout(() => {
