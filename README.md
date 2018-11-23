@@ -117,6 +117,7 @@ Our next step is to build an administrator panel which can be used to fire off A
                 answer: [Int]
             }
             ```
+		1. Remember to save the file you just edited from the text editor it was opened with.
 1. Now run `amplify push` to create the backend resources.
     1.  a. Y
     1. Y - Codegen time!
