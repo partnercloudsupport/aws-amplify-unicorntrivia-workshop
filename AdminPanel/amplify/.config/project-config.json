@@ -1,7 +1,7 @@
 {
     "projectName": "AdminPanel",
-    "projectPath": "/Users/ashwinmr/code/temp/PubliciOS/AdminPanel",
-    "defaultEditor": "sublime",
+    "projectPath": "/Users/migcerva/dev/reinvent/awslabs/aws-amplify-unicorntrivia-workshop/AdminPanel",
+    "defaultEditor": "code",
     "frontendHandler": {
         "javascript": "/usr/local/lib/node_modules/@aws-amplify/cli/node_modules/amplify-frontend-javascript"
     },
