@@ -7,116 +7,48 @@
 
 ## Step 0: Configuring your computer
 
-Before doing this workshop, please install these required programs for the platform you will be running.
+Before doing this workshop, please install these required programs for the platform and operating system you will be running.
 
+### Android && MACOS
 
-<style>
-  .toggler li {
-    display: inline-block;
-    position: relative;
-    top: 1px;
-    padding: 10px;
-    margin: 0px 2px 0px 2px;
-    border: 1px solid #05A5D1;
-    border-bottom-color: transparent;
-    border-radius: 3px 3px 0px 0px;
-    color: #05A5D1;
-    background-color: transparent;
-    font-size: 0.99em;
-    cursor: pointer;
-  }
-  .toggler li:first-child {
-    margin-left: 0;
-  }
-  .toggler li:last-child {
-    margin-right: 0;
-  }
-  .toggler ul {
-    width: 100%;
-    display: inline-block;
-    list-style-type: none;
-    margin: 0;
-    border-bottom: 1px solid #05A5D1;
-    cursor: default;
-  }
-  @media screen and (max-width: 960px) {
-    .toggler li,
-    .toggler li:first-child,
-    .toggler li:last-child {
-      display: block;
-      border-bottom-color: #05A5D1;
-      border-radius: 3px;
-      margin: 2px 0px 2px 0px;
-    }
-    .toggler ul {
-      border-bottom: 0;
-    }
-  }
-  .toggler a {
-    display: inline-block;
-    padding: 10px 5px;
-    margin: 2px;
-    border: 1px solid #05A5D1;
-    border-radius: 3px;
-    text-decoration: none !important;
-  }
-  .display-guide-quickstart .toggler .button-quickstart,
-  .display-guide-native .toggler .button-native,
-  .display-os-mac .toggler .button-mac,
-  .display-os-linux .toggler .button-linux,
-  .display-os-windows .toggler .button-windows,
-  .display-platform-ios .toggler .button-ios,
-  .display-platform-android .toggler .button-android {
-    background-color: #05A5D1;
-    color: white;
-  }
-  block { display: none; }
-  .display-guide-quickstart.display-platform-ios.display-os-mac .quickstart.ios.mac,
-  .display-guide-quickstart.display-platform-ios.display-os-linux .quickstart.ios.linux,
-  .display-guide-quickstart.display-platform-ios.display-os-windows .quickstart.ios.windows,
-  .display-guide-quickstart.display-platform-android.display-os-mac .quickstart.android.mac,
-  .display-guide-quickstart.display-platform-android.display-os-linux .quickstart.android.linux,
-  .display-guide-quickstart.display-platform-android.display-os-windows .quickstart.android.windows,    .display-guide-native.display-platform-ios.display-os-mac .native.ios.mac,
-  .display-guide-native.display-platform-ios.display-os-linux .native.ios.linux,
-  .display-guide-native.display-platform-ios.display-os-windows .native.ios.windows,
-  .display-guide-native.display-platform-android.display-os-mac .native.android.mac,
-  .display-guide-native.display-platform-android.display-os-linux .native.android.linux,
-  .display-guide-native.display-platform-android.display-os-windows .native.android.windows {
-    display: block;
-  }
-</style>
+1. Install Node and Watchman using [Homebrew](http://brew.sh/)
+1. Install Intel x86 Atom_64 System Image from the Android Studio SDK menu
 
-This page will help you install and build your first React Native app. If you already have React Native installed, you can skip ahead to the [Tutorial](tutorial.md).
+Install Node and Watchman using Homebrew using the below commands:
 
-<div class="toggler">
-  <ul role="tablist" >
-    <li id="quickstart" class="button-quickstart" aria-selected="false" role="tab" tabindex="0" aria-controls="quickstarttab" onclick="displayTab('guide', 'quickstart')">
-      Quick Start
-    </li>
-    <li id="native" class="button-native" aria-selected="false" role="tab" tabindex="-1" aria-controls="nativetab" onclick="displayTab('guide', 'native')">
-      Building Projects with Native Code
-    </li>
-  </ul>
-</div>
+1. `brew install node`
+1. `brew install watchman`
 
-<block class="quickstart mac windows linux ios android" />
+Install the react-native-cli with the node package manager(npm) using the following command:
+1. npm `install -g react-native-cli`
 
-[Expo](https://expo.io) is the easiest way to start building a new React Native application. It allows you to start a project without installing or configuring any tools to build native code - no Xcode or Android Studio installation required (see [Caveats](getting-started.md#caveats)).
+Install the AWS amplify CLI with the node package manager(npm) using the following command:
+1. `npm install -g @aws-amplify/cli`
 
-Assuming that you have [Node](https://nodejs.org/en/download/) installed, you can use npm to install the Expo CLI command line utility:
+### Android && Windows
 
-```sh
-npm install -g expo-cli
-```
+1. You will need Node, the React Native command line interface, Python2, a JDKm and Android Studio. While you can use any ditor of your choice to develop your app, you will need to install Android Studio in order to set up the necessary tooling to build your React Native app for Android.
 
+**Node, Python2, JDK**
+
+We recomment installing Node and Python2 via Chocolatey, a popular package manager for Windwos.
+
+React Native also requires a recent version of the Java SE Development Kit (JDK), as well as Python 2. Both can be installed using Chocolatey.
+
+Open an Administrator Command Prompt (right click command prompt and select "Run as Administrator"), then run the following command: `choco install  -y nodejs.install python2 jdk8`
+
+**The React Native CLI**
+
+Install the CLI using `npm install -g react-native-cli`
 
 ## Step 1:  Android Studio Configuration
 
 1. clone the project with git clone 
-2. run `export JAVA_HOME='/usr/libexec/java_home -v 1.8'` to get the right JDK version
-3. Navigate to the root directory of the project
-4. Run`npm install` to install dependencies detailed in package.json
-5. Run `react-native link` to link the React Native modules libraries to the project.
+1. run `export JAVA_HOME='/usr/libexec/java_home -v 1.8'` to get the right JDK version. 
+	1. If you are on windows, make sure your Java version is "1.8.0_192"
+1. Navigate to the root directory of the project
+1. Run`npm install` to install dependencies detailed in package.json
+1. Run `react-native link` to link the React Native modules libraries to the project.
 
 ## Step 2: Building the Video Component
 
