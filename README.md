@@ -4,20 +4,17 @@
 Before doing this workshop please install these required programs
 
 1. Download and install Xcode from the [AppStore](http://appstore.com/mac/apple/xcode)
-1. Download and install OBS from [obsproject.com](https://obsproject.com/download)
-1. Install Amplify CLI using this command `npm install -g @aws-amplify/cli`
 1. Install Pods using this command `sudo gem install cocoapods`, if you have pods installed then run `pods update`
-1. Clone the UnicornTrivia project repository using `git clone https://github.com/wizage/UnicornTriviaWorkshop.git` **This will change**
-1. Intall the amplify livestream plugin `npm install -g <insert url>` or cd into `AmplifyElementalPlugin` and run `npm install -g`
+1. Download this zip file [here](https://github.com/awslabs/aws-amplify-unicorntrivia-workshop/archive/unicorn-trivia-ios-workshop.zip)
 
 ## iOS Walkthrough
 
 ### Step One: Configuring your Xcode Enviroment
-1. To get started running your iOS app you need navigate to the iOS branch called: `iOS Workshop - Step One`.
 1. Open a terminal and navigate to your root directory of the iOS app.
 1. Run `pod install` to install required SDKs for the application.
 1. Open the UnicornTrivia.xcworkspace that was generated
-1. Navigate to the root of the project and change the bundle identifier to `yourname.unicorntriva` and make sure that the Team section is set to None.
+1. Navigate to the root of the project and change the bundle identifier to `yourname.unicorntriva` and make sure that the Team section is set to None. Should look something like this:
+    ![Xcode Project Configure](Assets/XcodeConfigureProject.png)
 1. Copy your `amplify` folder from your `AdminPanel` folder that you created in our last section and place a copy in the root directory of the iOS project.
 1. Then run `amplify configure project`. This will allow Amplify to generate iOS code unique to your API endpoint.
     1. Keep all your values the same except change your type of app you are building from `javascript` to `ios`. 
@@ -157,7 +154,7 @@ Before doing this workshop please install these required programs
     ![Appsync Resolver](Assets/Appsync_Resolvers.png)
 1. You are now presented with a Request Mapping Template and a Response Mapping Template.
     1. We are going to change the Request Mapping Templateto do the appending of the array.
-    1. Navigate to `#set( $expression = "SET" )` and look for this line:
+    1. Navigate/search for `#set( $expression = "SET" )` and look for this line (should be near line 42):
         ```vtl
         #set( $expression = "$expression $entry.key = $entry.value" )
         ```
