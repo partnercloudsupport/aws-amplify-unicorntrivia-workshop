@@ -1,4 +1,4 @@
-# Unicorn Trivia - React Native Mobile Client
+# Unicorn Trivia - React Native Version
 
 ## Configuring your computer
 
