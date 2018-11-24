@@ -297,9 +297,9 @@ Now that we are pushing to the cloud, we should check the backend table to obser
 
 1. Open the [AppSync Console](https://console.aws.amazon.com/appsync/home) and navigate to your AppSync endpoint.
 1. Once you select your AppSync endpoint on the left side select Schema.
-    ![Appsync Schema](Assets/Appsync_Schema.png)
+    ![Appsync Schema](assets/Appsync_Schema.png)
 1. You now should see your schema that was auto generated for you from Amplify. On the right side you should see a section called Resolvers. Search for `Mutation` in the text box and then select the clickable link next to `updateAnswer(...):Answer`
-    ![Appsync Resolver](Assets/Appsync_Resolvers.png)
+    ![Appsync Resolver](assets/Appsync_Resolvers.png)
 1. You are now presented with a Request Mapping Template and a Response Mapping Template.
     1. We are going to change the Request Mapping Templateto do the appending of the array.
     1. Navigate to `#set( $expression = "SET" )` and look for this line:
