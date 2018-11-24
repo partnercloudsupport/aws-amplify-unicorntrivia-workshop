@@ -299,9 +299,7 @@ prompt(
 ```
 This code is very similiar to what we did in our AdminPanel code. We just created a new User for our AnswersTable.
 
-1. Now navigate to `UnicornTrivia/QuestionView.swift` in Xcode.
-1. Once again add `import AWSAppSync` to the top of the file.
-1. Now that we are pushing to the cloud we should check the backend table to observe our answers being saved, but only one answer is being saved in the array. This seems to be an error. We can fix this though through the AppSync console using a resolver.
+1. Now that we are pushing to the cloud, we should check the backend table to observe our answers being saved, but only one answer is being saved in the array. This seems to be an error. We can fix this though through the AppSync console using a resolver.
 1. Open the [AppSync Console](https://console.aws.amazon.com/appsync/home) and navigate to your AppSync endpoint.
 1. Once you select your AppSync endpoint on the left side select Schema.
     ![Appsync Schema](Assets/Appsync_Schema.png)
