@@ -89,13 +89,7 @@ We will also be using the [AWS Amplify](https://aws-amplify.github.io/) library 
     1. A tab should now automatically open in your default browser to `http://localhost:3000/`. You have now successfully deployed the administrator panel for UnicornTrivia!
     1. When you issue the command `npm start` from the root directory of your React project, NodeJS will look for a scripts object in your package.json file. If found, it will look for a script with the key start and run the command specified as its value. You can view which scripts will be run by taking a look into package.json and taking a look at the "scripts" object.
 1. Now that you have the AdminPanel installed and running now it it is time to add in your API. Just like before when we setup the live-stream we will be using Amplify to setup the backend for the AdminPanel. So run `amplify api add` and use these values
-    1. Please select from one of the below mentioned services: `GraphQL`
-    1. Provide API name: `You Choose`
-    1. Choose an authorization type for the API: `API key`
-    1. Do you have an annotated GraphQL schema? `N`
-    1. Do you want a guided schema creation? `Y`
-    1. What best describes your project: `Single object with fields`
-    1. Do you want to edit the schema now? `Y`
+    ![AmplifyAPIAdd](.images/AmplifyAPIAdd.png)
         1. This will open your default editor that you configured with a GraphQL model:
             ```graphql
             type Todo @model {
@@ -121,13 +115,9 @@ We will also be using the [AWS Amplify](https://aws-amplify.github.io/) library 
             ```
 		1. Remember to save the file you just edited from the text editor it was opened with.
 1. Now run `amplify push` to create the backend resources.
-    1.  a. Y
-    1. Y - Codegen time!
-    1. javascript
-    1. leave as default
-    1. Y
+    ![AmplifyPushAPI](.images/AmplifyPushAPI.png)
     1. So what does the models you defined above create for you in the backend:
-        ![Appsync Backend](Assets/AppSyncBackend.png)
+        ![Appsync Backend](.images/AppSyncBackend.png)
         Each one of these models will have a DynamoDB table associated with it and each will be connected to AppSync through Resolvers. Resolvers are how AWS AppSync translates GraphQL requests and fetches information from your AWS resources (in this case the DynamoDB table). Resolvers can also transform the information sent to and received from your AWS resources. We will dive deeper in a later section on this.
 1. Time to add the ablity to push questions
 1. Open the src/App.js file in your favorite text editor.
