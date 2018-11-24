@@ -114,7 +114,7 @@ In this section we will be subscribing our client to the back end GraphQL API ho
 	```javascript
 	let self = this;
 	API.graphql(
-		graphqlOperation(gqlToString(onCreateQuestion))
+		graphqlOperation(onCreateQuestion)
 	).subscribe({
 		next: (data) => {
 			self.setState({
@@ -132,7 +132,7 @@ This function creates a GraphQL subscription to the AppSync backend to listen fo
 	```javascript
 	let self = this;
 	API.graphql(
-		graphqlOperation(gqlToString(onUpdateQuestion))
+		graphqlOperation(onUpdateQuestion)
 	).subscribe({
 		next: (data) => {
 			setTimeout(() => {
