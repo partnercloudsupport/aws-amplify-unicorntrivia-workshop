@@ -1,14 +1,10 @@
 # Unicorn Trivia - React Native Version
 
-## Configuring your computer
+# Configuring your computer
 
 Before we dive into building the React Native Android Client, please download a copy of this branch [here](https://github.com/awslabs/aws-amplify-unicorntrivia-workshop/archive/unicorn-trivia-react-native-workshop.zip)
 
 Once you successfully download a copy and unzip its contents, open up a terminal in that folder to follow along with the instructions below.
-
-Before you follow along in this workshop, please install these required programs for the platform and operating system you will be running.
-
-# React Native on Android Walkthrough
 
 ## Running React Native Android on Mac
 
@@ -70,7 +66,7 @@ You can find the actual location of the SDK in the Android Studio "Preferences" 
 
 Open a new Command Prompt window to ensure the new environment variable is loaded before proceeding to the next step.
 
-
+# React Native on Android Walkthrough
 
 ## Step 1:  Android Studio Configuration
 
