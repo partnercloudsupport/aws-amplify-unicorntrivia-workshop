@@ -40,7 +40,7 @@ Now you need to deploy MediaLive and MediaStore. Sure, you could use the AWS Con
     1. Note that because of the services leveraged, your AWS profile **MUST USE** us-west-2, us-east-1, eu-west-1, eu-central-1, ap-northeast-1, or ap-southeast-2.
     ![init](.images/amplify_init.png)
 1. Now, add the amplify livestream module to the project using `amplify livestream add`
-1. Again, follow the prompts as shown in the below image (remember to say no to the "Create Distribution" prompt!)
+1. Again, follow the prompts as shown in the image below
      ![livestream](.images/amplify_livestream.png) 
 1. Once the prompts complete, make sure the module was added by checking `amplify status`
     ![status](.images/amplify_status.png)
