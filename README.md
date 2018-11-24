@@ -48,7 +48,7 @@ You will need Node, the React Native command line interface, Python2, a JDKm and
 
 We recomment installing Node and Python2 via Chocolatey, a popular package manager for Windwos.
 
-React Native also requires a recent version of the Java SE Development Kit (JDK), as well as Python 2. Both can be installed using Chocolatey.
+React Native also requires a recent version of the Java SE Development Kit (JDK), as well as Python 2. Both can be installed using [Chocolatey](https://chocolatey.org/).
 
 Open an Administrator Command Prompt (right click command prompt and select "Run as Administrator"), then run the following command: `choco install  -y nodejs.install python2 jdk8`
 
