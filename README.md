@@ -47,7 +47,7 @@ Now you need to deploy MediaLive and MediaStore. Sure, you could use the AWS Con
 1. Now it is time to create our resources! Now run `amplify push` to create the backend resources for the livestream component! It will take a few minutes to stage and create the resources in your AWS environment. While that runs, let's take a brief look at what was just created! The Amplify CLI plugin created a MediaLive Channel which will process and deliver video segments to a MediaStore container (also created by the plugin). We'll serve the stream from MediaStore, but note that it is recommended to use a Content Delivery Network (CDN) like Amazon CloudFront. To begin processing video, you now need to send a source to the MediaLive endpoint.
 ![Streaming Architecture](.images/streaming_architecture.png)
 1. In order to retrieve the MediaLive endpoint that you just created, run the command `amplify livestream get-info` in the console.
-1. Note down the  **MediaLive Primary Ingest URL, MediaLive Primary Stream Key, and the MediaPackage HLS Egress Url** 
+1. Note down the  **MediaLive Primary Ingest URL, MediaLive Primary Stream Key, and the MediaStore HLS Egress Url** 
     ![Streaming Architecture](.images/amplify_get_status.png)
 1. Now Launch OBS. If you don't have it installed, refer to the "Configuring your computer" section for the download link.
 1. Next, under the control tab in the bottom right hand corner, select "settings"
@@ -69,7 +69,7 @@ Now you need to deploy MediaLive and MediaStore. Sure, you could use the AWS Con
 1. Finally we need to add an audio source. Again choose the **+** icon in the sources pane. This time choose "Audio Input Capture".
 1. Again, make sure the "Create New" radio button is selected and supply a name for the source and select ok. Under device, choose "Built in Microphone" and hit ok.
 1. We are now ready to start the stream! Hit the "Start Streaming" button under the "Controls" panel in the bottom right hand side.
-1. Check that the stream is up by pasting the MediaPackage HLS Egress Url into Safari or any supported HLS player.
+1. Check that the stream is up by pasting the MediaStore HLS Egress Url into Safari or any supported HLS player.
     1. You can use the [JW Player Stream Tester](https://developer.jwplayer.com/tools/stream-tester/) if you don't have an HLS compatible player installed. Just paste your MediaStore output URL into the File URL Field on the page and click the red "Test Stream" Button. You should now see your channel playing in the Test Player.
     ![JW Player](.images/jw_player.png)
 
