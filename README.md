@@ -120,18 +120,17 @@ We will also be using the [AWS Amplify](https://aws-amplify.github.io/) library 
         The models you defined above create the following on the backend:
         ![Appsync Backend](.images/AppSyncBackend.png)
         Each one of these models will have a DynamoDB table associated with it and each will be connected to AppSync through Resolvers. Resolvers are how AWS AppSync translates GraphQL requests and fetches information from your AWS resources (in this case the DynamoDB table). Resolvers can also transform the information sent to and received from your AWS resources. We will dive deeper in a later section on this.
-1. Time to add the ablity to push questions
-1. Open the src/App.js file in your favorite text editor.
+1. Time to add the ablity to push questions. Open the src/App.js file in your favorite text editor.
 1. Add this code this code to the top of the file:
     ```javascript
      import {createQuestion, updateQuestion} from './graphql/mutations.js';
      import {onCreateQuestion} from './graphql/subscriptions.js';
      import aws_exports from './aws-exports';
     ```
-1. Add this under all the imports:
+1. Under all the imports add the following:
     `Amplify.configure(aws_exports);`
-    This gets the info from the aws-exports.js file and this will be updated as you update your backend resources using amplify.
-1. Add this code to LOCATION1:
+    Amplify.configure() retrieves the configuration information from the aws-exports.js file it will be updated as you update your backend resources using Amplify.
+1. Add this code to LOCATION1, this creates a question from the table data in the format of input:
     ```javascript
     const question = {
         input: {
@@ -144,7 +143,6 @@ We will also be using the [AWS Amplify](https://aws-amplify.github.io/) library 
           console.log(response.data.createQuestion);
         });
     ```
-    This creates a question from the table data in the format of input.
 1. Add this code to LOCATION2:
     ```javascript
     const question = {
