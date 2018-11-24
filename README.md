@@ -37,7 +37,7 @@ Now you need to deploy MediaLive and MediaStore. Sure, you could use the AWS Con
 1. Run `amplify init`. This command creates new AWS backend resources (in this case a single S3 bucket to host your cloudformation templates) and pull the AWS service configurations into the app!
 1. Follow the prompts as shown in the below Image.
     1. If you do not have the AWS CLI installed and configured, amplify will direct you to create a default profile. 
-    Note that because of the services leveraged, your AWS profile *MUST USE* us-west-2, us-east-1, eu-west-1, eu-central-1, ap-northeast-1, or ap-southeast-2.
+    1. Note that because of the services leveraged, your AWS profile **MUST USE** us-west-2, us-east-1, eu-west-1, eu-central-1, ap-northeast-1, or ap-southeast-2.
     ![init](.images/amplify_init.png)
 1. Now, add the amplify livestream module to the project using `amplify livestream add`
 1. Again, follow the prompts as shown in the below image (remember to say no to the "Create Distribution" prompt!)
@@ -117,7 +117,7 @@ We will also be using the [AWS Amplify](https://aws-amplify.github.io/) library 
     1. Remember to save the file you just edited from the text editor it was opened with.
 1. Now run `amplify push` to create the backend resources.
     ![AmplifyPushAPI](.images/AmplifyPushAPI.png)
-    1. So what does the models you defined above create for you in the backend:
+        The models you defined above create the following on the backend:
         ![Appsync Backend](.images/AppSyncBackend.png)
         Each one of these models will have a DynamoDB table associated with it and each will be connected to AppSync through Resolvers. Resolvers are how AWS AppSync translates GraphQL requests and fetches information from your AWS resources (in this case the DynamoDB table). Resolvers can also transform the information sent to and received from your AWS resources. We will dive deeper in a later section on this.
 1. Time to add the ablity to push questions
@@ -157,8 +157,6 @@ We will also be using the [AWS Amplify](https://aws-amplify.github.io/) library 
           console.log(response.data.updateQuestion)
         });
     ```
-    Talk about how this is different then the createQuestion above. Mainly it requires the ID from the question so that we know which response we need to give.
-
 1. Run `npm start` and observe we are now pushing questions by opening the javascript debug console in your browser and clicking Post Question or Post Answer which is how we'll send trivia to our end-users.
 1. **Extra Credit** To view subscriptions you can add this at the top of your file:
     ```javascript
