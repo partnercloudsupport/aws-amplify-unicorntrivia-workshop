@@ -194,7 +194,7 @@ Now that our stream is playing and our subscriptions are set up. The last thing 
 
 1. The first step is to create the view for when a new question is pushed. Paste the following function into the the Game Component's `component.js` file!
 
-```
+```javascript
     question = () => {
         if(this.state.questionAvailable){
             setTimeout((() => {
@@ -223,7 +223,7 @@ Now that our stream is playing and our subscriptions are set up. The last thing 
 
 1. We will then create a similar view. This time for when an answered question is returned to the user displaying the correct and incorrect answer choices. Implement this view by pasting in the following function code.
 
-```
+```javascript
     answer = () => {
         let self = this;
         if(this.state.answerAvailable){
@@ -268,7 +268,7 @@ Now that our stream is playing and our subscriptions are set up. The last thing 
     }
 ```
 
-1. The last function we need to include is the function that changes our data model when an answer is chosen. Lets call this function answerChosen. Paste next to the other functions we defined previously.
+1. The last function we need to include is the function that changes our data model when an answer is chosen. Lets call this function answerChosen. This function will also push answers to your AppSync backend. Paste next to the other functions we defined previously.
 
 ```javascript
 	answerChosen = (index) => {
@@ -289,27 +289,24 @@ Now that our stream is playing and our subscriptions are set up. The last thing 
 		}).catch((err) => {
 			console.log("err: ", err);
 		});
-        this.setState({
-            questionsAnswered: true,
-            selectedAnswerButton: index,
-            buttonsDisabled: true,
-            answerChosen: {
-                index: index,
-                answer: answer
-            },
-            questionCount: this.state.questionCount + 1
-        });
+        	this.setState({
+            		questionsAnswered: true,
+            		selectedAnswerButton: index,
+            		buttonsDisabled: true,
+            		answerChosen: {
+            		    index: index,
+			    answer: answer
+            		},
+            		questionCount: this.state.questionCount + 1
+        	});
 	}
 ```
 **Well Done!** Now we have configured our application code to push and pull data from our GraphQL API. Let's move on to updating our AWS AppSync resolvers and mutations!
 
 ### Step Five: Recording answers
 
-# TODO MIGUEL SKIP FOR NOW
-
-
-1. Still in the `ViewController.swift` file we need to now perfom a mutation to add an user to our database.
-1. Add this code to `func setupUser(username: String)` to start creating users.
+1. In the `./src/components/App/Game/component.js` file we need to now perfom a mutation to add an user to our database.
+1. Add this code to `setupClient` and `askForName` to create a user.
     ```javascript
    		setupClient = (username) => {
 			API.graphql(
@@ -337,28 +334,13 @@ Now that our stream is playing and our subscriptions are set up. The last thing 
 					cancelable: false,
 					defaultValue: 'test',
 					placeholder: 'placeholder'
-	    	});	
+	    		});	
 		}
 
     ```
     This code is very similiar to what we did in our AdminPanel code. We just created a new User for our AnswersTable.
 1. Now navigate to `UnicornTrivia/QuestionView.swift` in Xcode.
 1. Once again add `import AWSAppSync` to the top of the file.
-1. We need to configure our client and variables again so under `private var showTimer: Bool!` paste in:
-    ```swift
-    private var graphqlClient : AWSAppSyncClient!
-    private var yourID : GraphQLID!
-
-    func setupClient(appSyncClient: AWSAppSyncClient, userID: GraphQLID){
-        graphqlClient = appSyncClient
-        yourID = userID
-    }
-    ```
-    This will enable passing of the AppSync configuration and also the user id to the view.
-1. Finally we now need to send the answer up to the cloud. To do this we need to add this code to `func sendAnswer()`
-    ```swift
-    graphqlClient?.perform(mutation: UpdateAnswerMutation(input: UpdateAnswerInput(id: yourID, answer: [yourAnswer])))
-    ```
 1. Now that we are pushing to the cloud we should check the backend table to observe our answers being saved, but only one answer is being saved in the array. This seems to be an error. We can fix this though through the AppSync console using a resolver.
 1. Open the [AppSync Console](https://console.aws.amazon.com/appsync/home) and navigate to your AppSync endpoint.
 1. Once you select your AppSync endpoint on the left side select Schema.
