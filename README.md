@@ -11,8 +11,8 @@ Before doing this workshop, please install these required programs for the platf
 
 ### Android && MACOS
 
-1. Install Node and Watchman using [Homebrew](http://brew.sh/)
-1. Install Intel x86 Atom_64 System Image from the Android Studio SDK menu
+* Install Node and Watchman using [Homebrew](http://brew.sh/)
+* Install Intel x86 Atom_64 System Image from the Android Studio SDK menu
 
 Install Node and Watchman using Homebrew using the below commands:
 
