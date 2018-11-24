@@ -4,7 +4,7 @@
 
 Before doing this workshop, please install these required programs for the platform and operating system you will be running.
 
-### Android && MACOS
+### Running React Native Android on Mac
 
 * Install Node and Watchman using [Homebrew](http://brew.sh/)
 * Install Intel x86 Atom_64 System Image from the Android Studio SDK menu
@@ -35,7 +35,7 @@ The last step is to source the file. Run `source $HOME/.bash_profile`
 
 You can make sure it worked by running `echo $PATH`!
 
-### Android && Windows
+### Running React Native Android on Windows
 
 You will need Node, the React Native command line interface, Python2, a JDKm and Android Studio. While you can use any ditor of your choice to develop your app, you will need to install Android Studio in order to set up the necessary tooling to build your React Native app for Android.
 
