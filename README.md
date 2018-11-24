@@ -133,8 +133,7 @@ API.graphql(
 	}
 })
 ```
-
-**Explain what the code does**. So we do a subscribe to the mutation called onCreateQuestion then do something with state.
+This function creates a GraphQL subscription to the AppSync backend to listen for questions. Once the app recieves a question, it will store the question in the app and it will prompt the user to answer the question in the application.
 
 1. Find the function named `listenForAnswers` and paste in the following code.
 ```javascript
@@ -154,6 +153,7 @@ API.graphql(
 	}
 })
  ```
+This function also creates a GraphQL subscription to the AppSync backend to listen for answers. Once the app recieves the answer to the question, it will store the answer in the app and it will prompt the user with the correct answer.
 1. We are now successfully subscribed to our GraphQL backend and our application is listening for new questions and questions being answered!
 
 ## Step 4: Populating the question/answer modal
