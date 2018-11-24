@@ -114,7 +114,7 @@ Furthermore, setVideoDimension function can be called to change the dimensions o
 	}
 ```
 
-1. Our goal for the Video Component is to define the render function that will draw our component on the screen. In this case the render function will place our video player over the entire area of the screen! We will connect the video player to our live streaming backend using the Medistore egress URL generated in the previous step. 
+3. Our goal for the Video Component is to define the render function that will draw our component on the screen. In this case the render function will place our video player over the entire area of the screen! We will connect the video player to our live streaming backend using the Medistore egress URL generated in the previous step. 
 
 
 **REMEMBER TO REPLACE THE SOURCE URI WITH YOUR MEDIASTORE EGRESS URI!**
