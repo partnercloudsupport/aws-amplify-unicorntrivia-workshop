@@ -1,4 +1,4 @@
-# Unicorn Trivia - React Native Version
+# Unicorn Trivia Workshop - React Native Version
 
 # Configuring your computer
 
