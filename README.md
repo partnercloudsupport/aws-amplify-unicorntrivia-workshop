@@ -117,79 +117,77 @@ In this section we will be subscribing our client to the back end GraphQL API ho
 	
 1. Navigate to this file `./src/components/App/Game/component.js`
 1. Now we are ready to implement our graphql subscriptions. We will be creating two listeners, one listening for new questions and one listening for updated questions.
-1. Find the function named “listenForQuestions” and paste in the following code.
+1. Find the function named `listenForQuestions` and paste in the following code.
 ```javascript
-	let self = this;
-        API.graphql(
-            	graphqlOperation(gqlToString(onCreateQuestion))
-        ).subscribe({
-            	next: (data) => {
-                	self.setState({
-                    		question: data.value.data,
-                    		answerAvailable: false,
-                    		questionAvailable: true,
-                    		modalVisible: true
-                	});
-        	}
-     	})
+let self = this;
+API.graphql(
+	graphqlOperation(gqlToString(onCreateQuestion))
+).subscribe({
+	next: (data) => {
+		self.setState({
+			question: data.value.data,
+			answerAvailable: false,
+			questionAvailable: true,
+			modalVisible: true
+		});
+	}
+})
 ```
 
 **Explain what the code does**. So we do a subscribe to the mutation called onCreateQuestion then do something with state.
 
 1. Find the function named `listenForAnswers` and paste in the following code.
-```
-	let self = this;
-    	API.graphql(
-        	graphqlOperation(gqlToString(onUpdateQuestion))
-    	).subscribe({
-        	next: (data) => {
-            		setTimeout(() => {
-                		self.setState({
-                    			answer: data.value.data,
-                    			answerAvailable: true,
-                    			questionAvailable: false,
-                    			modalVisible: true
-                		});
-            		}, 1000);
-        	}
-    	})
+```javascript
+let self = this;
+API.graphql(
+	graphqlOperation(gqlToString(onUpdateQuestion))
+).subscribe({
+	next: (data) => {
+		setTimeout(() => {
+			self.setState({
+				answer: data.value.data,
+				answerAvailable: true,
+				questionAvailable: false,
+				modalVisible: true
+			});
+		}, 1000);
+	}
+})
  ```
 1. We are now successfully subscribed to our GraphQL backend and our application is listening for new questions and questions being answered!
 
 ## Step 4: Populating the question/answer modal
 
-Now that our stream is playing and our subscriptions are set up. The last thing to do is to create the modal which displays the question and choices when a messaged, housing a new question or answer, is received by our listeners.
+Now that our stream is playing and our subscriptions are set up. The last thing to do is to create the modal which displays the question and choices when a messaged, housing a new question or answer, is received by our listeners. Paste the following function code snippets into the the Game Component's `component.js` file.
 
-1. The first step is to create the view for when a new question is pushed. Paste the following function into the the Game Component's `component.js` file!
+1. The first step is to create the view for when a new question is pushed. Paste the following code into the `question` function.
 
 ```javascript
-    question = () => {
-        if(this.state.questionAvailable){
-            setTimeout((() => {
-                this.setState({
-                    modalVisible: false,
-                    questionAvailable: false,
-                    buttonsDisabled: true,
-                    selectedAnswerButton: null
-                });
-            }).bind(this), 10000);
-            return(
-                <View style={styles.questionContainer}>
-                    <View style={styles.question}>
-                        <View style={styles.questionTitleContainer}>
-                            <Text style={styles.questionTitle}>{ this.state.question.onCreateQuestion.question }</Text>
-                        </View>
-                        <View style={styles.answerButtonContainer}>
-                            { this.answerButtons() }
-                        </View>
-                    </View>
-                </View>
-            );
-        }
-    }
+if(this.state.questionAvailable){
+	setTimeout((() => {
+		this.setState({
+	    		modalVisible: false,
+	    		questionAvailable: false,
+	    		buttonsDisabled: true,
+	    		selectedAnswerButton: null
+		});
+    	}).bind(this), 10000);
+    	return(
+		<View style={styles.questionContainer}>
+	    		<View style={styles.question}>
+				<View style={styles.questionTitleContainer}>
+		    			<Text style={styles.questionTitle}>{ this.state.question.onCreateQuestion.question }</Text>
+				</View>
+				<View style={styles.answerButtonContainer}>
+		    			{ this.answerButtons() }
+				</View>
+	    		</View>
+		</View>
+    	);
+}
 ```
 
-1. We will then create a similar view. This time for when an answered question is returned to the user displaying the correct and incorrect answer choices. Implement this view by pasting in the following function code.
+1. We will then create a similar view. This time for when an answered question is returned to the user displaying the correct and incorrect answer choices. Implement this view by pasting in the following code into the `answer` function.
 
 ```javascript
     answer = () => {
@@ -236,77 +234,73 @@ Now that our stream is playing and our subscriptions are set up. The last thing 
     }
 ```
 
-1. The last function we need to include is the function that changes our data model when an answer is chosen. Lets call this function answerChosen. This function will also push answers to your AppSync backend. Paste next to the other functions we defined previously.
+1. The last function we need to include is the function that changes our data model when an answer is chosen. Lets call this function answerChosen. This function will also push answers to your AppSync backend. Paste this code into the `answerChosen` function.
 
 ```javascript
-	answerChosen = (index) => {
-		let answer = this.state.question.onCreateQuestion.answers[index];
-		API.graphql(
-			graphqlOperation(
-				updateAnswer,
-				{
-					input: {
-						id: this.state.id,
-						username: this.state.username,
-						answer: this.state.answer
-					}
-				}
-			)
-		).then((res) => {
-			console.log("successfully submitted answer");
-		}).catch((err) => {
-			console.log("err: ", err);
-		});
-        	this.setState({
-            		questionsAnswered: true,
-            		selectedAnswerButton: index,
-            		buttonsDisabled: true,
-            		answerChosen: {
-            		    index: index,
-			    answer: answer
-            		},
-            		questionCount: this.state.questionCount + 1
-        	});
-	}
+let answer = this.state.question.onCreateQuestion.answers[index];
+API.graphql(
+	graphqlOperation(
+		updateAnswer,
+		{
+			input: {
+				id: this.state.id,
+				username: this.state.username,
+				answer: this.state.answer
+			}
+		}
+	)
+).then((res) => {
+	console.log("successfully submitted answer");
+}).catch((err) => {
+	console.log("err: ", err);
+});
+this.setState({
+	questionsAnswered: true,
+	selectedAnswerButton: index,
+	buttonsDisabled: true,
+	answerChosen: {
+	    index: index,
+	    answer: answer
+	},
+	questionCount: this.state.questionCount + 1
+});
 ```
 **Well Done!** Now we have configured our application code to push and pull data from our GraphQL API. Let's move on to updating our AWS AppSync resolvers and mutations!
 
 ### Step Five: Recording answers
 
 1. In the `./src/components/App/Game/component.js` file we need to now perfom a mutation to add an user to our database.
-1. Add this code to `setupClient` and `askForName` to create a user.
-    ```javascript
-   		setupClient = (username) => {
-			API.graphql(
-				graphqlOperation(createAnswer, {input: {username: username}})
-			).then(((res) => {
-				this.setState({
-					username: res.data.createAnswer.username,
-					id: res.data.createAnswer.id
-				});
-			}).bind(this)).catch((err) => {
-				console.log("err: ", err);
-			});
-		}
+1. Add this code to the `setupClient` function.
+```javascript
+API.graphql(
+	graphqlOperation(createAnswer, {input: {username: username}})
+).then(((res) => {
+	this.setState({
+		username: res.data.createAnswer.username,
+		id: res.data.createAnswer.id
+	});
+}).bind(this)).catch((err) => {
+	console.log("err: ", err);
+});		
+```
+1. Add this code to the `askForName` function.
+```javascript	
+let self = this;
+prompt(
+	'Provide a username',
+	'Please provide a username for this game',
+	[{
+		text: 'OK',
+		onPress: (input) => { self.setupClient(input)}
+	}],{
+		type: 'plain-text',
+		cancelable: false,
+		defaultValue: 'test',
+		placeholder: 'placeholder'
+});	
+```
+This code is very similiar to what we did in our AdminPanel code. We just created a new User for our AnswersTable.
 
-		askForName = () => {
-			let self = this;
-			prompt(
-				'Provide a username',
-				'Please provide a username for this game',
-				[{
-					text: 'OK',
-					onPress: (input) => { self.setupClient(input)}
-				}],{
-					type: 'plain-text',
-					cancelable: false,
-					defaultValue: 'test',
-					placeholder: 'placeholder'
-	    		});	
-		}
-
-    ```
-    This code is very similiar to what we did in our AdminPanel code. We just created a new User for our AnswersTable.
 1. Now navigate to `UnicornTrivia/QuestionView.swift` in Xcode.
 1. Once again add `import AWSAppSync` to the top of the file.
 1. Now that we are pushing to the cloud we should check the backend table to observe our answers being saved, but only one answer is being saved in the array. This seems to be an error. We can fix this though through the AppSync console using a resolver.
