@@ -1,7 +1,0 @@
-{
-    "AppSyncApiName": "admin3",
-    "schemaGraphql": "s3://dminanel-20181119133755-deployment/amplify-appsync-files/schema.graphql.1542664166549",
-    "ResolverBucket": "dminanel-20181119133755-deployment",
-    "ResolverRootKey": "amplify-appsync-files",
-    "DeploymentTimestamp": "1542664166549"
-}
