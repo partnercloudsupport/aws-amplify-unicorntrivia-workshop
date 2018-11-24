@@ -77,7 +77,7 @@ Open a new Command Prompt window to ensure the new environment variable is loade
 
 ## Step 2: Building the Video Component
 
-Now that our environment is all set up we are ready to begin implementing our application! React applications are broken up into “Components” or microservices within the application. Let's begin by creating the video player component! This component will display our stream output on the phone.
+Now that our environment is all set up we are ready to begin implementing our application! React applications are made up of “Components". Let's begin by creating the Video Player component that will display our video stream on the Android simulator.
 
 1. Navigate to `./src/components/App/Video/component.js`
 
