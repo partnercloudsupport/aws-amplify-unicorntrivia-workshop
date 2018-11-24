@@ -8,7 +8,7 @@ This workshop is split into three sections outlined below. You will need to buil
 
 **Live Streaming Service** - This service will encode and host a live video stream from a studio environment to the end users playing UnicornTrivia.
 
-**Admin Panel** - This allows a host to submit questions and collect answers from participants.
+**Adminstrator Panel** - This allows a host to submit questions and collect answers from participants.
 
 **Client** - This allows users to connect to the live stream and answer questions during the show using iOS, Android, and/or a web browser.
 
@@ -182,8 +182,6 @@ We will also be using the [AWS Amplify](https://aws-amplify.github.io/) library 
 
 The final step in getting your prototype built is to create the clients. The clients will be able to subscribe to the questions and answers being sent from the Admin Panel as well as submit answers back. Since you don't want to write any extra code we will want to utilize Amplify's built in codegen funcionality. With the codegen you can easily update the clients without having to write a lot of extra code. On top of using Amplify's codegen you will also be using the Amplify SDK. This SDK does a lot of the heavy lifting for all of the apps including: authentication, graphql transformations and subscriptions, offline capabilities and much more. When it came to write the code we choose three different clients to develop for. We choose React, iOS and React-Native. The reason why we choose these three to go to market is because React and React-native can reach the most amount of users devices by default. iOS was choosen for native development due to the user base surounding the iOS App Store being very active.
 
-*** UPDATE LINKS WITH ANCHORS ***
-
 Select which client your interested in building.
 
 [Web](https://github.com/awslabs/aws-amplify-unicorntrivia-workshop/tree/unicorn-trivia-web-workshop) - Based on React
@@ -192,14 +190,13 @@ Select which client your interested in building.
 
 [Android](https://github.com/awslabs/aws-amplify-unicorntrivia-workshop/tree/unicorn-trivia-react-native-workshop) - Based on React Native, requires Android Studio
 
-
 ## Wrap-up
 
-It is absolutely critical to remove the backend resources when you have completed the workshop to avoid charges.
+It's absolutely critical to remove the backend resources when you have completed the workshop to avoid ongoing charges.
 
-Remove all backend resources associated to the amplify project: `amplify delete`
+To remove all backend and local resources associated to the amplify project run the following command inside the AdminPanel directory: `amplify delete`
 
-Remove just the livestream component: `amplify livestream delete`
+Once the command has completed running, doublecheck the deletion process. Go into the console in your default region and confirm that that the MediaLive channel has been deleted.
 
 ## License
 
