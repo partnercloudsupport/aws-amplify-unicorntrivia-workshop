@@ -270,19 +270,36 @@ Now that our stream is playing and our subscriptions are set up. The last thing 
 
 1. The last function we need to include is the function that changes our data model when an answer is chosen. Lets call this function answerChosen. Paste next to the other functions we defined previously.
 
-```
-    answerChosen = (index) => {
+```javascript
+	answerChosen = (index) => {
+		let answer = this.state.question.onCreateQuestion.answers[index];
+		API.graphql(
+			graphqlOperation(
+				updateAnswer,
+				{
+					input: {
+						id: this.state.id,
+						username: this.state.username,
+						answer: this.state.answer
+					}
+				}
+			)
+		).then((res) => {
+			console.log("successfully submitted answer");
+		}).catch((err) => {
+			console.log("err: ", err);
+		});
         this.setState({
             questionsAnswered: true,
             selectedAnswerButton: index,
             buttonsDisabled: true,
             answerChosen: {
                 index: index,
-                answer: this.state.question.onCreateQuestion.answers[index]
+                answer: answer
             },
             questionCount: this.state.questionCount + 1
         });
-    }
+	}
 ```
 **Well Done!** Now we have configured our application code to push and pull data from our GraphQL API. Let's move on to updating our AWS AppSync resolvers and mutations!
 
@@ -293,12 +310,36 @@ Now that our stream is playing and our subscriptions are set up. The last thing 
 
 1. Still in the `ViewController.swift` file we need to now perfom a mutation to add an user to our database.
 1. Add this code to `func setupUser(username: String)` to start creating users.
-    ```swift
-    appSyncClient?.perform(mutation: CreateAnswerMutation(input: CreateAnswerInput(username: username)), queue: DispatchQueue.main, optimisticUpdate: nil, conflictResolutionBlock: nil, resultHandler: { (result, error) in
-        
-        self.questionView.setupClient(appSyncClient: self.appSyncClient!, userID: (result?.data?.createAnswer?.id)!)
+    ```javascript
+   		setupClient = (username) => {
+			API.graphql(
+				graphqlOperation(createAnswer, {input: {username: username}})
+			).then(((res) => {
+				this.setState({
+					username: res.data.createAnswer.username,
+					id: res.data.createAnswer.id
+				});
+			}).bind(this)).catch((err) => {
+				console.log("err: ", err);
+			});
+		}
 
-    })
+		askForName = () => {
+			let self = this;
+			prompt(
+				'Provide a username',
+				'Please provide a username for this game',
+				[{
+					text: 'OK',
+					onPress: (input) => { self.setupClient(input)}
+				}],{
+					type: 'plain-text',
+					cancelable: false,
+					defaultValue: 'test',
+					placeholder: 'placeholder'
+	    	});	
+		}
+
     ```
     This code is very similiar to what we did in our AdminPanel code. We just created a new User for our AnswersTable.
 1. Now navigate to `UnicornTrivia/QuestionView.swift` in Xcode.

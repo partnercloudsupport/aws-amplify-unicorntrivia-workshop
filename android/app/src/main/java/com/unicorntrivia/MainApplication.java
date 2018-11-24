@@ -3,6 +3,7 @@ package com.unicorntrivia;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import im.shimo.react.prompt.RNPromptPackage;
 import com.brentvatne.react.ReactVideoPackage;
 import com.horcrux.svg.SvgPackage;
 import com.facebook.react.ReactNativeHost;
@@ -25,6 +26,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNPromptPackage(),
             new ReactVideoPackage(),
             new SvgPackage()
       );

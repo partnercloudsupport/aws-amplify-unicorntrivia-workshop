@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
-import { Image, Platform, View, TouchableOpacity, Text } from 'react-native';
+import { Alert, Image, Platform, View, TouchableOpacity, Text } from 'react-native';
 // Amplify and GraphQL
 import { API, graphqlOperation } from "aws-amplify";
 import { print as gqlToString } from 'graphql/language';
-import { OnCreateQuestion, OnUpdateQuestion } from '../../../../graphql/subscriptions';
+import { onCreateQuestion, onUpdateQuestion } from '../../../graphql/subscriptions';
+import { createAnswer, updateAnswer } from '../../../graphql/mutations';
 // UI Components
 import ViewContainer from '../../Common/ViewContainer';
 import Video from '../Video';
 import Modal from '../Modal';
 import Timer from '../Timer';
 import styles from './styles';
+
+import prompt from 'react-native-prompt-android';
 
 class Game extends Component {
 	constructor(props){
@@ -28,25 +31,36 @@ class Game extends Component {
 			wrongQuestions: [],
 			gameOver: false,
 			winner: false,
-			loser: false
+			loser: false,
+			username: "",
+			id: ""
 		};
 	}
 
 	componentDidMount(){
+		this.askForName();
 		this.listenForQuestions();
 		this.listenForAnswers();
 	}
 
+	setupClient = (username) => {
+		/* Code goes here */		
+	}
+
+	askForName = () => {
+		/* Code goes here */		
+	}
+
 	listenForQuestions = () => {
-		/* Code goes here */
+		/* Code goes here */		
 	}
 
 	listenForAnswers = () => {
-		/* Code goes here */
+		/* Code goes here */		
 	}
 	
 	answerChosen = (index) => {
-		/* Code goes here */
+		/* Code goes here */		
 	}
 	
 	button = (index, value) => {
@@ -106,11 +120,11 @@ class Game extends Component {
 	}
 
 	question = () => {
-		/* Code goes here */
+		/* Code goes here */		
 	}
 
 	answer = () => {
-		/* Code goes here */	
+		/* Code goes here */		
 	}
 
 	winner = () => {

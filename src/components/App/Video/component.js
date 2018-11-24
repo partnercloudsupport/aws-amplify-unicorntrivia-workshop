@@ -29,7 +29,7 @@ class Video extends Component {
 	}
 
 	render(){
-		/* Code goes here */
+		/* Code goes here */	
 	}
 }
 
