@@ -68,9 +68,7 @@ Open a new Command Prompt window to ensure the new environment variable is loade
 
 # React Native on Android Walkthrough
 
-## Step 1:  Android Studio Configuration
-
-1. clone the project with git clone 
+## Step 1: Preparing the project
 1. run `export JAVA_HOME='/usr/libexec/java_home -v 1.8'` to get the right JDK version. 
 	1. If you are on windows, make sure your Java version is "1.8.0_192"
 1. Navigate to the root directory of the project
