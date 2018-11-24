@@ -28,6 +28,7 @@ Before doing this workshop please install these required programs
 1. Back in Xcode, Navigate to `File->Add files to "Unicorn Trivia"`. Then select the `API.swift` and `awsconfiguration.json` files to add to your project and make sure the radio `Copy items if needed` is selected. It should looks somethign like this:
     ![CopyFilesIn](.images/CopyFilesIn.png)
 1. Now your project has been configured.
+1. **Note:** When compiling the app you will see warnings. This is normal for this project.
 
 ### Step Two: Displaying your HLS Stream
 1. If you lost your egress url from the `amplify livestream` setup then you can run `amplify livestream get-info` again to get the MediaStore url. It should look something like this: `url`
@@ -179,3 +180,11 @@ Before doing this workshop please install these required programs
         This checks to see if the field being set is the answer array. If it is the array then it will append the value. We also do a check to see if the field exists and if it doesn't we create an empty array to append our first value to.
     1. Save the resolver in the top right corner.
 1. Run the app again and now you should observe the answers are being correctly appended to the array.
+
+## Wrap-up
+
+It's absolutely critical to remove the backend resources when you have completed the workshop to avoid ongoing charges.
+
+To remove all backend and local resources associated to the amplify project run the following command inside the AdminPanel directory: `amplify delete`
+
+Once the command has completed running, doublecheck the deletion process. Go into the console in your default region and confirm that that the MediaLive channel has been deleted.
