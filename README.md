@@ -158,7 +158,7 @@ We will also be using the [AWS Amplify](https://aws-amplify.github.io/) library 
     ```
     Talk about how this is different then the createQuestion above. Mainly it requires the ID from the question so that we know which response we need to give.
 
-1. Run `npm start` and observe we are now pushing questions by opening the javascript debug console in your browser.
+1. Run `npm start` and observe we are now pushing questions by opening the javascript debug console in your browser and clicking Post Question or Post Answer which is how we'll send trivia to our end-users.
 1. **Extra Credit** To view subscriptions you can add this at the top of your file:
     ```javascript
     const subscription = API.graphql(
