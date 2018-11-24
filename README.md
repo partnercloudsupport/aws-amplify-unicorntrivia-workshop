@@ -366,5 +366,5 @@ Now Try sending some questions and answers using the admin panel we configured p
 
 If you closed the terminal window running the admin panel no problem! Just open a new terminal window and navigate to the admin panel root directory and run `npm start`. Your default browser should now open up the admin panel on localhost:3000!
 
-Below are some additional resources for further development! Feel free to skip on forward to the clean up section ![here](https://github.com/awslabs/aws-amplify-unicorntrivia-workshop#wrap-up)!
+Below are some additional resources for further development! Feel free to skip on forward to the clean up section [here](https://github.com/awslabs/aws-amplify-unicorntrivia-workshop#wrap-up)!
 
