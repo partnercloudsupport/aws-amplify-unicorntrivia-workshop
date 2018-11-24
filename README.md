@@ -1,10 +1,5 @@
 # Unicorn Trivia - React Native Mobile Client
 
-## Troubleshooting Notes
-
-
-1) if android sdk isnt installing. click file → invalidate cache and restart
-
 ## Step 0: Configuring your computer
 
 Before doing this workshop, please install these required programs for the platform and operating system you will be running.
@@ -391,3 +386,6 @@ If you closed the terminal window running the admin panel no problem! Just open 
 
 Below are some additional resources for further development! Feel free to skip on forward to the clean up section [here](https://github.com/awslabs/aws-amplify-unicorntrivia-workshop#wrap-up)!
 
+## Troubleshooting Notes
+
+1) if android sdk isnt installing. click file → invalidate cache and restart
