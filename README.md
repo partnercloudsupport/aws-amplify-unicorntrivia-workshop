@@ -288,7 +288,7 @@ Now that our stream is playing and our subscriptions are set up. The last thing 
 
 ### Step Five: Recording answers
 
-# TODO MIGUEL
+# TODO MIGUEL SKIP FOR NOW
 
 
 1. Still in the `ViewController.swift` file we need to now perfom a mutation to add an user to our database.
