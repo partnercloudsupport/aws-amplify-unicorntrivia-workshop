@@ -192,7 +192,7 @@ let self = this;
 
 Now that our stream is playing and our subscriptions are set up. The last thing to do is to create the modal which displays the question and choices when a messaged, housing a new question or answer, is received by our listeners.
 
-1. The first step is to create the view for when a new question is pushed. Paste the following function into in the game component below the large commented code block.
+1. The first step is to create the view for when a new question is pushed. Paste the following function into the the Game Component's `component.js` file!
 
 ```
     question = () => {
@@ -221,7 +221,7 @@ Now that our stream is playing and our subscriptions are set up. The last thing 
     }
 ```
 
-1. We will then create a similar view. This time for when an answered question is returned to the user displaying the correct and incorrect answer choices. Implement this view by pasting in the following code.
+1. We will then create a similar view. This time for when an answered question is returned to the user displaying the correct and incorrect answer choices. Implement this view by pasting in the following function code.
 
 ```
     answer = () => {
@@ -284,7 +284,7 @@ Now that our stream is playing and our subscriptions are set up. The last thing 
         });
     }
 ```
-
+**Well Done!** Now we have configured our application code to push and pull data from our GraphQL API. Let's move on to updating our AWS AppSync resolvers and mutations!
 
 ### Step Five: Recording answers
 
