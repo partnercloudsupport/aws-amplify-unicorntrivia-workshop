@@ -19,9 +19,6 @@ Install Node and Watchman using Homebrew using the below commands:
 Install the react-native-cli with the node package manager(npm) using the following command:
 * `npm install -g react-native-cli`
 
-Install the AWS amplify CLI with the node package manager(npm) using the following command:
-* `npm install -g @aws-amplify/cli`
-
 **Configure the ANDROID_HOME environment variable**
 The React Native tools require some environment variables to be set up in order to build apps with native code.
 
