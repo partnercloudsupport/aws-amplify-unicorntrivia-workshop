@@ -1,8 +1,12 @@
 # Unicorn Trivia - React Native Mobile Client
 
+Before we dive into building the React Native Android Client, please download a copy of this branch [here](https://github.com/awslabs/aws-amplify-unicorntrivia-workshop/archive/unicorn-trivia-react-native-workshop.zip)
+
+Once you successfully download a copy and unzip its contents, open up a terminal in that folder to follow along with the instructions below.
+
 ## Step 0: Configuring your computer
 
-Before doing this workshop, please install these required programs for the platform and operating system you will be running.
+Before you follow along in this workshop, please install these required programs for the platform and operating system you will be running.
 
 ### Running React Native Android on Mac
 
