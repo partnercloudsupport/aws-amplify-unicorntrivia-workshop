@@ -186,7 +186,7 @@ let self = this;
         }
     })
  ```
-3. We are now successfully subscribed to our GraphQL backend and our application is listening for new questions and questions being answered!
+1. We are now successfully subscribed to our GraphQL backend and our application is listening for new questions and questions being answered!
 
 ## Step 4: Populating the question/answer modal
 
@@ -268,7 +268,7 @@ Now that our stream is playing and our subscriptions are set up. The last thing 
     }
 ```
 
-   4. The last function we need to include is the function that changes our data model when an answer is chosen. Lets call this function answerChosen. Paste next to the other functions we defined previously.
+1. The last function we need to include is the function that changes our data model when an answer is chosen. Lets call this function answerChosen. Paste next to the other functions we defined previously.
 
 ```
     answerChosen = (index) => {
