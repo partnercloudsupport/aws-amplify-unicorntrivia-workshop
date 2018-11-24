@@ -1,14 +1,16 @@
 # Unicorn Trivia - React Native Mobile Client
 
+## Configuring your computer
+
 Before we dive into building the React Native Android Client, please download a copy of this branch [here](https://github.com/awslabs/aws-amplify-unicorntrivia-workshop/archive/unicorn-trivia-react-native-workshop.zip)
 
 Once you successfully download a copy and unzip its contents, open up a terminal in that folder to follow along with the instructions below.
 
-## Step 0: Configuring your computer
-
 Before you follow along in this workshop, please install these required programs for the platform and operating system you will be running.
 
-### Running React Native Android on Mac
+# React Native on Android Walkthrough
+
+## Running React Native Android on Mac
 
 * Install Node and Watchman using [Homebrew](http://brew.sh/)
 * Install Intel x86 Atom_64 System Image from the Android Studio SDK menu
@@ -39,7 +41,7 @@ The last step is to source the file. Run `source $HOME/.bash_profile`
 
 You can make sure it worked by running `echo $PATH`!
 
-### Running React Native Android on Windows
+## Running React Native Android on Windows
 
 You will need Node, the React Native command line interface, Python2, a JDKm and Android Studio. While you can use any ditor of your choice to develop your app, you will need to install Android Studio in order to set up the necessary tooling to build your React Native app for Android.
 
