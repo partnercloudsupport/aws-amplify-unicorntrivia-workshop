@@ -152,7 +152,8 @@ API.graphql(
 })
  ```
 This function also creates a GraphQL subscription to the AppSync backend to listen for answers. Once the app recieves the answer to the question, it will store the answer in the app and it will prompt the user with the correct answer.
-1. We are now successfully subscribed to our GraphQL backend and our application is listening for new questions and questions being answered!
+
+We are now successfully subscribed to our GraphQL backend and our application is listening for new questions and questions being answered!
 
 ## Step 4: Populating the question/answer modal
 
