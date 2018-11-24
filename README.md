@@ -85,7 +85,7 @@ Now that our environment is all set up we are ready to begin implementing our ap
 
 1. The `component.js` file houses the code which defines how we display our livestream on the client device. 
 1. Our goal for the Video Component is to define the render function that will draw our component on the screen. In this case the render function will place our video player over the entire area of the screen! We will connect the video player to our live streaming backend using the Medistore egress URL generated in the previous step. 
-
+1. Paste the following code into the `render` function of the Video Component class.
 	```javascript         
 	return(
 		<ReactNativeVideoPlayer
