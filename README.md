@@ -189,48 +189,46 @@ if(this.state.questionAvailable){
 1. We will then create a similar view. This time for when an answered question is returned to the user displaying the correct and incorrect answer choices. Implement this view by pasting in the following code into the `answer` function.
 
 ```javascript
-    answer = () => {
-        let self = this;
-        if(this.state.answerAvailable){
-            setTimeout((()=> {
-                let gameOver = this.state.questionCount == 12 ? true : false;
-                let wrongQuestions = this.state.answerChosen.answer !== this.state.answer.onUpdateQuestion.answers[this.state.answer.onUpdateQuestion.answerId] ? [...this.state.wrongQuestions, {question: this.state.answer, answer: this.state.answerChosen.answer}] : [...this.state.wrongQuestions];
-                if(gameOver){
-                    setTimeout(() => {
-                        self.setState({
-                            modalVisible: true,
-                            modalBackground: "#FFFFFF"
-                        }, () => {
-                            console.log("final state: ", self.state);
-                        })
-                    }, 2000);
-                }
-                this.setState({
-                    modalVisible: false,
-                    answerAvailable: false,
-                    buttonsDisabled: false,
-                    wrongQuestions: wrongQuestions,
-                    answerChosen: {},
-                    selectedAnswerButton: null,
-                    gameOver: gameOver,
-                    winner: gameOver == true && wrongQuestions.length == 0 ? true : false,
-                    loser: gameOver == true && wrongQuestions.length > 0 ? true : false
-                });
-            }).bind(this), 10000);
-            return(
-                <View style={styles.questionContainer}>
-                    <View style={styles.question}>
-                        <View style={styles.questionTitleContainer}>
-                            <Text style={styles.questionTitle}>{ this.state.answer.onUpdateQuestion.question }</Text>
-                        </View>
-                        <View style={styles.answerButtonContainer}>
-                            { this.answerButtons() }
-                        </View>
-                    </View>
-                </View>
-            );
-        }
-    }
+let self = this;
+if(this.state.answerAvailable){
+    setTimeout((()=> {
+	let gameOver = this.state.questionCount == 12 ? true : false;
+	let wrongQuestions = this.state.answerChosen.answer !== this.state.answer.onUpdateQuestion.answers[this.state.answer.onUpdateQuestion.answerId] ? [...this.state.wrongQuestions, {question: this.state.answer, answer: this.state.answerChosen.answer}] : [...this.state.wrongQuestions];
+	if(gameOver){
+	    setTimeout(() => {
+		self.setState({
+		    modalVisible: true,
+		    modalBackground: "#FFFFFF"
+		}, () => {
+		    console.log("final state: ", self.state);
+		})
+	    }, 2000);
+	}
+	this.setState({
+	    modalVisible: false,
+	    answerAvailable: false,
+	    buttonsDisabled: false,
+	    wrongQuestions: wrongQuestions,
+	    answerChosen: {},
+	    selectedAnswerButton: null,
+	    gameOver: gameOver,
+	    winner: gameOver == true && wrongQuestions.length == 0 ? true : false,
+	    loser: gameOver == true && wrongQuestions.length > 0 ? true : false
+	});
+    }).bind(this), 10000);
+    return(
+	<View style={styles.questionContainer}>
+	    <View style={styles.question}>
+		<View style={styles.questionTitleContainer}>
+		    <Text style={styles.questionTitle}>{ this.state.answer.onUpdateQuestion.question }</Text>
+		</View>
+		<View style={styles.answerButtonContainer}>
+		    { this.answerButtons() }
+		</View>
+	    </View>
+	</View>
+    );
+}
 ```
 
 1. The last function we need to include is the function that changes our data model when an answer is chosen. Lets call this function answerChosen. This function will also push answers to your AppSync backend. Paste this code into the `answerChosen` function.
