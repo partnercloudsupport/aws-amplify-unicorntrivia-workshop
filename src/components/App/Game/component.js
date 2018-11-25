@@ -33,7 +33,8 @@ class Game extends Component {
 			winner: false,
 			loser: false,
 			username: "",
-			id: ""
+			id: "",
+			maxQuestions: 12
 		};
 	}
 
