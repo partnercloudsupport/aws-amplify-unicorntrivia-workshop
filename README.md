@@ -181,6 +181,11 @@ Before doing this workshop please install these required programs
     1. Save the resolver in the top right corner.
 1. Run the app again and now you should observe the answers are being correctly appended to the array.
 
+
+## Continuing Onwards!
+
+If you have some extra time, let's take a look at how to add our own questions. Lets navigte to the AdminPanel root directory. From here we will move into the /AdminPanel/src/ directory an list the files inside. Here we should see a file named questions.json. This is the file that stores the questions, answer choices, as well as correct answer all wrapped within a JSON object. Open, modify, and save the file in order to add your own questions! If your AdminPanel is still running in the terminal, you should see the questions auto update in the browser window!
+
 ## Wrap-up
 
 It's absolutely critical to remove the backend resources when you have completed the workshop to avoid ongoing charges.
