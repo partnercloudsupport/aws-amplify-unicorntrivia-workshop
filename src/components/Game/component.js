@@ -3,9 +3,11 @@ import { API, graphqlOperation } from 'aws-amplify';
 import { print as gqlToString } from 'graphql/language';
 import { onCreateQuestion, onUpdateQuestion } from '../../graphql/subscriptions';
 import { createAnswer, updateAnswer } from '../../graphql/mutations';
-
+import winner from '../../images/winner.png';
+import loser from '../../images/loser.png';
 import Video from '../Video';
 import Modal from '../Modal';
+import styles from './styles';
 
 class Game extends Component {
 	constructor(props){
@@ -25,25 +27,12 @@ class Game extends Component {
 			gameOver: false,
 			winner: false,
 			loser: false,
-			buttonStyle: {
-				cursor: "pointer",
-				height: "30px",
-				padding: "5px",
-				width: "100%",
-				border: "2px solid #e7e7e7",
-				borderRadius: "10px",
-				fontSize: "16px",
-				fontWeight: 600,
-				color: "#424242",
-				marginBottom: "10px"
-			},
 			username: "",
 			id: null
 		};
 	}
 
 	componentDidMount(){
-		this.askForName();
 		this.listenForQuestions();
 		this.listenForAnswers();
 	}
@@ -62,9 +51,26 @@ class Game extends Component {
 	}
 
 	askForName = () => {
-		let self = this;
-		let username = prompt('Provide a username');
-		self.setupClient(username);
+		return(
+			<div className="username-prompt-container">
+				<div className="username-prompt">
+					<div className="username-prompt-header-container">
+						<div className="username-prompt-header">Please provide a username</div>
+					</div>
+					<div className="username-prompt-input-container">
+						<input
+							className="username-prompt-input"
+							placeholder="Provide a username... then press enter"
+							onKeyPress={((e) => {
+								if(e.key === "Enter" && e.target.value != ""){
+									this.setupClient(e.target.value);
+								}
+							}).bind(this)}
+						/>
+					</div>
+				</div>
+			</div>
+		);
 	}
 
 	listenForQuestions = () => {
@@ -102,13 +108,11 @@ class Game extends Component {
 		API.graphql(
 			graphqlOperation(
 				updateAnswer,
-				{
-					input: {
-						id: this.state.id,
-						username: this.state.username,
-						answer: this.state.index
-					}
-				}
+				{ input: {
+					id: this.state.id,
+					username: this.state.username,
+					answer: this.state.index
+				}}
 			)
 		).then((res) => {
 			console.log("successfully submitted answer");
@@ -155,7 +159,7 @@ class Game extends Component {
 					disabled={this.state.buttonsDisabled}
 					onClick={this.state.questionAvailable ? ((e) => self.answerChosen(index)) : null}
 					style={{
-						...this.state.buttonStyle,
+						...styles.buttonStyle,
 						backgroundColor: buttonBackgroundColor,
 						borderColor: buttonBorderColor,
 						color: buttonTextColor
@@ -187,29 +191,29 @@ class Game extends Component {
 	}
 
 	question = () => {
-	if(this.state.questionAvailable){
-	setTimeout((() => {
-		this.setState({
-			modalVisible: false,
-			questionAvailable: false,
-			buttonsDisabled: true,
-			selectedAnswerButton: null
-		});
-	}).bind(this), 10000);
-		return(
-			<div className="question-container">
-				<div className="question">
-					<div className="question-title-container">
-						<div className="question-title">{ this.state.question.onCreateQuestion.question }</div>
-					</div>
-					<div className="answers-container">
-						<div className="answers">
-							{ this.answerButtons() }
-						</div>	
+		if(this.state.questionAvailable){
+			setTimeout((() => {
+					this.setState({
+					modalVisible: false,
+					questionAvailable: false,
+					buttonsDisabled: true,
+					selectedAnswerButton: null
+				});
+			}).bind(this), 10000);
+			return(
+				<div className="question-container">
+					<div className="question">
+						<div className="question-title-container">
+							<div className="question-title">{ this.state.question.onCreateQuestion.question }</div>
+						</div>
+						<div className="answers-container">
+							<div className="answers">
+								{ this.answerButtons() }
+							</div>	
+						</div>
 					</div>
 				</div>
-			</div>
-		);
+			);
 		}
 	}
 
@@ -217,62 +221,86 @@ class Game extends Component {
 		let self = this;
 		if(this.state.answerAvailable){
 			setTimeout((()=> {
-			let gameOver = this.state.questionCount == 12 ? true : false;
-			let wrongQuestions = this.state.answerChosen.answer !== this.state.answer.onUpdateQuestion.answers[this.state.answer.onUpdateQuestion.answerId] ? [...this.state.wrongQuestions, {question: this.state.answer, answer: this.state.answerChosen.answer}] : [...this.state.wrongQuestions];
-			if(gameOver){
-				setTimeout(() => {
-					self.setState({
-						modalVisible: true,
-						modalBackground: "#FFFFFF"
-					})
-				}, 2000);
-			}
-			this.setState({
-				modalVisible: false,
-				answerAvailable: false,
-				buttonsDisabled: false,
-				wrongQuestions: wrongQuestions,
-				answerChosen: {},
-				selectedAnswerButton: null,
-				gameOver: gameOver,
-				winner: gameOver == true && wrongQuestions.length == 0 ? true : false,
-				loser: gameOver == true && wrongQuestions.length > 0 ? true : false
-			});
+				let gameOver = this.state.questionCount == 1 ? true : false;
+				let wrongQuestions = this.state.answerChosen.answer !== this.state.answer.onUpdateQuestion.answers[this.state.answer.onUpdateQuestion.answerId] ? [...this.state.wrongQuestions, {question: this.state.answer, answer: this.state.answerChosen.answer}] : [...this.state.wrongQuestions];
+				if(gameOver){
+					setTimeout(() => {
+						self.setState({
+							modalVisible: true,
+							modalBackground: "transparent"
+						})
+					}, 2000);
+				}
+				this.setState({
+					modalVisible: false,
+					answerAvailable: false,
+					buttonsDisabled: false,
+					wrongQuestions: wrongQuestions,
+					answerChosen: {},
+					selectedAnswerButton: null,
+					gameOver: gameOver,
+					winner: gameOver == true && wrongQuestions.length == 0 ? true : false,
+					loser: gameOver == true && wrongQuestions.length > 0 ? true : false
+				});
 			}).bind(this), 10000);
 			return(
-			<div className="question-container">
-				<div className="question">
-					<div className="question-title-container">
-						<div className="question-title">{ self.state.answer.onUpdateQuestion.question }</div>
-					</div>
-					<div className="answers-container">
-						<div className="answers">
-							{ self.answerButtons() }
-						</div>	
+				<div className="question-container">
+					<div className="question">
+						<div className="question-title-container">
+							<div className="question-title">{ self.state.answer.onUpdateQuestion.question }</div>
+						</div>
+						<div className="answers-container">
+							<div className="answers">
+								{ self.answerButtons() }
+							</div>	
+						</div>
 					</div>
 				</div>
-			</div>
 			);
 		}
 	}
 
+	winner = () => {
+		return(
+			<div className="winner-container">
+				<img src={winner} alt="winner"/>	
+			</div>
+		);
+	}
+
+	loser = () => {
+		return(
+			<div className="loser-container">
+				<img src={loser} alt="loser"/>	
+			</div>
+		);
+	}
+
 	game = () => {
-		if(this.state.questionAvailable && !this.state.answerAvailable){
+		if(this.state.questionAvailable && !this.state.answerAvailable)
 			return this.question();
-		} else if(this.state.answerAvailable && !this.state.questionAvailable){
+		else if(this.state.answerAvailable && !this.state.questionAvailable)
 			return this.answer();
-		}
+		else if(this.state.gameOver)
+			if(this.state.winner)
+				return this.winner()
+			else if(this.state.loser)
+				return this.loser();
 	}
 
 	render(){
-		return(
-			<div className="game-container">
-				<Video />
-				<Modal visible={this.state.modalVisible}>
-					{ this.game() }
-				</Modal>
-			</div>
-		);
+		if(this.state.username == ""){
+			return this.askForName();	
+		} else {
+			return(
+				<div className="game-container">
+					<Video />
+					<Modal visible={this.state.modalVisible} backgroundColor={this.state.modalBackground}>
+						{ this.game() }
+					</Modal>
+				</div>
+			);
+		}
 	}
 }
 

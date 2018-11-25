@@ -30,10 +30,7 @@ class Video extends Component {
 	render(){
 		return(
 			<div className="video-container">
-				<video ref={(player) => this.player = player} autoPlay muted></video>
-				<div className="mute-container">
-					<button onClick={this.toggleMute} className="mute-button btn btn-sm btn-warning">Un-mute</button>	
-				</div>
+				<video ref={(player) => this.player = player}></video>
 			</div>
 		);
 	}

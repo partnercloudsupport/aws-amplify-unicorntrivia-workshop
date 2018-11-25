@@ -21,7 +21,7 @@ class Modal extends Component {
 			clearInterval(this.state.aTo);
 		} else {
 			this.setState({
-				modalBottom: this.state.modalClosed ? (this.state.modalBottom + 10) : (this.state.modalBottom - 10)
+				modalBottom: this.state.modalClosed ? (this.state.modalBottom + 20) : (this.state.modalBottom - 20)
 			});
 		}
 	}
@@ -58,7 +58,7 @@ class Modal extends Component {
 
 	render(){
 		return(
-			<div className="modal-container" style={{bottom: this.state.modalBottom}}>
+			<div className="modal-container" style={{bottom: this.state.modalBottom, backgroundColor: this.props.backgroundColor}}>
 				{ this.props.children }
 			</div>
 		);
