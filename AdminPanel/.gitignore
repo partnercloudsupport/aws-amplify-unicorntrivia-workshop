@@ -1,6 +1,0 @@
-node_modules
-amplify
-.amplifyrc
-.graphqlconfig.yml
-src/aws-exports.js
-src/graphql
