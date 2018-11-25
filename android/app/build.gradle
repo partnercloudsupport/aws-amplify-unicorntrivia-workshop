@@ -137,6 +137,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-prompt-android')
     compile project(':react-native-video')
     compile project(':react-native-svg')
     implementation fileTree(dir: "libs", include: ["*.jar"])

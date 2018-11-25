@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
-import { Image, Platform, View, TouchableOpacity, Text } from 'react-native';
+import { Alert, Image, Platform, View, TouchableOpacity, Text } from 'react-native';
 // Amplify and GraphQL
 import { API, graphqlOperation } from "aws-amplify";
 import { print as gqlToString } from 'graphql/language';
-import { OnCreateQuestion, OnUpdateQuestion } from '../../../../graphql/subscriptions';
+import { onCreateQuestion, onUpdateQuestion } from '../../../graphql/subscriptions';
+import { createAnswer, updateAnswer } from '../../../graphql/mutations';
 // UI Components
 import ViewContainer from '../../Common/ViewContainer';
 import Video from '../Video';
 import Modal from '../Modal';
 import Timer from '../Timer';
 import styles from './styles';
+
+import prompt from 'react-native-prompt-android';
 
 class Game extends Component {
 	constructor(props){
@@ -28,19 +31,52 @@ class Game extends Component {
 			wrongQuestions: [],
 			gameOver: false,
 			winner: false,
-			loser: false
+			loser: false,
+			username: "",
+			id: "",
+			maxQuestions: 12
 		};
 	}
 
 	componentDidMount(){
+		this.askForName();
 		this.listenForQuestions();
 		this.listenForAnswers();
+	}
+
+	setupClient = (username) => {
+		API.graphql(
+			graphqlOperation(createAnswer, {input: {username: username}})
+		).then(((res) => {
+			this.setState({
+				username: res.data.createAnswer.username,
+				id: res.data.createAnswer.id
+			});
+		}).bind(this)).catch((err) => {
+			console.log("err: ", err);
+		});		
+	}
+
+	askForName = () => {
+		let self = this;
+		prompt(
+			'Provide a username',
+			'Please provide a username for this game',
+			[{
+				text: 'OK',
+				onPress: (input) => { self.setupClient(input)}
+			}],{
+				type: 'plain-text',
+				cancelable: false,
+				defaultValue: 'test',
+				placeholder: 'placeholder'
+		});
 	}
 
 	listenForQuestions = () => {
 		let self = this;
 		API.graphql(
-			graphqlOperation(gqlToString(OnCreateQuestion))
+			graphqlOperation(onCreateQuestion)
 		).subscribe({
 			next: (data) => {
 				self.setState({
@@ -56,7 +92,7 @@ class Game extends Component {
 	listenForAnswers = () => {
 		let self = this;
 		API.graphql(
-			graphqlOperation(gqlToString(OnUpdateQuestion))
+			graphqlOperation(onUpdateQuestion)
 		).subscribe({
 			next: (data) => {
 				setTimeout(() => {
@@ -72,27 +108,44 @@ class Game extends Component {
 	}
 	
 	answerChosen = (index) => {
+		let answer = this.state.question.onCreateQuestion.answers[index];
+		API.graphql(
+			graphqlOperation(
+				updateAnswer,
+				{
+					input: {
+						id: this.state.id,
+						username: this.state.username,
+						answer: this.state.index
+					}
+				}
+			)
+		).then((res) => {
+			console.log("successfully submitted answer");
+		}).catch((err) => {
+			console.log("err: ", err);
+		});
 		this.setState({
 			questionsAnswered: true,
 			selectedAnswerButton: index,
 			buttonsDisabled: true,
 			answerChosen: {
 				index: index,
-				answer: this.state.question.onCreateQuestion.answers[index]
+				answer: answer
 			},
 			questionCount: this.state.questionCount + 1
 		});
 	}
-
+	
 	button = (index, value) => {
 		let self = this;
 		let touchableOpacityBackgroundColor,
 			touchableOpacityBorderColor,
 			textColor;
 		if(this.state.questionAvailable){
-			backgroundColor = this.state.selectedAnswerButton == index ? "#666666" : "#FFFFFF";
-			borderColor = this.state.selectedAnswerButton == index ? "#666666" : "#CCCCCC";
-			color = this.state.selectedAnswerButton == index ? "#FFFFFF" : "#000";
+			touchableOpacityBackgroundColor = this.state.selectedAnswerButton == index ? "#666666" : "#FFFFFF";
+			touchableOpacityBorderColor = this.state.selectedAnswerButton == index ? "#666666" : "#CCCCCC";
+			textColor = this.state.selectedAnswerButton == index ? "#FFFFFF" : "#000";
 
 		} else if(this.state.answerAvailable){
 			if(value == this.state.answer.onUpdateQuestion.answers[this.state.answer.onUpdateQuestion.answerId]){
@@ -100,9 +153,9 @@ class Game extends Component {
 				touchableOpacityBorderColor = "#02DC2A";
 				textColor = "#FFFFFF";
 			} else {
-				backgroundColor = this.state.answerChosen.index == index ? "#FE0000" : "#FFFFFF";
-				borderColor = this.state.answerChosen.index == index ? "#FE0000" : "#CCCCCC";
-				color = this.state.answerChosen.index == index ? "#FFFFFF" : "#000";
+				touchableOpacityBackgroundColor = this.state.answerChosen.index == index ? "#FE0000" : "#FFFFFF";
+				touchableOpacityBorderColor = this.state.answerChosen.index == index ? "#FE0000" : "#CCCCCC";
+				textColor = this.state.answerChosen.index == index ? "#FFFFFF" : "#000";
 			}
 		}
 		return(
@@ -140,7 +193,6 @@ class Game extends Component {
 		}
 	}
 
-
 	question = () => {
 		if(this.state.questionAvailable){
 			setTimeout((() => {
@@ -163,24 +215,24 @@ class Game extends Component {
 					</View>
 				</View>
 			);
-		}
+		}	
 	}
 
 	answer = () => {
 		let self = this;
 		if(this.state.answerAvailable){
 			setTimeout((()=> {
-				let gameOver = this.state.questionCount == 1 ? true : false;
+				let gameOver = this.state.questionCount == this.state.maxQuestions ? true : false;
 				let wrongQuestions = this.state.answerChosen.answer !== this.state.answer.onUpdateQuestion.answers[this.state.answer.onUpdateQuestion.answerId] ? [...this.state.wrongQuestions, {question: this.state.answer, answer: this.state.answerChosen.answer}] : [...this.state.wrongQuestions];
 				if(gameOver){
 					setTimeout(() => {
 						self.setState({
 							modalVisible: true,
-							modalBackground: "transparent"
+							modalBackground: "#FFFFFF"
 						}, () => {
 							console.log("final state: ", self.state);
 						})
-					}, 2000);
+						}, 2000);
 				}
 				this.setState({
 					modalVisible: false,
@@ -197,18 +249,17 @@ class Game extends Component {
 			return(
 				<View style={styles.questionContainer}>
 					<View style={styles.question}>
-						<View style={styles.questionTitleContainer}>
-							<Text style={styles.questionTitle}>{ this.state.answer.onUpdateQuestion.question }</Text>
-						</View>
-						<View style={styles.answerButtonContainer}>
-							{ this.answerButtons()}
-						</View>
+					<View style={styles.questionTitleContainer}>
+						<Text style={styles.questionTitle}>{ this.state.answer.onUpdateQuestion.question }</Text>
+					</View>
+					<View style={styles.answerButtonContainer}>
+						{ this.answerButtons() }
+					</View>
 					</View>
 				</View>
 			);
 		}
 	}
-
 
 	winner = () => {
 		return(

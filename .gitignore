@@ -1,3 +1,7 @@
+# AWS
+src/graphql
+src/aws-exports.js
+
 # OSX
 #
 .DS_Store

@@ -58,6 +58,12 @@
 		FC2AEAD917C84101BCADE693 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83710F5431114CFAAB61E09A /* Roboto-ThinItalic.ttf */; };
 		84642F131B0542749DD54039 /* loser.png in Resources */ = {isa = PBXBuildFile; fileRef = FE87B5296502433D90B6BDBD /* loser.png */; };
 		997BBFFF545A400A8564F31E /* winner.png in Resources */ = {isa = PBXBuildFile; fileRef = B1392CCB46B44F23868D81EE /* winner.png */; };
+		735A635A041D4E8CA80BEE9E /* android_studio_choose_device.png in Resources */ = {isa = PBXBuildFile; fileRef = C66DDD28B1C742C48699E7B9 /* android_studio_choose_device.png */; };
+		F549D2AC0C2D4B79AC8299EF /* android_studio_create_device.png in Resources */ = {isa = PBXBuildFile; fileRef = A7CC8CE5AE374D9B9EB6AEC2 /* android_studio_create_device.png */; };
+		EFC615A0A4F44CA89B57C338 /* android_studio_launch_emu.png in Resources */ = {isa = PBXBuildFile; fileRef = DE5A7EA5A7114A31A40ACA01 /* android_studio_launch_emu.png */; };
+		AB8ECA14C5EE48BCB7193105 /* android_studio_oreo.png in Resources */ = {isa = PBXBuildFile; fileRef = 086BA3DF30EC45E9B64840FF /* android_studio_oreo.png */; };
+		B5B903EA33DD4F3FBFDCE637 /* android_studio_play_device.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E402984ACD429F9D6EF9FE /* android_studio_play_device.png */; };
+		912912702D124B37AB55F880 /* windows_env_var.png in Resources */ = {isa = PBXBuildFile; fileRef = 879F70B038674E9493D7CD77 /* windows_env_var.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -414,6 +420,12 @@
 		FDF940F0AC1845ADB1C4E93D /* Roboto-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Italic.ttf"; path = "../assets/fonts/roboto/Roboto-Italic.ttf"; sourceTree = "<group>"; };
 		FE87B5296502433D90B6BDBD /* loser.png */ = {isa = PBXFileReference; name = "loser.png"; path = "../assets/loser.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		B1392CCB46B44F23868D81EE /* winner.png */ = {isa = PBXFileReference; name = "winner.png"; path = "../assets/winner.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C66DDD28B1C742C48699E7B9 /* android_studio_choose_device.png */ = {isa = PBXFileReference; name = "android_studio_choose_device.png"; path = "../assets/android_studio_choose_device.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A7CC8CE5AE374D9B9EB6AEC2 /* android_studio_create_device.png */ = {isa = PBXFileReference; name = "android_studio_create_device.png"; path = "../assets/android_studio_create_device.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DE5A7EA5A7114A31A40ACA01 /* android_studio_launch_emu.png */ = {isa = PBXFileReference; name = "android_studio_launch_emu.png"; path = "../assets/android_studio_launch_emu.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		086BA3DF30EC45E9B64840FF /* android_studio_oreo.png */ = {isa = PBXFileReference; name = "android_studio_oreo.png"; path = "../assets/android_studio_oreo.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D4E402984ACD429F9D6EF9FE /* android_studio_play_device.png */ = {isa = PBXFileReference; name = "android_studio_play_device.png"; path = "../assets/android_studio_play_device.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		879F70B038674E9493D7CD77 /* windows_env_var.png */ = {isa = PBXFileReference; name = "windows_env_var.png"; path = "../assets/windows_env_var.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -721,6 +733,12 @@
 				83710F5431114CFAAB61E09A /* Roboto-ThinItalic.ttf */,
 				FE87B5296502433D90B6BDBD /* loser.png */,
 				B1392CCB46B44F23868D81EE /* winner.png */,
+				C66DDD28B1C742C48699E7B9 /* android_studio_choose_device.png */,
+				A7CC8CE5AE374D9B9EB6AEC2 /* android_studio_create_device.png */,
+				DE5A7EA5A7114A31A40ACA01 /* android_studio_launch_emu.png */,
+				086BA3DF30EC45E9B64840FF /* android_studio_oreo.png */,
+				D4E402984ACD429F9D6EF9FE /* android_studio_play_device.png */,
+				879F70B038674E9493D7CD77 /* windows_env_var.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1238,6 +1256,12 @@
 				FC2AEAD917C84101BCADE693 /* Roboto-ThinItalic.ttf in Resources */,
 				84642F131B0542749DD54039 /* loser.png in Resources */,
 				997BBFFF545A400A8564F31E /* winner.png in Resources */,
+				735A635A041D4E8CA80BEE9E /* android_studio_choose_device.png in Resources */,
+				F549D2AC0C2D4B79AC8299EF /* android_studio_create_device.png in Resources */,
+				EFC615A0A4F44CA89B57C338 /* android_studio_launch_emu.png in Resources */,
+				AB8ECA14C5EE48BCB7193105 /* android_studio_oreo.png in Resources */,
+				B5B903EA33DD4F3FBFDCE637 /* android_studio_play_device.png in Resources */,
+				912912702D124B37AB55F880 /* windows_env_var.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
