@@ -91,7 +91,7 @@ Now that our stream is playing and our subscriptions are set up. The last thing 
 	```javascript
 	if(this.state.questionAvailable){
 		setTimeout((() => {
-			this.setState({
+				this.setState({
 				modalVisible: false,
 				questionAvailable: false,
 				buttonsDisabled: true,
@@ -99,16 +99,18 @@ Now that our stream is playing and our subscriptions are set up. The last thing 
 			});
 		}).bind(this), 10000);
 		return(
-			<View style={styles.questionContainer}>
-				<View style={styles.question}>
-					<View style={styles.questionTitleContainer}>
-						<Text style={styles.questionTitle}>{ this.state.question.onCreateQuestion.question }</Text>
-					</View>
-					<View style={styles.answerButtonContainer}>
-						{ this.answerButtons() }
-					</View>
-				</View>
-			</View>
+			<div className="question-container">
+				<div className="question">
+					<div className="question-title-container">
+						<div className="question-title">{ this.state.question.onCreateQuestion.question }</div>
+					</div>
+					<div className="answers-container">
+						<div className="answers">
+							{ this.answerButtons() }
+						</div>	
+					</div>
+				</div>
+			</div>
 		);
 	}
 	```
@@ -118,43 +120,43 @@ Now that our stream is playing and our subscriptions are set up. The last thing 
 	```javascript
 	let self = this;
 	if(this.state.answerAvailable){
-	    setTimeout((()=> {
-		let gameOver = this.state.questionCount == 12 ? true : false;
-		let wrongQuestions = this.state.answerChosen.answer !== this.state.answer.onUpdateQuestion.answers[this.state.answer.onUpdateQuestion.answerId] ? [...this.state.wrongQuestions, {question: this.state.answer, answer: this.state.answerChosen.answer}] : [...this.state.wrongQuestions];
-		if(gameOver){
-		    setTimeout(() => {
-			self.setState({
-			    modalVisible: true,
-			    modalBackground: "#FFFFFF"
-			}, () => {
-			    console.log("final state: ", self.state);
-			})
-		    }, 2000);
-		}
-		this.setState({
-		    modalVisible: false,
-		    answerAvailable: false,
-		    buttonsDisabled: false,
-		    wrongQuestions: wrongQuestions,
-		    answerChosen: {},
-		    selectedAnswerButton: null,
-		    gameOver: gameOver,
-		    winner: gameOver == true && wrongQuestions.length == 0 ? true : false,
-		    loser: gameOver == true && wrongQuestions.length > 0 ? true : false
-		});
-	    }).bind(this), 10000);
-	    return(
-		<View style={styles.questionContainer}>
-		    <View style={styles.question}>
-			<View style={styles.questionTitleContainer}>
-			    <Text style={styles.questionTitle}>{ this.state.answer.onUpdateQuestion.question }</Text>
-			</View>
-			<View style={styles.answerButtonContainer}>
-			    { this.answerButtons() }
-			</View>
-		    </View>
-		</View>
-	    );
+		setTimeout((()=> {
+			let gameOver = this.state.questionCount == this.state.maxQuestions ? true : false;
+			let wrongQuestions = this.state.answerChosen.answer !== this.state.answer.onUpdateQuestion.answers[this.state.answer.onUpdateQuestion.answerId] ? [...this.state.wrongQuestions, {question: this.state.answer, answer: this.state.answerChosen.answer}] : [...this.state.wrongQuestions];
+			if(gameOver){
+				setTimeout(() => {
+					self.setState({
+						modalVisible: true,
+						modalBackground: "transparent"
+					})
+				}, 2000);
+			}
+			this.setState({
+				modalVisible: false,
+				answerAvailable: false,
+				buttonsDisabled: false,
+				wrongQuestions: wrongQuestions,
+				answerChosen: {},
+				selectedAnswerButton: null,
+				gameOver: gameOver,
+				winner: gameOver == true && wrongQuestions.length == 0 ? true : false,
+				loser: gameOver == true && wrongQuestions.length > 0 ? true : false
+			});
+		}).bind(this), 10000);
+		return(
+			<div className="question-container">
+				<div className="question">
+					<div className="question-title-container">
+						<div className="question-title">{ self.state.answer.onUpdateQuestion.question }</div>
+					</div>
+					<div className="answers-container">
+						<div className="answers">
+							{ self.answerButtons() }
+						</div>	
+					</div>
+				</div>
+			</div>
+		);
 	}
 	```
 
@@ -165,13 +167,11 @@ Now that our stream is playing and our subscriptions are set up. The last thing 
 	API.graphql(
 		graphqlOperation(
 			updateAnswer,
-			{
-				input: {
-					id: this.state.id,
-					username: this.state.username,
-					answer: this.state.index
-				}
-			}
+			{ input: {
+				id: this.state.id,
+				username: this.state.username,
+				answer: this.state.index
+			}}
 		)
 	).then((res) => {
 		console.log("successfully submitted answer");
@@ -183,8 +183,8 @@ Now that our stream is playing and our subscriptions are set up. The last thing 
 		selectedAnswerButton: index,
 		buttonsDisabled: true,
 		answerChosen: {
-		    index: index,
-		    answer: answer
+			index: index,
+			answer: answer
 		},
 		questionCount: this.state.questionCount + 1
 	});
@@ -205,7 +205,7 @@ Now that our stream is playing and our subscriptions are set up. The last thing 
 		});
 	}).bind(this)).catch((err) => {
 		console.log("err: ", err);
-	});	
+	});
 	```
 1. Add this code to the `askForName` function.
 	```javascript	
