@@ -28,7 +28,8 @@ class Game extends Component {
 			winner: false,
 			loser: false,
 			username: "",
-			id: null
+			id: null,
+			maxQuestions: 12
 		};
 	}
 
@@ -221,7 +222,7 @@ class Game extends Component {
 		let self = this;
 		if(this.state.answerAvailable){
 			setTimeout((()=> {
-				let gameOver = this.state.questionCount == 1 ? true : false;
+				let gameOver = this.state.questionCount == this.state.maxQuestions ? true : false;
 				let wrongQuestions = this.state.answerChosen.answer !== this.state.answer.onUpdateQuestion.answers[this.state.answer.onUpdateQuestion.answerId] ? [...this.state.wrongQuestions, {question: this.state.answer, answer: this.state.answerChosen.answer}] : [...this.state.wrongQuestions];
 				if(gameOver){
 					setTimeout(() => {
