@@ -213,23 +213,30 @@ Now that our stream is playing and our subscriptions are set up. The last thing 
 		});
 	}).bind(this)).catch((err) => {
 		console.log("err: ", err);
-	});		
+	});	
 	```
 1. Add this code to the `askForName` function.
 	```javascript	
-	let self = this;
-	prompt(
-		'Provide a username',
-		'Please provide a username for this game',
-		[{
-			text: 'OK',
-			onPress: (input) => { self.setupClient(input)}
-		}],{
-			type: 'plain-text',
-			cancelable: false,
-			defaultValue: 'test',
-			placeholder: 'placeholder'
-	});	
+	return(
+		<div className="username-prompt-container">
+			<div className="username-prompt">
+				<div className="username-prompt-header-container">
+					<div className="username-prompt-header">Please provide a username</div>
+				</div>
+				<div className="username-prompt-input-container">
+					<input
+						className="username-prompt-input"
+						placeholder="Provide a username... then press enter"
+						onKeyPress={((e) => {
+							if(e.key === "Enter" && e.target.value != ""){
+								this.setupClient(e.target.value);
+							}
+						}).bind(this)}
+					/>
+				</div>
+			</div>
+		</div>
+	);
 	```
 This code is very similiar to what we did in our AdminPanel code. We just created a new User for our AnswersTable.
 
