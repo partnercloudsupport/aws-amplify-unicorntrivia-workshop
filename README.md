@@ -343,7 +343,7 @@ Below are some additional resources for further development! Feel free to skip o
 
 ## Continuing Onwards!
 
-If you have some extra time, let's take a look at how to add our own questions. Lets navigte to the AdminPanel root directory. From here we will move into the /AdminPanel/src/ directory an list the files inside. Here we should see a file named questions.json. This is the file that stores the questions, answer choices, as well as correct answer. Open, modify, and save the file in order to add your own questions! If your AdminPanel is still running, you should see the questions auto update in the browser!
+If you have some extra time, let's take a look at how to add our own questions. First, let's navigte to the AdminPanel root directory. From here we will move into the /AdminPanel/src/ directory and list the files inside. Inside, we should see a file named questions.json. This is the file that stores the questions, answer choices, as well as correct answer all wrapped within a JSON object. You can easily modify the questions by changing the structure of this file. Open it, modify questions.json with your own custom questions, and save! You have now added new questions that can be push to the subscribers of your app! If your AdminPanel is still running in the terminal, you should also see the questions auto update in the browser window!
 
 ## Troubleshooting Notes
 
