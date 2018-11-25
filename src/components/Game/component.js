@@ -39,97 +39,23 @@ class Game extends Component {
 	}
 
 	setupClient = (username) => {
-		API.graphql(
-			graphqlOperation(createAnswer, {input: {username: username}})
-		).then(((res) => {
-			this.setState({
-				username: res.data.createAnswer.username,
-				id: res.data.createAnswer.id
-			});
-		}).bind(this)).catch((err) => {
-			console.log("err: ", err);
-		});
+		/* CODE GOES HERE */
 	}
 
 	askForName = () => {
-		return(
-			<div className="username-prompt-container">
-				<div className="username-prompt">
-					<div className="username-prompt-header-container">
-						<div className="username-prompt-header">Please provide a username</div>
-					</div>
-					<div className="username-prompt-input-container">
-						<input
-							className="username-prompt-input"
-							placeholder="Provide a username... then press enter"
-							onKeyPress={((e) => {
-								if(e.key === "Enter" && e.target.value != ""){
-									this.setupClient(e.target.value);
-								}
-							}).bind(this)}
-						/>
-					</div>
-				</div>
-			</div>
-		);
+		/* CODE GOES HERE */
 	}
 
 	listenForQuestions = () => {
-		API.graphql(
-			graphqlOperation(onCreateQuestion)
-		).subscribe({
-			next: (((data) => {
-				this.setState({
-					question: data.value.data,
-					answerAvailable: false,
-					questionAvailable: true,
-					modalVisible: true
-				});
-			}).bind(this))
-		})
+		/* CODE GOES HERE */
 	}
 
 	listenForAnswers = () => {
-		API.graphql(
-			graphqlOperation(onUpdateQuestion)
-		).subscribe({
-			next: (((data) => {
-				this.setState({
-					answer: data.value.data,
-					answerAvailable: true,
-					questionAvailable: false,
-					modalVisible: true
-				});
-			}).bind(this))
-		})
+		/* CODE GOES HERE */
 	}
 
 	answerChosen = (index) => {
-		let answer = this.state.question.onCreateQuestion.answers[index];
-		API.graphql(
-			graphqlOperation(
-				updateAnswer,
-				{ input: {
-					id: this.state.id,
-					username: this.state.username,
-					answer: this.state.index
-				}}
-			)
-		).then((res) => {
-			console.log("successfully submitted answer");
-		}).catch((err) => {
-			console.log("err: ", err);
-		});
-		this.setState({
-			questionsAnswered: true,
-			selectedAnswerButton: index,
-			buttonsDisabled: true,
-			answerChosen: {
-	 			index: index,
-	  			answer: answer
-			},
-			questionCount: this.state.questionCount + 1
-		});
+		/* CODE GOES HERE */
 	}
 
 	button = (index, answer) => {
