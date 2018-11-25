@@ -19,7 +19,7 @@ Install Node by visiting the official Node.js download page [here](https://nodej
 
 Now that our environment is all set up, we are ready to begin implementing our application! React applications are made up of “Components". Let's begin by creating the Video Player component that will display our video stream in the browser.
 
-Navigate to `./src/components/App/Video/component.js`. The `component.js` file houses the code which defines how we display our livestream on the client device. Our goal for the Video Component is to update the `src` in the `constructor` function of the component. This `src` variable will point to the HLS stream you set up earlier and it will display the stream in your Video Player.
+Navigate to `./src/components/Video/component.js`. The `component.js` file houses the code which defines how we display our livestream on the client device. Our goal for the Video Component is to update the `src` in the `constructor` function of the component. This `src` variable will point to the HLS stream you set up earlier and it will display the stream in your Video Player.
 
 We will now connect the video player to our live streaming backend using the Medistore egress URL generated in the previous step. 
 1. Find the `constructor` and replace the value for the `src` key in `this.state` variable to your Mediastore egress URL. If you lost your MediaStore egress url from the amplify livestream setup, you can run `amplify livestream get-info` from the AdminPanel directory to get the MediaStore url. The url should be after the label `MediaStore Output Url:`.
