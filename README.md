@@ -234,7 +234,7 @@ Now that our stream is playing and our subscriptions are set up. The last thing 
 				input: {
 					id: this.state.id,
 					username: this.state.username,
-					answer: this.state.answer
+					answer: this.state.answerChosen
 				}
 			}
 		)
