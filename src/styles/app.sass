@@ -8,6 +8,7 @@ body
 	background: radial-gradient(#333, #000)
 	margin: 0
 	padding: 0
+	font-family: Helvetica
 
 #app
 	height: 100%
@@ -68,3 +69,46 @@ video
 	position: absolute
 	left: -160px
 	object-fit: inherit
+
+.question-container
+	position: relative
+	height: 100%
+	max-height: 240px
+	position: relative
+
+.question
+	position: relative
+	width: 200px
+	height: 65px
+	padding-left: 30px
+	padding-top: 30px
+	padding-right: 30px
+
+.question-title-container
+	.question-title
+			font-size: 18px
+			font-weight: 600
+			text-align: center
+
+.answers-container
+	min-height: 100%
+	margin-top: 15px
+	position: relative
+
+.answers
+	ul
+		list-style: none
+		padding-left: 0px
+		text-align: center
+
+		li
+			button
+				cursor: pointer
+				height: 15px
+				padding: 5px
+				border: 2px solid #e7e7e7
+				border-radius: 10px
+				font-size: 16px
+				font-weight: 600
+				color: #424242
+				margin-bottom: 10px
