@@ -83,31 +83,6 @@ If you closed the terminal window running the admin panel no problem! Just open 
 
 Below are some additional resources for further development! Feel free to skip on forward to the clean up section [here](https://github.com/awslabs/aws-amplify-unicorntrivia-workshop#wrap-up)!
 
-## Step Three: Update the backend
-1. Open the [AppSync Console](https://console.aws.amazon.com/appsync/home) and navigate to your AppSync endpoint.
-1. Once you select your AppSync endpoint on the left side select Schema.
-    ![Appsync Schema](.images/Appsync_Schema.png)
-1. You now should see your schema that was auto generated for you from Amplify. On the right side you should see a section called Resolvers. Search for `Mutation` in the text box and then select the clickable link next to `updateAnswer(...):Answer`
-    ![Appsync Resolver](.images/Appsync_Resolvers.png)
-1. You are now presented with a Request Mapping Template and a Response Mapping Template.
-    1. We are going to change the Request Mapping Templateto do the appending of the array.
-    1. Navigate/search for `#set( $expression = "SET" )` and look for this line (should be near line 42):
-        ```vtl
-        #set( $expression = "$expression $entry.key = $entry.value" )
-        ```
-    1. Replace this line with:
-        ```vtl
-        #if ($util.matches($entry.key, "#answer"))
-            #set( $expression = "$expression $entry.key = list_append(if_not_exists($entry.key, :empty_list), $entry.value)" )
-            $util.qr($expValues.put(":empty_list", $util.dynamodb.toDynamoDB([])))
-        #else
-            #set( $expression = "$expression $entry.key = $entry.value" )
-        #end
-        ```
-        This checks to see if the field being set is the answer array. If it is the array then it will append the value. We also do a check to see if the field exists and if it doesn't we create an empty array to append our first value to.
-    1. Save the resolver in the top right corner.
-1. Run the app again and now you should observe the answers are being correctly appended to the array.
-
 ## Troubleshooting Notes
 
 1) Refresh your browser window manually or re-run `npm start`.
