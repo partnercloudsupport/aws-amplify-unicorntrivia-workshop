@@ -5,7 +5,7 @@ class Video extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			src: '#YOUR_MEDIASTORE_URL_HERE'
+			src: '#YOUR_MEDIA_STORE_URL_HERE'
 		};
 	}
 
