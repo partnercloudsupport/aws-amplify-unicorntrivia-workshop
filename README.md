@@ -155,11 +155,7 @@ Now Try sending some questions and answers using the admin panel we configured p
 
 If you closed the terminal window running the admin panel no problem! Just open a new terminal window and navigate to the admin panel root directory and run `npm start`. Your default browser should now open up the admin panel on localhost:3000!
 
-Below are some additional resources for further development! Feel free to skip on forward to the clean up section [here](https://github.com/awslabs/aws-amplify-unicorntrivia-workshop#wrap-up)!
-
-## Continuing Onwards!
-
-If you have some extra time, let's take a look at how to add our own questions. First, let's navigte to the AdminPanel root directory. From here we will move into the /AdminPanel/src/ directory and list the files inside. Inside, we should see a file named questions.json. This is the file that stores the questions, answer choices, as well as correct answer all wrapped within a JSON object. You can easily modify the questions by changing the structure of this file. Open it, modify questions.json with your own custom questions, and save! You have now added new questions that can be push to the subscribers of your app! If your AdminPanel is still running in the terminal, you should also see the questions auto update in the browser window!
+Now you have finished, feel free to skip on forward to the clean up section [here](https://github.com/awslabs/aws-amplify-unicorntrivia-workshop#wrap-up)!
 
 ## Troubleshooting Notes
 
