@@ -106,7 +106,6 @@ class Game extends Component {
 
 	answerChosen = (index) => {
 		let answer = this.state.question.onCreateQuestion.answers[index];
-		console.log("answer chosen: ", this.state.id, index);
 		API.graphql(
 			graphqlOperation(
 				updateAnswer,
