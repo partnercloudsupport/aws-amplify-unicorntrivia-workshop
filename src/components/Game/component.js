@@ -19,7 +19,7 @@ class Game extends Component {
 			answer: {},
 			questionAvailable: false,
 			answerAvailable: false,
-			answerChosen: "",
+			answerChosen: null,
 			selectedAnswerButton: null,
 			buttonsDisabled: false,
 			questionCount: 0,
@@ -106,13 +106,13 @@ class Game extends Component {
 
 	answerChosen = (index) => {
 		let answer = this.state.question.onCreateQuestion.answers[index];
+		console.log("answer chosen: ", this.state.id, index);
 		API.graphql(
 			graphqlOperation(
 				updateAnswer,
 				{ input: {
 					id: this.state.id,
-					username: this.state.username,
-					answer: this.state.index
+					answer: [index]
 				}}
 			)
 		).then((res) => {
@@ -194,7 +194,10 @@ class Game extends Component {
 	question = () => {
 		if(this.state.questionAvailable){
 			setTimeout((() => {
-					this.setState({
+				if(this.state.answerChosen == null){
+					this.answerChosen(-1);
+				}
+				this.setState({
 					modalVisible: false,
 					questionAvailable: false,
 					buttonsDisabled: true,
