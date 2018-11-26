@@ -290,7 +290,10 @@ Now that our stream is playing and our subscriptions are set up. The last thing 
 	```
 This code is very similiar to what we did in our AdminPanel code. We just created a new User for our AnswersTable.
 
-Now that we are pushing to the cloud, we should check the backend table to observe our answers being saved, but only one answer is being saved in the array. This seems to be an error. We can fix this though through the AppSync console using a resolver.
+Now that we are pushing to the cloud we should be able to check our backend table to observe our answers being saved. We can do this by navigating to the [AWS DynamoDB](https://us-west-2.console.aws.amazon.com/dynamodb/home?region=us-west-2) table which was created by amplify. There should be 2 new tables, one named questions and one named answers. Let’s take a peek into the answer table! (Hint! The table names will have a random string appended to the end, it will look something like answers-aejngwek234ngenk)
+
+You should now be able to observe our answers being saved, but only one answer is being saved in the array. This seems to be an error. We can fix this though through the AppSync console using a resolver.
+
 
 1. Open the [AppSync Console](https://console.aws.amazon.com/appsync/home) and navigate to your AppSync endpoint.
 1. Once you select your AppSync endpoint on the left side select Schema.
