@@ -16,7 +16,7 @@ This workshop is split into three sections outlined below. You will need to buil
 
 You just started at UnicornTrivia and they hooked you up with a brand new laptop - _sweeeet!_ Now let's configure your development environment. 
 
-1. Clone the UnicornTrivia project repository using `git clone https://github.com/awslabs/aws-amplify-unicorntrivia-workshop`
+1. Download the UnicornTrivia workshop zip [here](https://github.com/awslabs/aws-amplify-unicorntrivia-workshop/archive/master.zip)
 1. Download and install Node and Node Package Manager (NPM) if you don't already have it from [nodejs.org](https://nodejs.org/en/download/)
 1. Install AWS Amplify CLI using this command `npm install -g @aws-amplify/cli`
 1. Install a custom AWS Amplify CLI livestream plugin by moving into `AmplifyElementalPlugin` directory and running `npm install -g` or by running `npm install amplify-elemental-plugin -g`
@@ -179,7 +179,9 @@ Select which client your interested in building.
 ## Wrap-up
 It's absolutely critical to remove the backend resources when you have completed the workshop to avoid ongoing charges.
 
-To remove all backend and local resources associated to the amplify project run the following command inside the AdminPanel directory: amplify delete
+To remove all backend and local resources associated to the amplify project run the following command inside the AdminPanel directory: `amplify delete`
+
+![Delete Resources](.images/delete.png)
 
 Once the command has completed running, doublecheck the deletion process. Go into the console in your default region and confirm that that the MediaLive channel has been deleted.
 
