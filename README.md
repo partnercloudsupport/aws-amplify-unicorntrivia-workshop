@@ -155,10 +155,6 @@ We will also be using the [AWS Amplify](https://aws-amplify.github.io/) library 
     ```
 1. Run `npm start` and observe we are now pushing questions by opening the javascript debug console in your browser and clicking Post Question or Post Answer which is how we'll send trivia to our end-users.
 
-## Continuing Onwards! **Extra Credit**
-
-1. If you have some extra time, let's take a look at how to add our own questions. First, let's navigte to the AdminPanel root directory. From here we will move into the /AdminPanel/src/ directory and list the files inside. Inside, we should see a file named questions.json. This is the file that stores the questions, answer choices, as well as correct answer all wrapped within a JSON object. You can easily modify the questions by changing the structure of this file. Open it, modify questions.json with your own custom questions, and save! You have now added new questions that can be push to the subscribers of your app! If your AdminPanel is still running in the terminal, you should also see the questions auto update in the browser window!
-
 1. To view subscriptions you can add this at the top of your file:
     ```javascript
     const subscription = API.graphql(
@@ -179,6 +175,18 @@ Select which client your interested in building.
 [iOS](https://github.com/awslabs/aws-amplify-unicorntrivia-workshop/tree/unicorn-trivia-ios-workshop) - Based on Swift, requires XCode and Cocoapods
 
 [Android](https://github.com/awslabs/aws-amplify-unicorntrivia-workshop/tree/unicorn-trivia-react-native-workshop) - Based on React Native, requires Android Studio
+
+## Wrap-up
+It's absolutely critical to remove the backend resources when you have completed the workshop to avoid ongoing charges.
+
+To remove all backend and local resources associated to the amplify project run the following command inside the AdminPanel directory: amplify delete
+
+Once the command has completed running, doublecheck the deletion process. Go into the console in your default region and confirm that that the MediaLive channel has been deleted.
+
+## Extra Credit!
+
+1. If you have some extra time, let's take a look at how to add our own questions. First, let's navigte to the AdminPanel root directory. From here we will move into the /AdminPanel/src/ directory and list the files inside. Inside, we should see a file named questions.json. This is the file that stores the questions, answer choices, as well as correct answer all wrapped within a JSON object. You can easily modify the questions by changing the structure of this file. Open it, modify questions.json with your own custom questions, and save! You have now added new questions that can be push to the subscribers of your app! If your AdminPanel is still running in the terminal, you should also see the questions auto update in the browser window!
+
 
 ## License
 
