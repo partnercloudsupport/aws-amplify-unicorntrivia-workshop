@@ -182,14 +182,4 @@ Before doing this workshop please install these required programs
 1. Run the app again and now you should observe the answers are being correctly appended to the array.
 
 
-## Continuing Onwards!
-
-If you have some extra time, let's take a look at how to add our own questions. First, let's navigte to the AdminPanel root directory. From here we will move into the /AdminPanel/src/ directory and list the files inside. Inside, we should see a file named questions.json. This is the file that stores the questions, answer choices, as well as correct answer all wrapped within a JSON object. You can easily modify the questions by changing the structure of this file. Open it, modify questions.json with your own custom questions, and save! You have now added new questions that can be push to the subscribers of your app! If your AdminPanel is still running in the terminal, you should also see the questions auto update in the browser window!
-
-## Wrap-up
-
-It's absolutely critical to remove the backend resources when you have completed the workshop to avoid ongoing charges.
-
-To remove all backend and local resources associated to the amplify project run the following command inside the AdminPanel directory: `amplify delete`
-
-Once the command has completed running, doublecheck the deletion process. Go into the console in your default region and confirm that that the MediaLive channel has been deleted.
+Now that you have finished feel free to skip on forward to the clean up section [here](https://github.com/awslabs/aws-amplify-unicorntrivia-workshop#wrap-up)!
