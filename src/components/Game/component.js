@@ -29,83 +29,13 @@ class Game extends Component {
 			loser: false,
 			username: "",
 			id: null,
-			maxQuestions: 12,
-			subscriptions: {
-				forQuestions: null,
-				forAnswers: null
-			}
+			maxQuestions: 12
 		};
 	}
 
 	componentDidMount(){
-		this.createQuestionsSubscription();
-		this.createAnswersSubscription();
-	}
-
-	createQuestionsSubscription = () => {
-		const subscription = API.graphql(
-			graphqlOperation(onCreateQuestion)
-		).subscribe({
-			next: (((data) => {
-				this.setState({
-					question: data.value.data,
-					answerAvailable: false,
-					questionAvailable: true,
-					modalVisible: true,
-				});
-				this.unsubscribeQuestionsSubscription();
-			}).bind(this))
-		});
-		this.setState({
-			subscriptions: {
-				...this.state.subscriptions,
-				forQuestions: subscription
-			}	
-		});
-		return subscription;
-	}
-
-	unsubscribeQuestionsSubscription = () => {
-		this.state.subscriptions.forQuestions.unsubscribe();
-		this.setState({
-			subscriptions: {
-				...this.state.subscriptions,
-				forQuestions: null
-			}
-		});
-	}
-
-	createAnswersSubscription = () => {
-		const subscription = API.graphql(
-			graphqlOperation(onUpdateQuestion)
-		).subscribe({
-			next: (((data) => {
-				this.setState({
-					answer: data.value.data,
-					answerAvailable: true,
-					questionAvailable: false,
-					modalVisible: true
-				});
-				this.unsubscribeAnswersSubscription();
-			}).bind(this))
-		});
-		this.setState({
-			subscriptions: {
-				...this.state.subscriptions,
-				forAnswers: subscription
-			}	
-		});
-		return subscription;
-	}
-
-	unsubscribeAnswersSubscription = () => {
-		this.state.subscriptions.forAnswers.unsubscribe();
-		this.setState({
-			subscriptions: {
-				...this.state.subscriptions,
-				forAnswers: null
-			}
-		});
+		this.listenForQuestions();
+		this.listenForAnswers();
 	}
 
 	setupClient = (username) => {
@@ -144,6 +74,36 @@ class Game extends Component {
 		);
 	}
 
+	listenForQuestions = () => {
+		API.graphql(
+			graphqlOperation(onCreateQuestion)
+		).subscribe({
+			next: (((data) => {
+				this.setState({
+					question: data.value.data,
+					answerAvailable: false,
+					questionAvailable: true,
+					modalVisible: true
+				});
+			}).bind(this))
+		})
+	}
+
+	listenForAnswers = () => {
+		API.graphql(
+			graphqlOperation(onUpdateQuestion)
+		).subscribe({
+			next: (((data) => {
+				this.setState({
+					answer: data.value.data,
+					answerAvailable: true,
+					questionAvailable: false,
+					modalVisible: true
+				});
+			}).bind(this))
+		})
+	}
+
 	answerChosen = (index) => {
 		let answer = this.state.question.onCreateQuestion.answers[index];
 		API.graphql(
@@ -152,7 +112,7 @@ class Game extends Component {
 				{ input: {
 					id: this.state.id,
 					username: this.state.username,
-					answer: [this.state.index]
+					answer: this.state.index
 				}}
 			)
 		).then((res) => {
