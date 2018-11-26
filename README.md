@@ -67,7 +67,7 @@ Open a new Command Prompt window to ensure the new environment variable is loade
 
 ## Step 1: Preparing the project
 1. Run `export JAVA_HOME='/usr/libexec/java_home -v 1.8'` from your terminal to set the Java version needed to run the Android application.
-	1. If you are on windows, make sure your Java version is "1.8.0_192"
+	1. If you are on windows, make sure your Java version is "1.8.0_192". Refer to [this blog](https://blogs.oracle.com/pranav/switch-between-different-jdk-versions-in-windows) post on how to change Java Cersions
 1. Navigate to the root directory of the client branch folder you downloaded earlier.
 1. Run`npm install` from the terminal to install dependencies detailed in `package.json`
 1. Run `react-native link` from the terminal to link the React Native modules libraries to the project.
