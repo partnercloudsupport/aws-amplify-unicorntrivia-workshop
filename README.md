@@ -91,7 +91,10 @@ Now that our stream is playing and our subscriptions are set up. The last thing 
 	```javascript
 	if(this.state.questionAvailable){
 		setTimeout((() => {
-				this.setState({
+			if(this.state.answerChosen == null){
+				this.answerChosen(-1);
+			}
+			this.setState({
 				modalVisible: false,
 				questionAvailable: false,
 				buttonsDisabled: true,
@@ -169,8 +172,7 @@ Now that our stream is playing and our subscriptions are set up. The last thing 
 			updateAnswer,
 			{ input: {
 				id: this.state.id,
-				username: this.state.username,
-				answer: this.state.index
+				answer: [index]
 			}}
 		)
 	).then((res) => {
