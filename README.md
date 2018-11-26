@@ -180,14 +180,6 @@ Select which client your interested in building.
 
 [Android](https://github.com/awslabs/aws-amplify-unicorntrivia-workshop/tree/unicorn-trivia-react-native-workshop) - Based on React Native, requires Android Studio
 
-## Wrap-up
-
-It's absolutely critical to remove the backend resources when you have completed the workshop to avoid ongoing charges.
-
-To remove all backend and local resources associated to the amplify project run the following command inside the AdminPanel directory: `amplify delete`
-
-Once the command has completed running, doublecheck the deletion process. Go into the console in your default region and confirm that that the MediaLive channel has been deleted.
-
 ## License
 
 This library is licensed under the Apache 2.0 License.
