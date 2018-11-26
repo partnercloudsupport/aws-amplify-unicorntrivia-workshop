@@ -33,7 +33,7 @@ For video files, S3 Static Hosting is a popular way to host video. In a live str
 Now you need to deploy MediaLive and MediaStore. Sure, you could use the AWS Console or even Cloudformation, but you're in a hurry and not interested in writing YAML or JSON. You plan to use AWS Amplify CLI/SDK for the mobile app, maybe there's a way to manage your live streaming infrastructure with the same toolchain? Luckily, you met an Solutions Architect at the AWS SFO Summit who shared with you a [AWS Amplify plugin](https://aws-amplify.github.io/docs/cli/plugins) that does just this very thing. Let's get building!
 
 
-1. First, open a terminal and navigate to your root directory of the AdminPanel.
+1. First, unzip the workshop, then open a terminal and navigate to the AdminPanel directory.
 1. Run `amplify init`. This command creates new AWS backend resources (in this case a single S3 bucket to host your cloudformation templates) and pull the AWS service configurations into the app!
 1. Follow the prompts as shown in the below Image.
     1. If you do not have the AWS CLI installed and configured, amplify will direct you to create a default profile. 
@@ -82,11 +82,11 @@ Our next step is to build an Administrator Panel which can be used to fire off A
 
 We will also be using the [AWS Amplify](https://aws-amplify.github.io/) library to effortlessly configure backends. We will be using the templating engine within [AWS Amplify](https://aws-amplify.github.io/) called CodeGen to quickly template the structure of our api and our live streaming infrastructure without hand writing any code! 
 
-1. Open a terminal and navigate to your root directory of the AdminPanel.
+1. Open a terminal and navigate to the AdminPanel directory.
 1. Once you are in the adminpanel directory install the dependancies using `npm install` for the adminpanel 
 1. Now to start the local deployment of the AdminPanel run the command `npm start`
     1. A tab should now automatically open in your default browser to `http://localhost:3000/`. You have now successfully deployed the administrator panel for UnicornTrivia!
-    1. When you issue the command `npm start` from the root directory of your React project, NodeJS will look for a scripts object in your package.json file. If found, it will look for a script with the key start and run the command specified as its value. You can view which scripts will be run by taking a look into package.json and taking a look at the "scripts" object.
+    1. When you issue the command `npm start` from the root directory of a React project, NodeJS will look for a scripts object in your package.json file. If found, it will look for a script with the key start and run the command specified as its value. You can view which scripts will be run by taking a look into package.json and taking a look at the "scripts" object.
 1. Now that you have the AdminPanel installed and running now it it is time to add in your API. Just like before when we setup the live stream you can use Amplify to setup the backend for the AdminPanel. Run `amplify api add` and use these values
     ![AmplifyAPIAdd](.images/AmplifyAPIAdd.png)
     1. This will open your default editor with a default GraphQL model:
@@ -187,7 +187,7 @@ Once the command has completed running, doublecheck the deletion process. Go int
 
 ## Extra Credit!
 
-1. If you have some extra time, let's take a look at how to add our own questions. First, let's navigte to the AdminPanel root directory. From here we will move into the /AdminPanel/src/ directory and list the files inside. Inside, we should see a file named questions.json. This is the file that stores the questions, answer choices, as well as correct answer all wrapped within a JSON object. You can easily modify the questions by changing the structure of this file. Open it, modify questions.json with your own custom questions, and save! You have now added new questions that can be push to the subscribers of your app! If your AdminPanel is still running in the terminal, you should also see the questions auto update in the browser window!
+1. If you have some extra time, let's take a look at how to add our own questions. First, let's navigte to the AdminPanel directory. From here we will move into the /AdminPanel/src/ directory and list the files inside. Inside, we should see a file named questions.json. This is the file that stores the questions, answer choices, as well as correct answer all wrapped within a JSON object. You can easily modify the questions by changing the structure of this file. Open it, modify questions.json with your own custom questions, and save! You have now added new questions that can be push to the subscribers of your app! If your AdminPanel is still running in the terminal, you should also see the questions auto update in the browser window!
 
 
 ## License
