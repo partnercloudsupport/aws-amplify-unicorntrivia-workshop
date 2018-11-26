@@ -268,8 +268,7 @@ Now that we have every section of the application implemented, it's time to run 
 
 **Congratulations!** You have now successfully implemented a UnicornTrivia application on one of three suported platforms! 
 Now Try sending some questions and answers using the admin panel we configured previously.
-
-Below are some additional resources for further development! Feel free to skip on forward to the clean up section [here](https://github.com/awslabs/aws-amplify-unicorntrivia-workshop#wrap-up)!
+Now that you have finished, feel free to skip on forward to the wrap-up section [here](https://github.com/awslabs/aws-amplify-unicorntrivia-workshop#wrap-up)!
 
 ## Troubleshooting Notes
 
