@@ -339,15 +339,7 @@ Now Try sending some questions and answers using the admin panel we configured p
 
 If you closed the terminal window running the admin panel no problem! Just open a new terminal window and navigate to the admin panel root directory and run `npm start`. Your default browser should now open up the admin panel on localhost:3000!
 
-Below are some additional resources for further development! Feel free to skip on forward to the clean up section [here](https://github.com/awslabs/aws-amplify-unicorntrivia-workshop#wrap-up)!
-
-## Wrap-up
-
-It's absolutely critical to remove the backend resources when you have completed the workshop to avoid ongoing charges.
-
-To remove all backend and local resources associated to the amplify project run the following command inside the AdminPanel directory: `amplify delete`
-
-Once the command has completed running, doublecheck the deletion process. Go into the console in your default region and confirm that that the MediaLive channel has been deleted.
+Now that you have finished feel free to skip on forward to the clean up section [here](https://github.com/awslabs/aws-amplify-unicorntrivia-workshop#wrap-up)!
 
 
 ## Troubleshooting Notes
